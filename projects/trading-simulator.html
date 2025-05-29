@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Simulator | Portfolio</title>
+    <meta name="description" content="Interactive trading simulator with real-time market simulation and educational feedback for learning trading strategies.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="project-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">AT</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#expertise" class="nav-link">Expertise</a></li>
+                    <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                    <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <div class="back-link">
+                    <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                </div>
+                
+                <div class="project-title">
+                    <h1>Interactive Trading Simulator</h1>
+                    <div class="project-metadata">
+                        <span class="project-date">2025</span>
+                        <span class="project-category">Financial Education</span>
+                    </div>
+                </div>
+                
+                <div class="project-showcase">
+                    <div class="project-image-showcase">
+                        <img src="../assets/images/trading-simulator-showcase.jpg" alt="Trading Simulator Interface">
+                    </div>
+                    
+                    <div class="project-info">
+                        <div class="project-description">
+                            <h2>Project Overview</h2>
+                            <p>This interactive trading simulator provides a hands-on learning environment for understanding cryptocurrency market dynamics and trading strategies. Users practice decision-making with realistic market conditions, receive immediate feedback, and develop trading intuition without financial risk.</p>
+                            
+                            <p>The application simulates BTC/CHF price action with realistic volatility and market patterns, offering multiple order types to master (Limit Orders, Market Orders, and Stop-Limit Orders). The intelligent feedback system evaluates users' decisions against optimal trading strategies.</p>
+                            
+                            <div class="demo-link">
+                                <a href="../demos/interactive-demo/index.html" class="btn primary-btn">
+                                    <i class="fas fa-play-circle"></i> Try Interactive Demo
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech-stack">
+                            <h2>Technologies Used</h2>
+                            <ul class="tech-tags">
+                                <li>JavaScript</li>
+                                <li>Custom DOM Manipulation</li>
+                                <li>CSS3 Transitions</li>
+                                <li>Financial Algorithms</li>
+                                <li>Canvas Rendering</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-highlights">
+                            <h2>Key Features</h2>
+                            <ul class="feature-list">
+                                <li><strong>Realistic Market Simulation:</strong> Algorithmically generated price data with trend and volatility patterns</li>
+                                <li><strong>Multiple Trading Strategies:</strong> Practice with different order types and execution methods</li>
+                                <li><strong>Intelligent Feedback System:</strong> Real-time analysis and recommendations based on market conditions</li>
+                                <li><strong>Educational Insights:</strong> Market condition analysis and strategy recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-details">
+                    <h2>Technical Implementation</h2>
+                    
+                    <div class="implementation-section">
+                        <h3>Market Data Generation</h3>
+                        <p>The simulator utilizes advanced algorithms to generate realistic cryptocurrency price movements, accounting for volatility, trends, and market psychology. This creates an authentic environment for practicing trading decisions without using historical data that users might recognize.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Price Data Generation Algorithm</span>
+                            </div>
+                            <pre><code>const generateRandomPriceData = (basePrice = 85000, volatility = 0.02) => {
+    const times = ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', 
+                   '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
+    let currentPrice = basePrice;
+    let trend = Math.random() > 0.5 ? 1 : -1;
+    
+    return times.map((time, index) => {
+        const maxMove = basePrice * volatility;
+        const trendInfluence = trend * (Math.random() * maxMove * 0.3);
+        const open = currentPrice;
+        const close = open + trendInfluence + (Math.random() - 0.5) * maxMove;
+        const high = Math.max(open, close) + Math.random() * maxMove * 0.5;
+        const low = Math.min(open, close) - Math.random() * maxMove * 0.5;
+        
+        // Trend can occasionally change
+        if (Math.random() < 0.2) trend *= -1;
+        currentPrice = close;
+        
+        // Return OHLC data with time
+        return {
+            time,
+            open: Math.round(open),
+            high: Math.round(high),
+            low: Math.round(low),
+            close: Math.round(close),
+            trend: trend
+        };
+    });
+};</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-section">
+                        <h3>Market Analysis System</h3>
+                        <p>The application implements sophisticated market analysis algorithms that evaluate volatility, trend strength, and momentum. This system not only powers the feedback engine but also simulates the kind of analysis professional traders perform.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Market Conditions Analysis</span>
+                            </div>
+                            <pre><code>const analyzeMarketConditions = (candle) => {
+    const volatility = (candle.high - candle.low) / candle.low;
+    const bodySize = Math.abs(candle.close - candle.open) / candle.open;
+    
+    return {
+        isVolatile: volatility > 0.02,
+        trend: candle.close > candle.open ? 'bullish' : 'bearish',
+        momentum: bodySize > 0.01 ? 'strong' : 'weak'
+    };
+};</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-section">
+                        <h3>Interactive Candlestick Chart</h3>
+                        <p>The simulator features a fully custom-built candlestick chart that renders OHLC (Open, High, Low, Close) data with appropriate scaling and visual indicators. This component demonstrates advanced DOM manipulation and rendering techniques for financial data visualization.</p>
+                        
+                        <div class="image-gallery">
+                            <div class="gallery-item">
+                                <img src="../assets/images/trading-chart-detail.jpg" alt="Candlestick Chart Detail">
+                                <p class="caption">Custom candlestick rendering with dynamic price scaling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-outcomes">
+                    <h2>Educational Value</h2>
+                    <p>This simulator serves multiple educational purposes:</p>
+                    <ul>
+                        <li><strong>Risk-Free Practice:</strong> Users can develop trading intuition without financial exposure</li>
+                        <li><strong>Strategy Comparison:</strong> Direct experience with different order types and their optimal use cases</li>
+                        <li><strong>Market Psychology:</strong> Understanding of how price movements are influenced by volatility and trends</li>
+                        <li><strong>Decision Analysis:</strong> Immediate feedback helps users understand the consequences of trading decisions</li>
+                    </ul>
+                    
+                    <p>For financial institutions, this tool demonstrates how interactive educational technology can enhance trader training programs and client education initiatives.</p>
+                </div>
+                
+                <div class="technical-challenges">
+                    <h2>Technical Challenges</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3><i class="fas fa-chart-line"></i> Dynamic Price Scaling</h3>
+                            <p>Creating an algorithm that automatically scales the chart axes to accommodate price ranges of varying volatility while maintaining visual clarity.</p>
+                        </div>
+                        
+                        <div class="challenge-card">
+                            <h3><i class="fas fa-random"></i> Realistic Market Patterns</h3>
+                            <p>Generating price data that exhibits authentic market behaviors like trend persistence, momentum, and volatility clustering.</p>
+                        </div>
+                        
+                        <div class="challenge-card">
+                            <h3><i class="fas fa-brain"></i> Strategy Evaluation</h3>
+                            <p>Developing a system that can analyze user decisions against optimal trading practices in various market conditions.</p>
+                        </div>
+                        
+                        <div class="challenge-card">
+                            <h3><i class="fas fa-mobile-alt"></i> Responsive Visualization</h3>
+                            <p>Ensuring the complex chart visualization remains usable and informative across various screen sizes and devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 | <a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+            <div class="social-links">
+                <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
