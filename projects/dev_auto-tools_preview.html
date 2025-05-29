@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management Automation Suite | Portfolio</title>
+    <meta name="description" content="A collection of Python tools for efficient file management, including duplicate detection and batch processing utilities.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="project-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">AT</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#expertise" class="nav-link">Expertise</a></li>
+                    <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                    <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <div class="back-link">
+                    <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                </div>
+                
+                <div class="project-title">
+                    <h1>File Management Automation Suite</h1>
+                    <div class="project-metadata">
+                        <span class="project-date">2025</span>
+                        <span class="project-category">Python Utilities</span>
+                    </div>
+                </div>
+                
+                <div class="project-showcase">
+                    <div class="project-image-showcase">
+                        <img src="../assets/images/file-automation-showcase.jpg" alt="File Automation Tools Screenshot">
+                    </div>
+                    
+                    <div class="project-info">
+                        <div class="project-description">
+                            <h2>Project Overview</h2>
+                            <p>This collection of specialized Python scripts addresses common file management challenges, including duplicate image detection, batch file renaming, and image processing tasks. Each tool was developed to solve specific workflow problems and increase productivity.</p>
+                        </div>
+                        
+                        <div class="project-tech-stack">
+                            <h2>Technologies Used</h2>
+                            <ul class="tech-tags">
+                                <li>Python</li>
+                                <li>PIL (Pillow)</li>
+                                <li>OS Module</li>
+                                <li>Hashlib</li>
+                                <li>FuzzyWuzzy</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-highlights">
+                            <h2>Key Tools</h2>
+                            <ul class="feature-list">
+                                <li><strong>Image Duplicate Detector:</strong> Identifies and removes duplicate images using content-based hashing</li>
+                                <li><strong>Batch Image Resizer:</strong> Processes multiple images with Lanczos algorithm for high-quality scaling</li>
+                                <li><strong>File Renaming Utility:</strong> Implements systematic file renaming with collision detection</li>
+                                <li><strong>Text Correction Tool:</strong> Performs fuzzy matching for text correction in filenames</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-details">
+                    <h2>Technical Implementation</h2>
+                    
+                    <div class="implementation-section">
+                        <h3>Image Duplicate Detection</h3>
+                        <p>The duplicate detection tool uses content-based hashing rather than simple filename comparison. By converting images to a consistent format and generating MD5 hashes of the actual pixel data, the system can identify duplicates even when filenames differ completely.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Image Hashing Logic</span>
+                            </div>
+                            <pre><code>def hash_image(image_path):
+    with Image.open(image_path) as img:
+        img = img.convert("RGB")
+        img_hash = hashlib.md5(img.tobytes()).hexdigest()
+    return img_hash
+
+# Usage example (simplified)
+def find_duplicates(directory):
+    hashes = {}
+    for file in files:
+        if file.lower().endswith((".png", ".jpg", ".jpeg")):
+            file_hash = hash_image(file_path)
+            if file_hash in hashes:
+                # Duplicate found
+                print(f"Duplicate found: {file_path}")
+            else:
+                hashes[file_hash] = file_path</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-section">
+                        <h3>Batch Image Resizing</h3>
+                        <p>The batch image processor efficiently handles multiple images at once, creating new versions at specified dimensions while preserving quality through the Lanczos resampling algorithm. The tool automatically organizes outputs into dimension-specific folders for easy management.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Image Resizing with Quality Preservation</span>
+                            </div>
+                            <pre><code>def resize_image(image_path, output_size):
+    with Image.open(image_path) as img:
+        # Lanczos algorithm provides high-quality resampling
+        resized_img = img.resize(output_size, Image.LANCZOS)
+    return resized_img
+
+def batch_process(directory, sizes):
+    for file in walk_files(directory):
+        if is_image(file):
+            for size in sizes:
+                # Create size-specific output directory
+                output_dir = create_output_dir(file, size)
+                
+                # Process and save the resized image
+                resized = resize_image(file, size)
+                save_with_metadata(resized, output_dir, file)</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-section">
+                        <h3>Intelligent File Renaming</h3>
+                        <p>The file renaming utility systematically processes files in a directory, applying consistent naming patterns while ensuring no existing files are overwritten. The system includes collision detection and automatic variant generation when duplicates are encountered.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Sequential Renaming with Collision Prevention</span>
+                            </div>
+                            <pre><code>def rename_files(directory, prefix):
+    for count, filename in enumerate(os.listdir(directory)):
+        src = os.path.join(directory, filename)
+        
+        # Generate new filename with prefix and original extension
+        new_filename = f"{prefix}{count + 1}{os.path.splitext(filename)[1]}"
+        dst = os.path.join(directory, new_filename)
+
+        # Handle potential name conflicts
+        variant = 1
+        while os.path.exists(dst):
+            variant_name = f"{prefix}{count + 1}_{variant}{os.path.splitext(filename)[1]}"
+            dst = os.path.join(directory, variant_name)
+            variant += 1
+
+        # Perform the rename operation
+        os.rename(src, dst)</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-section">
+                        <h3>Text Correction System</h3>
+                        <p>The text correction tool employs fuzzy string matching algorithms to detect and fix potential typos or inconsistencies in filenames. By comparing against a dictionary of correct terms, the system can suggest or automatically apply corrections based on configurable accuracy thresholds.</p>
+                        
+                        <div class="code-snippet-preview">
+                            <div class="code-header">
+                                <span class="code-title">Fuzzy Matching for Text Correction</span>
+                            </div>
+                            <pre><code>def correct_word(word, dictionary, threshold=80):
+    # Check if word exists in dictionary
+    if word in dictionary:
+        return word
+        
+    # Find closest match using fuzzy matching
+    match = process.extractOne(word, dictionary)
+    
+    if match and match[1] >= threshold:
+        # Return correction if confidence is above threshold
+        return match[0]
+    
+    # Return original if no good match found
+    return word</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-outcomes">
+                    <h2>Efficiency Improvements</h2>
+                    <p>These automation tools have delivered measurable productivity benefits:</p>
+                    <ul>
+                        <li>Reduced image management time by approximately 70% for large collections</li>
+                        <li>Eliminated manual quality degradation issues in batch processing workflows</li>
+                        <li>Provided consistent naming conventions across multiple projects</li>
+                        <li>Saved storage space by automatically identifying and removing duplicate files</li>
+                    </ul>
+                    
+                    <div class="use-case">
+                        <h3>Common Use Cases</h3>
+                        <div class="use-case-grid">
+                            <div class="use-case-card">
+                                <div class="use-case-icon"><i class="fas fa-store"></i></div>
+                                <h4>E-Commerce Image Management</h4>
+                                <p>Efficiently prepare product images in multiple dimensions required by different platforms while maintaining naming consistency.</p>
+                            </div>
+                            
+                            <div class="use-case-card">
+                                <div class="use-case-icon"><i class="fas fa-photo-video"></i></div>
+                                <h4>Media Collection Organization</h4>
+                                <p>Clean up and organize large media libraries by identifying duplicates and standardizing filenames.</p>
+                            </div>
+                            
+                            <div class="use-case-card">
+                                <div class="use-case-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                <h4>Batch Upload Preparation</h4>
+                                <p>Prepare large batches of files for upload to web services with specific naming and dimension requirements.</p>
+                            </div>
+                            
+                            <div class="use-case-card">
+                                <div class="use-case-icon"><i class="fas fa-database"></i></div>
+                                <h4>Dataset Preprocessing</h4>
+                                <p>Clean and standardize image datasets for machine learning or analytical purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-insights">
+                    <h2>Technical Insights</h2>
+                    <p>Developing these tools highlighted several important principles in automation design:</p>
+                    <ul>
+                        <li><strong>Idempotence:</strong> Ensuring operations can be run multiple times without unexpected side effects</li>
+                        <li><strong>Error Resilience:</strong> Gracefully handling exceptions like corrupted files or unexpected formats</li>
+                        <li><strong>Platform Compatibility:</strong> Writing code that works across Windows and Unix-based systems</li>
+                        <li><strong>Memory Efficiency:</strong> Processing large files in chunks to prevent memory overflow</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 | <a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+            <div class="social-links">
+                <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
