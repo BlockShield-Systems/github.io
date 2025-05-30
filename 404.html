@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Portfolio</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to the portfolio home page.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .error-number {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--text-light), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 0 0 40px rgba(251, 191, 36, 0.3);
+            }
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .error-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .error-link {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .error-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .error-link i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .error-link h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .error-link p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="animated-bg">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+        </div>
+        
+        <div class="error-content">
+            <div class="error-number">404</div>
+            
+            <h1 class="error-title">Page Not Found</h1>
+            
+            <p class="error-message">
+                Oops! The page you're looking for seems to have wandered off into the digital void. 
+                Don't worry, even the best navigators sometimes take a wrong turn.
+            </p>
+            
+            <div class="error-actions">
+                <a href="/" class="btn primary-btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="/#projects" class="btn secondary-btn">
+                    <i class="fas fa-folder-open"></i> View Projects
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for content..." id="searchInput">
+            </div>
+            
+            <div class="error-links">
+                <a href="/#about" class="error-link">
+                    <div><i class="fas fa-user"></i></div>
+                    <h3>About Me</h3>
+                    <p>Learn about my background and expertise</p>
+                </a>
+                
+                <a href="/#expertise" class="error-link">
+                    <div><i class="fas fa-cogs"></i></div>
+                    <h3>Technical Skills</h3>
+                    <p>Explore my technical capabilities</p>
+                </a>
+                
+                <a href="/#contact" class="error-link">
+                    <div><i class="fas fa-envelope"></i></div>
+                    <h3>Get In Touch</h3>
+                    <p>Connect for collaborations</p>
+                </a>
+                
+                <a href="/demos/interactive-demo/" class="error-link">
+                    <div><i class="fas fa-play-circle"></i></div>
+                    <h3>Interactive Demos</h3>
+                    <p>Try live project demonstrations</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                // Simple routing based on search terms
+                const routes = {
+                    'about': '/#about',
+                    'projects': '/#projects',
+                    'skills': '/#skills',
+                    'expertise': '/#expertise',
+                    'contact': '/#contact',
+                    'trading': '/projects/trading-simulator.html',
+                    'ai': '/projects/learning-platform.html',
+                    'learning': '/projects/learning-platform.html',
+                    'code': '/projects/code-formatter.html',
+                    'formatter': '/projects/code-formatter.html',
+                    'system': '/projects/system-architecture.html',
+                    'architecture': '/projects/system-architecture.html',
+                    'automation': '/projects/automation-tools.html',
+                    'tools': '/projects/automation-tools.html',
+                    'demo': '/demos/interactive-demo/',
+                    'simulator': '/demos/interactive-demo/'
+                };
+                
+                // Find matching route
+                for (let keyword in routes) {
+                    if (searchTerm.includes(keyword)) {
+                        window.location.href = routes[keyword];
+                        return;
+                    }
+                }
+                
+                // Default to home with search parameter
+                window.location.href = `/#search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+        
+        // Animate elements on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.error-number, .error-title, .error-message, .error-actions, .error-links');
+            
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+        
+        // Add some interactivity to floating shapes
+        document.querySelectorAll('.shape').forEach(shape => {
+            shape.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.2)';
+                this.style.opacity = '1';
+            });
+            
+            shape.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+                this.style.opacity = '0.7';
+            });
+        });
+    </script>
+</body>
+</html>
