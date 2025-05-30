@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://ai-techart.com/</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/portfolio-preview.jpg</image:loc>
+            <image:title>IT Specialist Portfolio - AI &amp; Multimedia Expert</image:title>
+            <image:caption>Professional portfolio showcasing expertise in AI, development, and multimedia</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Main Sections (anchor links) -->
+    <url>
+        <loc>https://ai-techart.com/#about</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/#expertise</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/#projects</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/#skills</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/#contact</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Project Pages -->
+    <url>
+        <loc>https://ai-techart.com/projects/trading-simulator.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/trading-simulator-showcase.jpg</image:loc>
+            <image:title>Interactive Trading Simulator</image:title>
+            <image:caption>Educational trading platform with real-time market simulation</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/projects/learning-platform.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/learning-platform-showcase.jpg</image:loc>
+            <image:title>Interactive AI Learning Platform</image:title>
+            <image:caption>Gamified platform for learning complex AI tools</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/projects/code-formatter.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/code-formatter-showcase.jpg</image:loc>
+            <image:title>Advanced Code Formatting Tool</image:title>
+            <image:caption>Sophisticated C# application for syntax highlighting</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/projects/system-architecture.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/system-architecture-showcase.jpg</image:loc>
+            <image:title>Advanced System Architecture</image:title>
+            <image:caption>Comprehensive virtualization infrastructure design</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/projects/automation-tools.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://ai-techart.com/assets/images/automation-tools-showcase.jpg</image:loc>
+            <image:title>File Management Automation Suite</image:title>
+            <image:caption>Python tools for efficient file management</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Demo Pages -->
+    <url>
+        <loc>https://ai-techart.com/demos/interactive-demo/index.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/demos/tool-preview/index.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Alternative project pages -->
+    <url>
+        <loc>https://ai-techart.com/projects/interactive_projects.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://ai-techart.com/projects/dev.auto_tools_preview.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Static pages -->
+    <url>
+        <loc>https://ai-techart.com/404.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+    <!-- Important files -->
+    <url>
+        <loc>https://ai-techart.com/manifest.json</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
