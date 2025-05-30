@@ -1,0 +1,80 @@
+# Robots.txt for AI-TechArt Portfolio
+# https://ai-techart.com
+
+User-agent: *
+
+# Allow all content for indexing
+Allow: /
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Allow project pages
+Allow: /projects/
+Allow: /demos/
+
+# Block any potential sensitive directories (even if they don't exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /logs/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: *.log
+Disallow: *.tmp
+Disallow: *.bak
+
+# Allow search engine bots to crawl images
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Special rules for specific crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Archive crawlers
+User-agent: ia_archiver
+Allow: /
+
+# SEO and analytics crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Crawl delay for general bots (1 second)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://ai-techart.com/sitemap.xml
+
+# Host directive (for some search engines)
+Host: ai-techart.com
