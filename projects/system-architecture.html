@@ -151,18 +151,18 @@ echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf</code></pre>
                             <pre><code># Bridge Configuration (/etc/network/interfaces)
 auto vmbr0
 iface vmbr0 inet static
-    address 172.16.56.1/24
+    address 10.10.10.1/24
     bridge-ports none
     bridge-stp off
     bridge-fd 0
     post-up echo 1 > /proc/sys/net/ipv4/ip_forward
-    post-up iptables -t nat -A POSTROUTING -s '172.16.56.0/24' -o enp4s0 -j MASQUERADE
-    post-down iptables -t nat -D POSTROUTING -s '172.16.56.0/24' -o enp4s0 -j MASQUERADE
+    post-up iptables -t nat -A POSTROUTING -s '10.10.10.0/24' -o enp4s0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s '10.10.10.0/24' -o enp4s0 -j MASQUERADE
 
 # Container Network Configuration
 auto vmbr1
 iface vmbr1 inet static
-    address 172.28.71.1/24
+    address 10.10.10.1/24
     bridge-ports none
     bridge-stp off
     bridge-fd 0
