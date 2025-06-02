@@ -1,0 +1,34 @@
+# CODEOWNERS for AI-TechArt Portfolio
+# This file defines who is responsible for which files and directories
+# Format: file path pattern followed by one or more owners
+
+# By default, you are the owner of all files
+*                 @BlockShield-Systems
+
+# Core functionality and configuration
+/*.*              @BlockShield-Systems
+/.github/         @BlockShield-Systems
+/manifest.json    @BlockShield-Systems
+/sw.js            @BlockShield-Systems
+/robots.txt       @BlockShield-Systems
+/sitemap.xml      @BlockShield-Systems
+/404.html         @BlockShield-Systems
+
+# Project structure
+/projects/        @BlockShield-Systems
+/demos/           @BlockShield-Systems
+/assets/          @BlockShield-Systems
+
+# CSS system
+/assets/css/      @BlockShield-Systems
+
+# JavaScript system
+/assets/js/       @BlockShield-Systems
+
+# Interactive demo components
+/demos/tool-preview/      @BlockShield-Systems
+/demos/interactive-demo/  @BlockShield-Systems
+
+# Documentation
+/README.md        @BlockShield-Systems
+/.github/SECURITY.md  @BlockShield-Systems
