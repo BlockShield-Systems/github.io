@@ -6,6 +6,12 @@
     <title>IT Specialist | AI & Multimedia Expert</title>
     <meta name="description" content="Professional portfolio showcasing expertise in AI integration, system architecture, multimedia and development.">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="AI specialist, machine learning, system architecture, web development, multimedia, portfolio">
     <meta name="author" content="Demian Lienert">
@@ -201,11 +207,21 @@
                 <h2 class="section-title">Project Highlights</h2>
                 
                 <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="ai">AI & ML</button>
-                    <button class="filter-btn" data-filter="dev">Development</button>
-                    <button class="filter-btn" data-filter="sys">Systems</button>
-                    <button class="filter-btn" data-filter="media">Multimedia</button>
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large"></i> Alle Projekte
+                    </button>
+                    <button class="filter-btn" data-filter="ai">
+                        <i class="fas fa-brain"></i> KI & ML
+                    </button>
+                    <button class="filter-btn" data-filter="dev">
+                        <i class="fas fa-code"></i> Entwicklung
+                    </button>
+                    <button class="filter-btn" data-filter="sys">
+                        <i class="fas fa-server"></i> Systeme
+                    </button>
+                    <button class="filter-btn" data-filter="media">
+                        <i class="fas fa-photo-video"></i> Multimedia
+                    </button>
                 </div>
                 
                 <div class="projects-grid">
@@ -315,29 +331,72 @@
                 <div class="skills-container">
                     <div class="skill-category">
                         <h3>Programming & Development</h3>
-                        <div class="skill-bars">
-                            <div class="skill-bar">
-                                <div class="skill-name">Python</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="90"></div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Python</h4>
+                                    <p>Spezialisiert auf Automatisierung, ML-Integration und Backend-Entwicklung</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">JavaScript/React</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="85"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript/React</h4>
+                                    <p>Frontend-Entwicklung mit modernen Frameworks und State Management</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">HTML/CSS/Tailwind</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="90"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML/CSS/Tailwind</h4>
+                                    <p>Responsive Design und moderne CSS-Frameworks für optimale UI/UX</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">C# .NET</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="75"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-windows"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>C# .NET</h4>
+                                    <p>Desktop-Anwendungen und Backend-Services mit .NET Framework</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -345,29 +404,72 @@
                     
                     <div class="skill-category">
                         <h3>AI & Machine Learning</h3>
-                        <div class="skill-bars">
-                            <div class="skill-bar">
-                                <div class="skill-name">LLM Integration</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="95"></div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>LLM Integration</h4>
+                                    <p>Integration und Optimierung von Large Language Models in Anwendungen</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">RAG Systems</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="90"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>RAG Systems</h4>
+                                    <p>Entwicklung von Retrieval-Augmented Generation Systemen</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Prompt Engineering</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="95"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Prompt Engineering</h4>
+                                    <p>Optimierung von KI-Prompts für präzise und effektive Ergebnisse</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Vector Databases</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="85"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Vector Databases</h4>
+                                    <p>Implementation und Optimierung von Vektordatenbanken für KI-Anwendungen</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -375,111 +477,57 @@
                     
                     <div class="skill-category">
                         <h3>Systems & Infrastructure</h3>
-                        <div class="skill-bars">
-                            <div class="skill-bar">
-                                <div class="skill-name">Linux Systems</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="85"></div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-linux"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Linux Systems</h4>
+                                    <p>Administration und Optimierung von Linux-Servern und Systemen</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Virtualization</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="90"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Virtualization</h4>
+                                    <p>Virtualisierungstechnologien und Container-Management</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Container Technologies</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="80"></div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Container Technologies</h4>
+                                    <p>Docker, Kubernetes und Container-Orchestrierung</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Network Configuration</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Multimedia & Design</h3>
-                        <div class="skill-bars">
-                            <div class="skill-bar">
-                                <div class="skill-name">Adobe Creative Suite</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">UI/UX Design</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Audio Engineering</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-name">Game Development</div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-percentage="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                
-                <div class="contact-content">
-                    <p>Interested in collaboration or would like to discuss potential opportunities? Feel free to reach out through any of the following channels:</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon"><i class="fab fa-github"></i></div>
-                            <div class="contact-details">
-                                <h4>GitHub</h4>
-                                <p><a href="https://github.com/BlockShield-Systems" target="_blank">BlockShield-Systems</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="contact-note">I'm open to diverse opportunities across multiple IT domains and welcome challenges that span different technical fields.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 | <a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
-            <div class="social-links">
-                <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/animations.js"></script>
-</body>
-</html>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">

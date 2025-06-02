@@ -17,6 +17,7 @@ class PortfolioNavigation {
         this.setupIntersectionObserver();
         this.initializeBreadcrumbs();
         this.setupKeyboardNavigation();
+        this.updateNavbarBackground();
         
         console.log('Advanced navigation initialized');
     }
@@ -33,30 +34,30 @@ class PortfolioNavigation {
     }
     
     bindEvents() {
-        // Mobile menu events
+        // Mobile menu events with improved animation
         if (this.burger) {
             this.burger.addEventListener('click', (e) => this.toggleMobileMenu(e));
         }
         
-        // Navigation link events
+        // Navigation link events with enhanced scrolling
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleNavClick(e));
         });
         
-        // Scroll events with throttling
+        // Scroll events with optimized throttling
         window.addEventListener('scroll', this.throttle(() => {
             this.handleScroll();
-        }, 16)); // ~60fps
+        }, 10)); // More frequent updates for smoother effects
         
-        // Resize events
+        // Resize events with improved debouncing
         window.addEventListener('resize', this.debounce(() => {
             this.handleResize();
-        }, 250));
+        }, 200));
         
-        // Close mobile menu on outside click
+        // Close mobile menu on outside click with better detection
         document.addEventListener('click', (e) => this.handleOutsideClick(e));
         
-        // Escape key to close mobile menu
+        // Escape key to close mobile menu with animation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.nav.classList.contains('nav-active')) {
                 this.closeMobileMenu();
@@ -65,15 +66,16 @@ class PortfolioNavigation {
     }
     
     setupIntersectionObserver() {
+        // Improved intersection observer for more accurate section detection
         const options = {
             root: null,
-            rootMargin: '-20% 0px -70% 0px',
-            threshold: 0
+            rootMargin: '-15% 0px -75% 0px',
+            threshold: [0.1, 0.5]
         };
         
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
                     this.updateActiveNavItem(entry.target.id);
                 }
             });
@@ -85,7 +87,7 @@ class PortfolioNavigation {
     }
     
     initializeBreadcrumbs() {
-        // Create breadcrumb navigation for project pages
+        // Create breadcrumb navigation for project pages with improved styling
         const isProjectPage = window.location.pathname.includes('/projects/');
         
         if (isProjectPage) {
@@ -94,7 +96,7 @@ class PortfolioNavigation {
     }
     
     setupKeyboardNavigation() {
-        // Tab navigation enhancement
+        // Tab navigation enhancement for accessibility
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Tab') {
                 this.handleTabNavigation(e);
@@ -125,9 +127,11 @@ class PortfolioNavigation {
         this.burger.classList.add('toggle');
         this.body.style.overflow = 'hidden';
         
-        // Animate nav links
+        // Animate nav links with staggered delay
         this.navLinks.forEach((link, index) => {
             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            link.style.opacity = '1';
+            link.style.transform = 'translateX(0)';
         });
         
         // Focus first nav item for accessibility
@@ -135,9 +139,12 @@ class PortfolioNavigation {
             this.navLinks[0]?.focus();
         }, 100);
         
-        // Add ARIA attributes
+        // Add ARIA attributes for accessibility
         this.burger.setAttribute('aria-expanded', 'true');
         this.nav.setAttribute('aria-hidden', 'false');
+        
+        // Add overlay
+        this.addMenuOverlay();
     }
     
     closeMobileMenu() {
@@ -145,14 +152,59 @@ class PortfolioNavigation {
         this.burger.classList.remove('toggle');
         this.body.style.overflow = '';
         
-        // Remove animations
+        // Remove animations with transition
         this.navLinks.forEach(link => {
             link.style.animation = '';
+            link.style.opacity = '';
+            link.style.transform = '';
         });
         
         // Update ARIA attributes
         this.burger.setAttribute('aria-expanded', 'false');
         this.nav.setAttribute('aria-hidden', 'true');
+        
+        // Remove overlay
+        this.removeMenuOverlay();
+    }
+    
+    addMenuOverlay() {
+        // Add overlay for better visual indication of modal state
+        if (!document.querySelector('.menu-overlay')) {
+            const overlay = document.createElement('div');
+            overlay.className = 'menu-overlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            document.body.appendChild(overlay);
+            
+            // Force reflow and animate
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+            
+            // Add click event to close menu
+            overlay.addEventListener('click', () => this.closeMobileMenu());
+        }
+    }
+    
+    removeMenuOverlay() {
+        const overlay = document.querySelector('.menu-overlay');
+        if (overlay) {
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                if (overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                }
+            }, 300);
+        }
     }
     
     handleNavClick(e) {
@@ -163,13 +215,14 @@ class PortfolioNavigation {
             return; // Let browser handle external links
         }
         
-        // Handle anchor links
+        // Handle anchor links with improved scrolling
         if (href && href.startsWith('#')) {
             e.preventDefault();
             const targetId = href.substring(1);
             const target = document.getElementById(targetId);
             
             if (target) {
+                // Enhanced scrolling with easing
                 this.scrollToSection(target);
                 this.closeMobileMenu();
                 
@@ -190,6 +243,7 @@ class PortfolioNavigation {
         const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - headerOffset;
         
+        // Smooth scroll with improved easing
         window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -219,13 +273,13 @@ class PortfolioNavigation {
         if (!this.navbar) return;
         
         const scrollY = window.scrollY;
-        const threshold = 100;
+        const threshold = 50; // Lower threshold for faster response
         
         if (scrollY > threshold) {
             this.navbar.classList.add('scrolled');
             this.navbar.style.background = 'rgba(26, 54, 93, 0.95)';
             this.navbar.style.backdropFilter = 'blur(10px)';
-            this.navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            this.navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
         } else {
             this.navbar.classList.remove('scrolled');
             this.navbar.style.background = 'transparent';
@@ -235,7 +289,7 @@ class PortfolioNavigation {
     }
     
     updateScrollProgress() {
-        // Create or update scroll progress bar
+        // Create or update scroll progress bar with improved visual design
         let progressBar = document.querySelector('.scroll-progress');
         
         if (!progressBar) {
@@ -246,10 +300,11 @@ class PortfolioNavigation {
                 top: 0;
                 left: 0;
                 width: 0%;
-                height: 3px;
+                height: 4px;
                 background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
                 z-index: 9999;
                 transition: width 0.1s ease;
+                box-shadow: 0 1px 5px rgba(251, 191, 36, 0.3);
             `;
             document.body.appendChild(progressBar);
         }
@@ -268,10 +323,16 @@ class PortfolioNavigation {
             link.classList.remove('active');
         });
         
-        // Add active class to current section's nav item
+        // Add active class to current section's nav item with highlight animation
         const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
         if (activeLink) {
             activeLink.classList.add('active');
+            
+            // Add subtle highlight animation
+            activeLink.style.animation = 'navItemHighlight 0.5s ease';
+            setTimeout(() => {
+                activeLink.style.animation = '';
+            }, 500);
         }
     }
     
@@ -286,39 +347,44 @@ class PortfolioNavigation {
     }
     
     handleOutsideClick(e) {
-        const isInsideNav = this.nav.contains(e.target);
-        const isBurger = this.burger.contains(e.target);
-        const isNavActive = this.nav.classList.contains('nav-active');
+        const isInsideNav = this.nav?.contains(e.target);
+        const isBurger = this.burger?.contains(e.target);
+        const isNavActive = this.nav?.classList.contains('nav-active');
+        const isOverlay = e.target.classList.contains('menu-overlay');
         
-        if (!isInsideNav && !isBurger && isNavActive) {
+        if ((!isInsideNav && !isBurger && isNavActive) || isOverlay) {
             this.closeMobileMenu();
         }
     }
     
     handleTabNavigation(e) {
         // Enhance tab navigation for accessibility
+        if (!this.nav?.classList.contains('nav-active')) return;
+        
         const focusableElements = this.nav.querySelectorAll(
             'a, button, [tabindex]:not([tabindex="-1"])'
         );
         
-        if (this.nav.classList.contains('nav-active')) {
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-            
-            if (e.shiftKey && document.activeElement === firstElement) {
-                e.preventDefault();
-                lastElement.focus();
-            } else if (!e.shiftKey && document.activeElement === lastElement) {
-                e.preventDefault();
-                firstElement.focus();
-            }
+        if (focusableElements.length === 0) return;
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
         }
     }
     
     handleArrowNavigation(e) {
-        if (!this.nav.classList.contains('nav-active')) return;
+        if (!this.nav?.classList.contains('nav-active')) return;
         
         const currentIndex = Array.from(this.navLinks).indexOf(document.activeElement);
+        if (currentIndex === -1) return;
+        
         let nextIndex;
         
         switch (e.key) {
@@ -381,9 +447,10 @@ class PortfolioNavigation {
         const style = document.createElement('style');
         style.textContent = `
             .breadcrumbs {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 0.75rem 0;
+                background: rgba(255, 255, 255, 0.08);
+                padding: 0.8rem 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             }
             
             .breadcrumb-list {
@@ -393,17 +460,38 @@ class PortfolioNavigation {
                 margin: 0;
                 padding: 0;
                 flex-wrap: wrap;
+                max-width: var(--max-width);
+                margin: 0 auto;
+                padding: 0 var(--content-padding);
             }
             
             .breadcrumb-item a {
                 color: rgba(255, 255, 255, 0.8);
                 text-decoration: none;
                 font-weight: 500;
-                transition: color 0.3s ease;
+                transition: all 0.3s ease;
+                padding: 0.3rem 0;
+                position: relative;
+            }
+            
+            .breadcrumb-item a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--accent-color);
+                transition: width 0.3s ease;
             }
             
             .breadcrumb-item a:hover {
                 color: var(--accent-color);
+                text-decoration: none;
+            }
+            
+            .breadcrumb-item a:hover::after {
+                width: 100%;
             }
             
             .breadcrumb-item span[aria-current="page"] {
@@ -413,51 +501,31 @@ class PortfolioNavigation {
             
             .breadcrumb-separator {
                 color: rgba(255, 255, 255, 0.5);
-                margin: 0 0.75rem;
+                margin: 0 0.8rem;
                 font-size: 0.9rem;
             }
             
             @media (max-width: 768px) {
                 .breadcrumbs {
-                    padding: 0.5rem 0;
+                    padding: 0.6rem 0;
                 }
                 
                 .breadcrumb-separator {
                     margin: 0 0.5rem;
                 }
+                
+                .breadcrumb-item a,
+                .breadcrumb-item span[aria-current="page"] {
+                    font-size: 0.9rem;
+                }
+            }
+            
+            @keyframes navItemHighlight {
+                0% { background: rgba(251, 191, 36, 0.2); }
+                100% { background: transparent; }
             }
         `;
         document.head.appendChild(style);
-    }
-    
-    // Utility functions
-    throttle(func, limit) {
-        let inThrottle;
-        return function() {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
-    }
-    
-    debounce(func, wait, immediate) {
-        let timeout;
-        return function executedFunction() {
-            const context = this;
-            const args = arguments;
-            const later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            const callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
     }
     
     // Public API
@@ -489,6 +557,44 @@ class PortfolioNavigation {
         if (progressBar) {
             progressBar.remove();
         }
+    }
+    
+    // Utility functions with improved performance
+    throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+    
+    debounce(func, wait, immediate) {
+        let timeout;
+        return function executedFunction() {
+            const context = this;
+            const args = arguments;
+            const later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
     }
 }
 

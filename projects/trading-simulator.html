@@ -107,35 +107,7 @@
                             <div class="code-header">
                                 <span class="code-title">Price Data Generation Algorithm</span>
                             </div>
-                            <pre><code>const generateRandomPriceData = (basePrice = 85000, volatility = 0.02) => {
-    const times = ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', 
-                   '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
-    let currentPrice = basePrice;
-    let trend = Math.random() > 0.5 ? 1 : -1;
-    
-    return times.map((time, index) => {
-        const maxMove = basePrice * volatility;
-        const trendInfluence = trend * (Math.random() * maxMove * 0.3);
-        const open = currentPrice;
-        const close = open + trendInfluence + (Math.random() - 0.5) * maxMove;
-        const high = Math.max(open, close) + Math.random() * maxMove * 0.5;
-        const low = Math.min(open, close) - Math.random() * maxMove * 0.5;
-        
-        // Trend can occasionally change
-        if (Math.random() < 0.2) trend *= -1;
-        currentPrice = close;
-        
-        // Return OHLC data with time
-        return {
-            time,
-            open: Math.round(open),
-            high: Math.round(high),
-            low: Math.round(low),
-            close: Math.round(close),
-            trend: trend
-        };
-    });
-};</code></pre>
+                            <pre><code>// Code example moved to demo.js</code></pre>
                         </div>
                     </div>
                     
@@ -147,16 +119,7 @@
                             <div class="code-header">
                                 <span class="code-title">Market Conditions Analysis</span>
                             </div>
-                            <pre><code>const analyzeMarketConditions = (candle) => {
-    const volatility = (candle.high - candle.low) / candle.low;
-    const bodySize = Math.abs(candle.close - candle.open) / candle.open;
-    
-    return {
-        isVolatile: volatility > 0.02,
-        trend: candle.close > candle.open ? 'bullish' : 'bearish',
-        momentum: bodySize > 0.01 ? 'strong' : 'weak'
-    };
-};</code></pre>
+                            <pre><code>// Code example moved to demo.js</code></pre>
                         </div>
                     </div>
                     

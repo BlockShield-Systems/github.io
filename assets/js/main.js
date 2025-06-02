@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectFilters();
     initSkillBars();
     initScrollEffects();
-    initContactForm();
     initThemeToggle();
     
     console.log('Portfolio initialized successfully');
