@@ -314,8 +314,8 @@ a:hover {
 }
 
 .primary-btn {
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    color: var(--text-light);
+    background: var(--secondary-color); /* Oder deine Hauptfarbe */
+    color: #ffffff; /* Weiße Schrift auf dunklem Hintergrund */
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
@@ -333,10 +333,11 @@ a:hover {
 }
 
 .primary-btn:hover {
+    background: var(--primary-color); /* Dunklere Farbe beim Hover */
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
     text-decoration: none;
-    color: var(--text-light);
+    color: #ffffff;
 }
 
 .primary-btn:hover::before {
@@ -344,18 +345,17 @@ a:hover {
 }
 
 .secondary-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-light);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    color: var(--secondary-color); /* Blaue Schrift */
+    border: 2px solid var(--secondary-color);
 }
 
 .secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--secondary-color);
+    color: #ffffff; /* Weiße Schrift beim Hover */
     transform: translateY(-3px);
     text-decoration: none;
-    color: var(--text-light);
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--secondary-color);
 }
 
 /* About section */
@@ -1211,6 +1211,37 @@ footer p {
 .project-detail li {
     color: #333;
     line-height: 1.8;
+}
+
+.project-detail .btn.primary-btn {
+    background: var(--secondary-color);
+    color: #ffffff;
+}
+
+.project-detail .btn.primary-btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.project-detail .btn.secondary-btn {
+    background: #ffffff;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.project-detail .btn.secondary-btn:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+}
+
+.demo-link .btn {
+    /* Stelle sicher, dass die Schrift lesbar ist */
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.project-info .btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .project-detail .highlight-box {
