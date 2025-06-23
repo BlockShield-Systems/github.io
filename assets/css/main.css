@@ -988,15 +988,18 @@ a:hover {
     align-items: center;
     gap: 1.5rem;
     padding: 2rem;
-    background: var(--bg-light);
+    background: #ffffff;  /* Explizit weißer Hintergrund */
     border-radius: var(--border-radius);
     transition: var(--transition);
     box-shadow: var(--shadow);
+    border: 1px solid #e9ecef;  /* Leichter Rand */
 }
 
 .contact-method:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    background: #ffffff;  /* Bleibt weiß beim Hover */
+    border-color: var(--secondary-color);  /* Blauer Rand beim Hover */
 }
 
 .contact-icon {
