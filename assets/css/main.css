@@ -314,8 +314,8 @@ a:hover {
 }
 
 .primary-btn {
-    background: var(--secondary-color); /* Oder deine Hauptfarbe */
-    color: #ffffff; /* Weiße Schrift auf dunklem Hintergrund */
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    color: var(--text-light);
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
@@ -333,11 +333,10 @@ a:hover {
 }
 
 .primary-btn:hover {
-    background: var(--primary-color); /* Dunklere Farbe beim Hover */
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
     text-decoration: none;
-    color: #ffffff;
+    color: var(--text-light);
 }
 
 .primary-btn:hover::before {
@@ -345,17 +344,18 @@ a:hover {
 }
 
 .secondary-btn {
-    background: transparent;
-    color: var(--secondary-color); /* Blaue Schrift */
-    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .secondary-btn:hover {
-    background: var(--secondary-color);
-    color: #ffffff; /* Weiße Schrift beim Hover */
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
     text-decoration: none;
-    border-color: var(--secondary-color);
+    color: var(--text-light);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* About section */
@@ -1213,25 +1213,47 @@ footer p {
     line-height: 1.8;
 }
 
-.project-detail .btn.primary-btn {
+.project-detail .btn.primary-btn,
+.project-info .btn.primary-btn,
+.demo-link .btn.primary-btn {
     background: var(--secondary-color);
-    color: #ffffff;
+    color: var(--text-light);
+    box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
 }
 
-.project-detail .btn.primary-btn:hover {
+.project-detail .btn.primary-btn:hover,
+.project-info .btn.primary-btn:hover,
+.demo-link .btn.primary-btn:hover {
     background: var(--primary-color);
-    color: #ffffff;
+    color: var(--text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(26, 54, 93, 0.3);
 }
 
-.project-detail .btn.secondary-btn {
-    background: #ffffff;
+.project-detail .btn.secondary-btn,
+.project-info .btn.secondary-btn,
+.demo-link .btn.secondary-btn {
+    background: transparent;
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
 }
 
-.project-detail .btn.secondary-btn:hover {
+.project-detail .btn.secondary-btn:hover,
+.project-info .btn.secondary-btn:hover,
+.demo-link .btn.secondary-btn:hover {
     background: var(--secondary-color);
-    color: #ffffff;
+    color: var(--text-light);
+    transform: translateY(-3px);
+    border-color: var(--secondary-color);
+}
+
+/* Icon in Buttons sichtbar machen */
+.btn i {
+    font-size: 1.1em;
+}
+
+.demo-link {
+    margin-top: 1.5rem;
 }
 
 .demo-link .btn {
@@ -1353,6 +1375,12 @@ footer p {
     align-items: center;
     color: #666;
     margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+/* Für project-metadata Links die auch als Buttons gestylt sind */
+.project-metadata .btn {
+    padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
 }
 
