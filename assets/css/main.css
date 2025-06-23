@@ -1063,6 +1063,7 @@ a:hover {
     background: #ffffff !important;
     background-color: #ffffff !important;
 }
+
 /* Footer */
 footer {
     background: var(--primary-color);
@@ -1157,6 +1158,266 @@ footer p {
     color: var(--text-light);
 }
 
+/* Project Detail Page Specific Styles */
+.project-detail {
+    background: #ffffff;
+    color: var(--text-color);
+    min-height: calc(100vh - 200px);
+}
+
+.project-detail .container {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-detail h1, 
+.project-detail h2, 
+.project-detail h3,
+.project-detail h4 {
+    color: var(--primary-color);
+}
+
+.project-detail h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.project-detail h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.project-detail h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-detail p,
+.project-detail li {
+    color: #333;
+    line-height: 1.8;
+}
+
+.project-detail .highlight-box {
+    background: rgba(49, 130, 206, 0.08);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.project-detail .highlight-box p {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.project-detail .code-snippet-preview {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.project-detail .code-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    font-weight: 500;
+}
+
+.project-detail .code-snippet-preview pre {
+    background: #282c34;
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.project-detail .code-snippet-preview code {
+    color: #abb2bf;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.project-detail .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.project-detail .tech-tags li {
+    background: rgba(49, 130, 206, 0.1);
+    color: var(--secondary-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(49, 130, 206, 0.2);
+}
+
+.project-detail .feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-detail .feature-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+.project-detail .feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.project-detail .project-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.project-detail .project-image-showcase {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail .project-image-showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail .project-metadata {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    color: #666;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.project-detail .project-metadata span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-detail .note-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.project-detail .note-box p {
+    margin: 0;
+    color: #856404;
+}
+
+/* Outcome and Challenge Cards */
+.project-detail .outcomes-grid,
+.project-detail .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-detail .outcome-card,
+.project-detail .challenge-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-top: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.project-detail .outcome-card:hover,
+.project-detail .challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail .outcome-card h3,
+.project-detail .challenge-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.project-detail .outcome-card h3 i,
+.project-detail .challenge-card h3 i {
+    color: var(--secondary-color);
+}
+
+.project-detail .outcome-card p,
+.project-detail .challenge-card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Technical Insights Section */
+.project-detail .technical-insights {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 3rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.project-detail .technical-insights h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.project-detail .technical-insights ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.project-detail .technical-insights li {
+    margin-bottom: 0.8rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+.project-detail .technical-insights li strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
 /* Back link */
 .back-link {
     margin-bottom: 2.5rem;
@@ -1166,19 +1427,21 @@ footer p {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-muted);
+    color: var(--secondary-color);
     font-weight: 500;
     transition: var(--transition);
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     background: rgba(49, 130, 206, 0.05);
+    border: 1px solid rgba(49, 130, 206, 0.1);
 }
 
 .back-link a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
     background: rgba(49, 130, 206, 0.1);
     transform: translateX(-5px);
+    box-shadow: 0 2px 10px rgba(49, 130, 206, 0.1);
 }
 
 /* Utility classes */
