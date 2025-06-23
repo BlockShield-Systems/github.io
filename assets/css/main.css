@@ -960,7 +960,7 @@ a:hover {
     z-index: 2;
 }
 
-/* Contact section */
+/* Contact section content */
 .contact-content {
     max-width: 700px;
     margin: 0 auto;
@@ -983,29 +983,32 @@ a:hover {
     margin-bottom: 3.5rem;
 }
 
+/* Contact Method Boxen - mit !important für definitive Anwendung */
 .contact-method {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     padding: 2rem;
-    background: #ffffff;  /* Explizit weißer Hintergrund */
+    background: #ffffff !important;  /* Erzwinge weißen Hintergrund */
+    background-color: #ffffff !important;  /* Doppelt für Sicherheit */
     border-radius: var(--border-radius);
     transition: var(--transition);
     box-shadow: var(--shadow);
-    border: 1px solid #e9ecef;  /* Leichter Rand */
+    border: 1px solid #e9ecef !important;
 }
 
 .contact-method:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    background: #ffffff;  /* Bleibt weiß beim Hover */
-    border-color: var(--secondary-color);  /* Blauer Rand beim Hover */
+    background: #ffffff !important;  /* Bleibt weiß beim Hover */
+    background-color: #ffffff !important;
+    border-color: var(--secondary-color) !important;
 }
 
 .contact-icon {
     font-size: 2.2rem;
     color: var(--secondary-color);
-    background: rgba(49, 130, 206, 0.1);
+    background: rgba(49, 130, 206, 0.1) !important;
     width: 60px;
     height: 60px;
     display: flex;
@@ -1016,21 +1019,32 @@ a:hover {
 }
 
 .contact-method:hover .contact-icon {
-    background: var(--secondary-color);
-    color: white;
+    background: var(--secondary-color) !important;
+    color: white !important;
     transform: scale(1.1);
 }
 
+/* Stellt sicher, dass alle Texte lesbar sind */
 .contact-details h4 {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: #1a202c !important;  /* Explizit dunkler Text */
     font-size: 1.2rem;
 }
 
 .contact-details p {
     margin: 0;
-    color: var(--text-muted);
+    color: #718096 !important;  /* Explizit dunkelgrauer Text */
     font-size: 1rem;
+}
+
+.contact-details a {
+    color: var(--secondary-color) !important;  /* Links in Blau */
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
 }
 
 .contact-note {
@@ -1042,6 +1056,13 @@ a:hover {
     line-height: 1.8;
 }
 
+/* Zusätzliche Sicherheit für alle contact-method Elemente */
+#contact .contact-method,
+#contact .contact-methods .contact-method,
+.contact-methods .contact-method {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
 /* Footer */
 footer {
     background: var(--primary-color);
