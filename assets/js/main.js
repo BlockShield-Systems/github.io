@@ -3,7 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
-    initProjectFilters();
+    initFilterableSection('projects');
+    initFilterableSection('ai-creations');
     initSkillBars();
     initScrollEffects();
     initThemeToggle();
@@ -85,23 +86,26 @@ function initNavigation() {
     });
 }
 
-// Project filtering functionality
-function initProjectFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+// Generic filtering functionality for any section
+function initFilterableSection(sectionId) {
+    const sectionElement = document.getElementById(sectionId);
+    if (!sectionElement) return;
+    
+    const filterButtons = sectionElement.querySelectorAll('.filter-btn');
+    const cards = sectionElement.querySelectorAll('.project-card');
     
     if (filterButtons.length === 0) return;
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
+            // Remove active class from all buttons in this section
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
             button.classList.add('active');
             
             const filterValue = button.getAttribute('data-filter');
             
-            projectCards.forEach(card => {
+            cards.forEach(card => {
                 const cardCategories = card.getAttribute('data-category');
                 
                 if (filterValue === 'all' || cardCategories.includes(filterValue)) {
