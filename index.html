@@ -101,6 +101,7 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#expertise" class="nav-link">Expertise</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#ai-creations" class="nav-link">AI Creations</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -323,6 +324,141 @@
             </div>
         </section>
 
+        <!-- AI Creations Section -->
+        <section id="ai-creations" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">AI Creations Gallery</h2>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large"></i> All Creations
+                    </button>
+                    <button class="filter-btn" data-filter="fantasy">
+                        <i class="fas fa-hat-wizard"></i> Fantasy
+                    </button>
+                    <button class="filter-btn" data-filter="horror">
+                        <i class="fas fa-skull-crossbones"></i> Horror
+                    </button>
+                    <button class="filter-btn" data-filter="characters">
+                        <i class="fas fa-user-friends"></i> Characters
+                    </button>
+                    <button class="filter-btn" data-filter="world-environments">
+                        <i class="fas fa-globe-americas"></i> World Environments
+                    </button>
+                    <button class="filter-btn" data-filter="science-fiction">
+                        <i class="fas fa-rocket"></i> Science-Fiction
+                    </button>
+                    <button class="filter-btn" data-filter="various">
+                        <i class="fas fa-ellipsis-h"></i> Various
+                    </button>
+                </div>
+                
+                <div class="projects-grid" id="aiCreationsGrid">
+                    <!-- Fantasy AI Creation -->
+                    <div class="project-card" data-category="fantasy">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Fantasy AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNjY2IiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYW50YXN5IEFJIEFydDwvdGV4dD48L3N2Zz4='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Enchanted Forest</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>A mystical forest scene generated with Stable Diffusion, exploring vibrant colors and ethereal lighting effects.</p>
+                            <div class="project-tech">
+                                <span>Stable Diffusion</span>
+                                <span>Fantasy Art</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+
+                    <!-- Horror AI Creation -->
+                    <div class="project-card" data-category="horror">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1612353/pexels-photo-1612353.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Horror AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMxIiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Ib3Jyb3IgQUkgQXJ0PC90ZXh0Pjwvc3ZnPg=='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Shadowy Entity</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>A chilling depiction of a shadowy figure, created to evoke atmosphere of dread and supernatural mystery.</p>
+                            <div class="project-tech">
+                                <span>Midjourney</span>
+                                <span>Dark Art</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+
+                    <!-- Character AI Creation -->
+                    <div class="project-card" data-category="characters">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Character AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDU2IiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5DaGFyYWN0ZXIgQUkgQXJ0PC90ZXh0Pjwvc3ZnPg=='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Cyberpunk Warrior</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>A detailed character portrait showcasing intricate cyberpunk aesthetics and futuristic armor design.</p>
+                            <div class="project-tech">
+                                <span>Stable Diffusion</span>
+                                <span>Character Design</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+
+                    <!-- World Environment AI Creation -->
+                    <div class="project-card" data-category="world-environments">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1029242/pexels-photo-1029242.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="World Environment AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzY0IiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Xb3JsZCBFbnZpcm9ubWVudDwvdGV4dD48L3N2Zz4='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Alien Landscape</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>An otherworldly environment featuring bizarre flora and glowing geological formations in vivid detail.</p>
+                            <div class="project-tech">
+                                <span>Midjourney</span>
+                                <span>Environment Art</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+
+                    <!-- Science-Fiction AI Creation -->
+                    <div class="project-card" data-category="science-fiction">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Science-Fiction AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjQ2IiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5TY2ktRmkgQUkgQXJ0PC90ZXh0Pjwvc3ZnPg=='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Futuristic Cityscape</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>A sprawling metropolis with towering megastructures and flying vehicles, bathed in neon lighting.</p>
+                            <div class="project-tech">
+                                <span>DALL-E</span>
+                                <span>Sci-Fi Art</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+
+                    <!-- Various AI Creation -->
+                    <div class="project-card" data-category="various">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Various AI Art" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNTU0IiAvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5WYXJpb3VzIEFJIEFydDwvdGV4dD48L3N2Zz4='">
+                        </div>
+                        <div class="project-content">
+                            <h3>Abstract Digital Art</h3>
+                            <p class="project-type">AI Generated Image</p>
+                            <p>An experimental piece exploring complex patterns and vibrant gradients, showcasing AI's creative potential.</p>
+                            <div class="project-tech">
+                                <span>GANs</span>
+                                <span>Abstract Art</span>
+                            </div>
+                            <a href="#" class="project-link">View Full Size</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills Section -->
         <section id="skills" class="section section-dark">
             <div class="container">
@@ -531,97 +667,96 @@
                             
                             <div class="skill-item">
                                 <div class="skill-icon">
-                                    <!-- Ergänzung ab der Stelle wo index.html abbricht -->
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="skill-info">
-                    <h4>Network Security</h4>
-                    <p>Firewall configuration, VPN setup and network segmentation</p>
-                    <div class="skill-level">
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot"></span>
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Network Security</h4>
+                                    <p>Firewall configuration, VPN setup and network segmentation</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Multimedia & Creative</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>UI/UX Design</h4>
+                                    <p>User interface design and user experience optimization</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Audio Engineering</h4>
+                                    <p>Professional audio production and sound design</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>3D Development</h4>
+                                    <p>Game design and 3D environment development</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Generative AI</h4>
+                                    <p>AI-powered creative processes and generative art</p>
+                                    <div class="skill-level">
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                        <span class="skill-dot active"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="skill-category">
-        <h3>Multimedia & Creative</h3>
-        <div class="skill-list">
-            <div class="skill-item">
-                <div class="skill-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="skill-info">
-                    <h4>UI/UX Design</h4>
-                    <p>User interface design and user experience optimization</p>
-                    <div class="skill-level">
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="skill-info">
-                    <h4>Audio Engineering</h4>
-                    <p>Professional audio production and sound design</p>
-                    <div class="skill-level">
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-icon">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <div class="skill-info">
-                    <h4>3D Development</h4>
-                    <p>Game design and 3D environment development</p>
-                    <div class="skill-level">
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-item">
-                <div class="skill-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="skill-info">
-                    <h4>Generative AI</h4>
-                    <p>AI-powered creative processes and generative art</p>
-                    <div class="skill-level">
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                        <span class="skill-dot active"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
             </div>
         </section>
 
