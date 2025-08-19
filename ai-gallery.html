@@ -461,6 +461,40 @@
         .gallery-item {
             pointer-events: auto;
         }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .gallery-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+                padding: 20px 10px;
+            }
+            
+            .category-filter {
+                padding: 20px 10px;
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .gallery-item.nsfw::after {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -495,7 +529,7 @@
             <p class="lead">Professional Collection of AI-Generated Artwork</p>
             <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold; color: #667eea;">39</div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #667eea;">89</div>
                     <div style="opacity: 0.8;">Artworks</div>
                 </div>
                 <div style="text-align: center;">
@@ -598,6 +632,15 @@
                 const response = await fetch('assets/data/ai-gallery-data.json?v=' + Date.now());
                 const data = await response.json();
                 galleryData = data.gallery;
+                
+                // Log NSFW detection info
+                const nsfwImages = galleryData.images.filter(img => 
+                    img.mature || img.category.includes('nsfw')
+                );
+                console.log(`Loaded ${galleryData.images.length} images total`);
+                console.log(`Found ${nsfwImages.length} NSFW images that will be blurred`);
+                console.log('NSFW categories:', [...new Set(nsfwImages.map(img => img.category))]);
+                
                 renderGallery();
             } catch (error) {
                 console.error('Error loading gallery data:', error);
@@ -622,12 +665,14 @@
             
             filteredImages.forEach(image => {
                 const item = document.createElement('div');
-                item.className = `gallery-item ${image.mature ? 'nsfw' : ''}`;
+                // Check both mature flag AND nsfw categories
+                const isNSFW = image.mature || image.category.includes('nsfw');
+                item.className = `gallery-item ${isNSFW ? 'nsfw' : ''}`;
                 item.dataset.category = image.category;
                 
-                // Force NSFW styling for mature content
-                if (image.mature) {
-                    console.log(`Applying NSFW blur to image: ${image.id}`);
+                // Force NSFW styling for mature content or NSFW categories
+                if (isNSFW) {
+                    console.log(`Applying NSFW blur to image: ${image.id} (category: ${image.category}, mature: ${image.mature})`);
                     item.classList.add('nsfw');
                 }
                 
@@ -648,7 +693,8 @@
                 `;
                 
                 // Add click handlers
-                if (image.mature) {
+                // isNSFW already declared above
+                if (isNSFW) {
                     item.onclick = function(e) {
                         if (!this.classList.contains('revealed')) {
                             if (confirm('This content contains mature themes (18+). Do you wish to continue?')) {
@@ -674,6 +720,7 @@
                 'characters': '👤 Characters',
                 'horror': '👻 Horror',
                 'nsfw_horror': '⚠️ NSFW Horror',
+                'nsfw_erotic': '🔞 NSFW Erotic',
                 'environments': '🌍 Environments'
             };
             return categories[categoryId] || categoryId;
@@ -763,8 +810,27 @@
             renderGallery();
         }
         
+        // Check URL parameters for initial filter
+        function checkURLParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filter = urlParams.get('filter');
+            if (filter) {
+                currentFilter = filter;
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filter === filter) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        }
+        
         // Initialize gallery on page load
-        document.addEventListener('DOMContentLoaded', loadGalleryData);
+        document.addEventListener('DOMContentLoaded', () => {
+            checkURLParams();
+            loadGalleryData();
+        });
         
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
