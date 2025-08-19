@@ -1,0 +1,413 @@
+/**
+ * AI Gallery Styles
+ * Enhanced styles for the AI-generated artwork gallery
+ */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Gallery Sections */
+.category-section {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.category-section:nth-child(1) { animation-delay: 0.1s; }
+.category-section:nth-child(2) { animation-delay: 0.2s; }
+.category-section:nth-child(3) { animation-delay: 0.3s; }
+.category-section:nth-child(4) { animation-delay: 0.4s; }
+.category-section:nth-child(5) { animation-delay: 0.5s; }
+.category-section:nth-child(6) { animation-delay: 0.6s; }
+.category-section:nth-child(7) { animation-delay: 0.7s; }
+
+/* Enhanced Category Headers */
+.category-header {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.category-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.category-header:hover::before {
+    left: 100%;
+}
+
+.category-icon {
+    transition: transform 0.3s ease;
+}
+
+.category-header:hover .category-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* NSFW Category Special Styles */
+.nsfw-category {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { border-color: rgba(255,0,0,0.5); }
+    50% { border-color: rgba(255,0,0,1); }
+}
+
+.nsfw-category::after {
+    content: 'Click to reveal - 18+ Only';
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    opacity: 0.7;
+}
+
+/* Gallery Grid Enhancements */
+.gallery-grid {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gallery Item Hover Effects */
+.gallery-item {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent, rgba(102, 126, 234, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+/* Image Container Effects */
+.image-container {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover .image-container::after {
+    opacity: 1;
+}
+
+/* Loading Animation */
+.loading-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.loading-placeholder::before {
+    content: 'Loading...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Protection Notice Animation */
+.protection-notice {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Lightbox Enhancements */
+.lightbox {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.95);
+}
+
+.lightbox.active {
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-content img {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.lightbox-nav {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* Watermark Style */
+.image-watermark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
+/* Age Confirmation Modal */
+.age-confirmation-modal {
+    animation: fadeIn 0.3s ease;
+}
+
+.age-confirmation-modal button {
+    transition: all 0.3s ease;
+}
+
+.age-confirmation-modal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Protection Popup */
+.protection-popup {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .category-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .category-icon {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+    
+    .lightbox-prev {
+        left: 1rem;
+    }
+    
+    .lightbox-next {
+        right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-disclaimer {
+        padding: 2rem 1rem;
+    }
+    
+    .gallery-disclaimer h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-disclaimer p {
+        font-size: 1rem;
+    }
+}
+
+/* Print Protection */
+@media print {
+    .gallery-item {
+        display: none !important;
+    }
+    
+    body::after {
+        content: 'This content is protected and cannot be printed.';
+        display: block;
+        text-align: center;
+        padding: 50px;
+        font-size: 20px;
+        color: #333;
+    }
+}
+
+/* Additional Security Styles */
+.gallery-item img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.gallery-item.protected {
+    position: relative;
+}
+
+.gallery-item.protected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: all;
+}
+
+/* Blur unloaded images */
+img[src=""],
+img:not([src]) {
+    filter: blur(10px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
