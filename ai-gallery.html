@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Gallery | AI-Generated Artwork Collection</title>
-    <meta name="description" content="Explore a curated collection of AI-generated artwork spanning various genres from fantasy to sci-fi, created through advanced prompt engineering.">
+    <title>AI Gallery | Professional AI-Generated Artwork Collection</title>
+    <meta name="description" content="Explore a curated collection of AI-generated artwork across Fantasy, Sci-Fi, Horror and Character Design. Created through advanced prompt engineering by Demian Lienert.">
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="AI art, AI generated images, digital art, fantasy art, sci-fi art, AI gallery">
+    <meta name="keywords" content="AI art, AI generated images, digital art, fantasy art, sci-fi art, AI gallery, prompt engineering, Demian Lienert">
     <meta name="author" content="Demian Lienert">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ai-techart.com/ai-gallery.html">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="AI Gallery | AI-Generated Artwork Collection">
+    <meta property="og:title" content="AI Gallery | Professional AI-Generated Artwork Collection">
     <meta property="og:description" content="Explore a curated collection of AI-generated artwork spanning various genres.">
     <meta property="og:url" content="https://ai-techart.com/ai-gallery.html">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ai-techart.com/assets/images/ai-gallery-preview.jpg">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/gallery.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,211 +30,204 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Inline critical CSS for gallery */
-        .gallery-disclaimer {
+        /* Gallery-specific styles */
+        .gallery-hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 3rem 2rem;
-            margin: 2rem 0;
-            border-radius: 15px;
+            padding: 100px 0 60px;
+            text-align: center;
             color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s;
+        }
+        
+        .gallery-disclaimer {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
         .gallery-disclaimer h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
             border-bottom: 2px solid rgba(255,255,255,0.3);
-            padding-bottom: 1rem;
-        }
-        
-        .gallery-disclaimer p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            padding-bottom: 10px;
         }
         
         .age-warning {
             background: rgba(255,0,0,0.2);
             border: 2px solid rgba(255,0,0,0.5);
-            padding: 1rem;
+            padding: 15px;
             border-radius: 10px;
-            margin: 1.5rem 0;
+            margin: 20px 0;
             font-weight: 600;
-        }
-        
-        .category-section {
-            margin: 3rem 0;
-        }
-        
-        .category-header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            gap: 15px;
         }
         
-        .category-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .category-header h3 {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .category-header .category-icon {
+        .age-warning i {
             font-size: 2rem;
-            width: 50px;
-            height: 50px;
+            color: #ff6b6b;
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            gap: 8px;
         }
         
-        .category-count {
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .filter-btn .count {
             background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 2px 8px;
+            border-radius: 15px;
             font-size: 0.9rem;
         }
         
-        .nsfw-category {
-            background: linear-gradient(135deg, #8b0000, #4a0000);
-            border: 2px solid #ff0000;
-            position: relative;
-        }
-        
-        .nsfw-category::before {
-            content: "18+";
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: #ff0000;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
+        /* Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .gallery-item {
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            background: #1a1a2e;
-            transition: all 0.3s ease;
+            background: #1a1a1a;
+            transition: all 0.3s;
             cursor: pointer;
+            animation: fadeIn 0.5s;
         }
         
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
-        .gallery-item.protected {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-        
-        .gallery-item.protected img {
-            pointer-events: none;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-        
-        .image-container {
+        .gallery-item.nsfw {
+            filter: blur(20px);
             position: relative;
-            width: 100%;
-            padding-bottom: 75%;
-            overflow: hidden;
-            background: #0a0a0a;
         }
         
-        .image-container img {
+        .gallery-item.nsfw::after {
+            content: "🔞 Click to reveal (18+)";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            z-index: 10;
         }
         
-        .gallery-item:hover .image-container img {
+        .gallery-item.nsfw.revealed {
+            filter: none;
+        }
+        
+        .gallery-item.nsfw.revealed::after {
+            display: none;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-image {
             transform: scale(1.1);
         }
         
-        .image-overlay {
+        .gallery-overlay {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
         }
         
-        .gallery-item:hover .image-overlay {
-            opacity: 1;
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
         }
         
-        .image-info {
+        .gallery-title {
             color: white;
-        }
-        
-        .image-info h4 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         
-        .image-info p {
+        .gallery-category {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
             font-size: 0.9rem;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-        
-        .protection-notice {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255,0,0,0.8);
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .keyword-tag {
+            background: rgba(102, 126, 234, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
             font-size: 0.8rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            color: #a8b2ff;
         }
         
-        .gallery-item.protected:hover .protection-notice {
-            opacity: 1;
-        }
-        
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -243,9 +236,9 @@
             right: 0;
             bottom: 0;
             background: rgba(0,0,0,0.95);
-            z-index: 10000;
-            padding: 2rem;
-            cursor: zoom-out;
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
         }
         
         .lightbox.active {
@@ -256,14 +249,15 @@
         
         .lightbox-content {
             max-width: 90%;
-            max-height: 90%;
+            max-height: 90vh;
             position: relative;
         }
         
-        .lightbox-content img {
-            width: 100%;
-            height: 100%;
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
             object-fit: contain;
+            border-radius: 10px;
         }
         
         .lightbox-close {
@@ -273,331 +267,394 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
         }
         
         .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
             transform: rotate(90deg);
         }
         
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+        .lightbox-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
             color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            padding: 1rem;
-            transition: opacity 0.3s ease;
         }
         
-        .lightbox-nav:hover {
-            opacity: 0.7;
+        .lightbox-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
         
-        .lightbox-prev {
-            left: 2rem;
+        .lightbox-description {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
         
-        .lightbox-next {
-            right: 2rem;
+        /* Copyright watermark */
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            user-select: none;
         }
         
-        .loading-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #1a1a2e 0%, #2a2a3e 50%, #1a1a2e 100%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
+        /* Loading animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px 10px;
+            }
+            
+            .category-filter {
+                padding: 20px 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Right-click protection */
+        .gallery-image {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .gallery-item {
+            pointer-events: auto;
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo">AT</div>
-                <ul class="nav-links">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="gradient-text">AI-TechArt</span>
+                </a>
+                <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
                     <li><a href="index.html#projects">Projects</a></li>
                     <li><a href="ai-gallery.html" class="active">AI Gallery</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu-toggle">
+                <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">AI-Generated Artwork Gallery</h1>
-                <p class="hero-subtitle">A curated collection of AI-generated images showcasing the creative potential of artificial intelligence</p>
-            </div>
-        </section>
-
-        <!-- Disclaimer Section -->
-        <section class="section">
-            <div class="container">
-                <div class="gallery-disclaimer">
-                    <h2><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h2>
-                    <p>
-                        All AI-generated images displayed in this gallery are entirely fictional creations born from imagination and advanced prompt engineering. These artworks have been generated using various AI models and techniques, and they bear <strong>no connection whatsoever to real persons, places, situations, or events</strong>.
-                    </p>
-                    <p>
-                        Every image is a product of creative exploration in the realm of artificial intelligence art generation. Any resemblance to actual persons (living or deceased), real locations, or actual events is purely coincidental and unintentional.
-                    </p>
-                    <p>
-                        Beyond the artwork showcased here, I have also created more intense and grotesque content in genres such as extreme horror and dark fantasy. If you are working on projects that require such specialized content—whether for games, films, animations, trailers, conceptual art, or other creative endeavors—I am available for commissioned work and collaborations.
-                    </p>
-                    <p>
-                        For professional inquiries regarding custom AI-generated artwork for your creative projects, please feel free to contact me through the contact section.
-                    </p>
-                    <div class="age-warning">
-                        <i class="fas fa-shield-alt"></i> <strong>Age Restriction Notice:</strong> Some sections of this gallery contain mature content (18+) including horror and artistic nudity. Viewer discretion is advised. By proceeding, you confirm that you are of legal age in your jurisdiction.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Categories -->
-        <section class="section section-dark">
-            <div class="container">
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>AI Art Gallery</h1>
+            <p class="lead">Professional Collection of AI-Generated Artwork</p>
+            
+            <!-- Disclaimer -->
+            <div class="gallery-disclaimer">
+                <h2>🎨 About This Collection</h2>
+                <p>Welcome to my professional AI art gallery showcasing various styles and techniques in AI-generated imagery. Each piece represents careful prompt engineering and artistic vision, demonstrating the possibilities of AI in creative expression.</p>
                 
-                <!-- World Environments -->
-                <div class="category-section" data-category="world-environments">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-globe-americas"></i></span>
-                            World Environments
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="world-environments-grid">
-                        <!-- Images will be loaded here dynamically -->
-                        <div class="gallery-item protected" data-category="world-environments">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="World Environment" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Mystical Landscape</h4>
-                                    <p>An ethereal world with floating islands</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
+                <p><strong>Categories include:</strong> Fantasy Worlds, Sci-Fi Environments, Character Design, Horror Atmospheres, and Experimental Art.</p>
+                
+                <div class="age-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong>Age Restriction Notice:</strong><br>
+                        Some content in this gallery contains mature themes (Horror/NSFW 18+). These images are blurred by default and require explicit consent to view. Viewer discretion is advised.
                     </div>
                 </div>
-
-                <!-- Fantasy Settings -->
-                <div class="category-section" data-category="fantasy-settings">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-hat-wizard"></i></span>
-                            Fantasy Settings
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="fantasy-settings-grid">
-                        <!-- Images will be loaded here dynamically -->
-                        <div class="gallery-item protected" data-category="fantasy-settings">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="Fantasy Setting" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Enchanted Forest</h4>
-                                    <p>A magical realm filled with wonder</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sci-Fi Settings -->
-                <div class="category-section" data-category="scifi-settings">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-rocket"></i></span>
-                            Sci-Fi Settings
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="scifi-settings-grid">
-                        <!-- Images will be loaded here dynamically -->
-                        <div class="gallery-item protected" data-category="scifi-settings">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="Sci-Fi Setting" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Cyberpunk Metropolis</h4>
-                                    <p>Neon-lit streets of the future</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Characters & Models -->
-                <div class="category-section" data-category="characters-models">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-user-friends"></i></span>
-                            Characters & Models
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="characters-models-grid">
-                        <!-- Images will be loaded here dynamically -->
-                        <div class="gallery-item protected" data-category="characters-models">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="Character Model" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Digital Character</h4>
-                                    <p>AI-generated character portrait</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Horror Settings -->
-                <div class="category-section" data-category="horror-settings">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-skull"></i></span>
-                            Horror Settings
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="horror-settings-grid">
-                        <!-- Images will be loaded here dynamically -->
-                        <div class="gallery-item protected" data-category="horror-settings">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="Horror Setting" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Dark Atmosphere</h4>
-                                    <p>Chilling scenes of dread</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NSFW +18 Horror -->
-                <div class="category-section nsfw-category" data-category="nsfw-horror">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-exclamation-triangle"></i></span>
-                            NSFW +18 Horror
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="nsfw-horror-grid" style="display: none;">
-                        <!-- Hidden by default, requires age confirmation -->
-                        <div class="gallery-item protected" data-category="nsfw-horror">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="NSFW Horror Content" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Mature Horror Content</h4>
-                                    <p>18+ Extreme horror imagery</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NSFW +18 Soft Erotic Content -->
-                <div class="category-section nsfw-category" data-category="nsfw-erotic">
-                    <div class="category-header">
-                        <h3>
-                            <span class="category-icon"><i class="fas fa-heart"></i></span>
-                            NSFW +18 Soft Erotic Content
-                        </h3>
-                        <span class="category-count">0 Images</span>
-                    </div>
-                    <div class="gallery-grid" id="nsfw-erotic-grid" style="display: none;">
-                        <!-- Hidden by default, requires age confirmation -->
-                        <div class="gallery-item protected" data-category="nsfw-erotic">
-                            <div class="image-container">
-                                <div class="loading-placeholder"></div>
-                                <img src="" alt="NSFW Artistic Content" loading="lazy">
-                            </div>
-                            <div class="image-overlay">
-                                <div class="image-info">
-                                    <h4>Artistic Expression</h4>
-                                    <p>18+ Soft artistic content</p>
-                                </div>
-                            </div>
-                            <div class="protection-notice">Protected Image</div>
-                        </div>
-                    </div>
-                </div>
-
+                
+                <p><strong>Copyright Notice:</strong> All images are © 2024 Demian Lienert | AI-TechArt.com. Unauthorized use, reproduction, or distribution is prohibited.</p>
             </div>
-        </section>
-
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox">
-            <div class="lightbox-content">
-                <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-                <img src="" alt="Full size image" id="lightbox-image">
-            </div>
-            <span class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</span>
-            <span class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</span>
         </div>
-    </main>
+    </section>
 
+    <!-- Category Filter -->
+    <div class="category-filter">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th"></i> All <span class="count">39</span>
+        </button>
+        <button class="filter-btn" data-filter="fantasy">
+            <i class="fas fa-dragon"></i> Fantasy <span class="count">11</span>
+        </button>
+        <button class="filter-btn" data-filter="scifi">
+            <i class="fas fa-rocket"></i> Sci-Fi <span class="count">6</span>
+        </button>
+        <button class="filter-btn" data-filter="characters">
+            <i class="fas fa-user"></i> Characters <span class="count">4</span>
+        </button>
+        <button class="filter-btn" data-filter="horror">
+            <i class="fas fa-ghost"></i> Horror <span class="count">10</span>
+        </button>
+        <button class="filter-btn" data-filter="nsfw_horror">
+            <i class="fas fa-skull"></i> NSFW Horror 18+ <span class="count">7</span>
+        </button>
+        <button class="filter-btn" data-filter="environments">
+            <i class="fas fa-globe"></i> Environments <span class="count">1</span>
+        </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items will be dynamically loaded here -->
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <div class="watermark">© 2024 AI-TechArt.com</div>
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-description" id="lightboxDescription"></p>
+                <div class="gallery-keywords" id="lightboxKeywords"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <h3>AI-TechArt</h3>
-                    <p>Exploring the intersection of AI and creative expression</p>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#contact">Contact</a>
-                    <a href="https://github.com/BlockShield-Systems" target="_blank">GitHub</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AI-TechArt. All rights reserved.</p>
+                <p>&copy; 2024 Demian Lienert | AI-TechArt. All rights reserved.</p>
+                <p>AI-generated artwork created through advanced prompt engineering.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/gallery-images-config.js"></script>
-    <script src="assets/js/gallery.js"></script>
+    <script>
+        // Gallery data
+        let galleryData = null;
+        let currentFilter = 'all';
+        
+        // Load gallery data
+        async function loadGalleryData() {
+            try {
+                const response = await fetch('assets/data/ai-gallery-data.json');
+                const data = await response.json();
+                galleryData = data.gallery;
+                renderGallery();
+            } catch (error) {
+                console.error('Error loading gallery data:', error);
+                // Fallback to inline data if needed
+                loadFallbackData();
+            }
+        }
+        
+        // Render gallery items
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+            
+            const filteredImages = currentFilter === 'all' 
+                ? galleryData.images 
+                : galleryData.images.filter(img => img.category === currentFilter);
+            
+            filteredImages.forEach(image => {
+                const item = document.createElement('div');
+                item.className = `gallery-item ${image.mature ? 'nsfw' : ''}`;
+                item.dataset.category = image.category;
+                
+                // Use language based on browser settings
+                const lang = navigator.language.startsWith('de') ? 'de' : 'en';
+                const title = image.title[lang] || image.title.en;
+                
+                item.innerHTML = `
+                    <img src="${image.url}" alt="${title}" class="gallery-image" loading="lazy">
+                    <div class="watermark">© AI-TechArt</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">${getCategoryName(image.category)}</span>
+                        <h3 class="gallery-title">${title}</h3>
+                        <div class="gallery-keywords">
+                            ${image.keywords.slice(0, 3).map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                // Add click handlers
+                if (image.mature) {
+                    item.onclick = function(e) {
+                        if (!this.classList.contains('revealed')) {
+                            if (confirm('This content contains mature themes (18+). Do you wish to continue?')) {
+                                this.classList.add('revealed');
+                            }
+                        } else {
+                            openLightbox(image);
+                        }
+                    };
+                } else {
+                    item.onclick = () => openLightbox(image);
+                }
+                
+                grid.appendChild(item);
+            });
+        }
+        
+        // Get category display name
+        function getCategoryName(categoryId) {
+            const categories = {
+                'fantasy': '🏰 Fantasy',
+                'scifi': '🚀 Sci-Fi',
+                'characters': '👤 Characters',
+                'horror': '👻 Horror',
+                'nsfw_horror': '⚠️ NSFW Horror',
+                'environments': '🌍 Environments'
+            };
+            return categories[categoryId] || categoryId;
+        }
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                renderGallery();
+            });
+        });
+        
+        // Lightbox functions
+        function openLightbox(image) {
+            const lang = navigator.language.startsWith('de') ? 'de' : 'en';
+            const title = image.title[lang] || image.title.en;
+            
+            document.getElementById('lightboxImage').src = image.url;
+            document.getElementById('lightboxImage').alt = title;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxDescription').textContent = image.description;
+            
+            const keywordsContainer = document.getElementById('lightboxKeywords');
+            keywordsContainer.innerHTML = image.keywords.map(k => 
+                `<span class="keyword-tag">${k}</span>`
+            ).join('');
+            
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+        
+        // Prevent right-click on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.classList.contains('gallery-image') || e.target.classList.contains('lightbox-image')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Prevent drag on images
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.classList.contains('gallery-image') || e.target.classList.contains('lightbox-image')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Load fallback data if JSON fails to load
+        function loadFallbackData() {
+            // This would contain a minimal set of data as fallback
+            galleryData = {
+                images: [
+                    {
+                        id: "img001",
+                        url: "https://page.gensparksite.com/v1/base64_upload/671d0343b9ecbfa1eb17ef2472221667",
+                        category: "fantasy",
+                        title: { en: "Winter Wonderland", de: "Winterwunderland" },
+                        description: "A magical winter forest scene",
+                        keywords: ["fantasy", "winter", "magical"],
+                        mature: false
+                    }
+                    // Add more fallback items as needed
+                ]
+            };
+            renderGallery();
+        }
+        
+        // Initialize gallery on page load
+        document.addEventListener('DOMContentLoaded', loadGalleryData);
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger?.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
