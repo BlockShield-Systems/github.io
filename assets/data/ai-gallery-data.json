@@ -11,14 +11,14 @@
         "name": "Fantasy Settings",
         "icon": "🏰",
         "description": "Magical worlds and mystical environments",
-        "count": 25
+        "count": 22
       },
       "scifi": {
         "id": "scifi",
         "name": "Sci-Fi Settings",
         "icon": "🚀",
         "description": "Futuristic and technological landscapes",
-        "count": 15
+        "count": 17
       },
       "characters": {
         "id": "characters",
@@ -32,14 +32,14 @@
         "name": "Horror Settings",
         "icon": "👻",
         "description": "Dark and atmospheric horror environments",
-        "count": 23
+        "count": 21
       },
       "nsfw_horror": {
         "id": "nsfw_horror",
         "name": "NSFW +18 Horror",
         "icon": "⚠️",
         "description": "Mature horror content (18+ only)",
-        "count": 15,
+        "count": 18,
         "restricted": true
       },
       "nsfw_erotic": {
@@ -143,7 +143,7 @@
       {
         "id": "img005",
         "url": "https://page.gensparksite.com/v1/base64_upload/9997299fd07c5562acf7d455bdef47d0",
-        "category": "fantasy",
+        "category": "scifi",
         "title": {
           "en": "Cosmic Realms",
           "de": "Kosmische Welten"
@@ -671,7 +671,7 @@
       {
         "id": "img031",
         "url": "https://page.gensparksite.com/v1/base64_upload/cc9d12651bcec9b581a20291a79e60d7",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Terrifying Beast Opening",
           "de": "Schreckliche Bestie öffnet sich"
@@ -686,7 +686,8 @@
           "blood",
           "nightmare"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img032",
@@ -771,7 +772,7 @@
       {
         "id": "img036",
         "url": "https://page.gensparksite.com/v1/base64_upload/be24d380f1febb4bed6008958e2c10e1",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Spider Monster in Corridor",
           "de": "Spinnenmonster im Korridor"
@@ -786,7 +787,8 @@
           "creature",
           "eerie"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img037",
@@ -976,7 +978,7 @@
       {
         "id": "img046",
         "url": "https://page.gensparksite.com/v1/base64_upload/0c795a22f35964b473b5349c36a9206d",
-        "category": "fantasy",
+        "category": "scifi",
         "title": {
           "en": "Steampunk Mechanical Dragon",
           "de": "Steampunk Mechanischer Drache"
@@ -1056,7 +1058,7 @@
       {
         "id": "img050",
         "url": "https://page.gensparksite.com/v1/base64_upload/d439196df925b062989c1db5b8c58fb6",
-        "category": "scifi",
+        "category": "nsfw_horror",
         "title": {
           "en": "Cyberpunk Energy Fusion",
           "de": "Cyberpunk Energiefusion"
@@ -1071,12 +1073,13 @@
           "organic",
           "digital"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img051",
         "url": "https://page.gensparksite.com/v1/base64_upload/ba754c02e9fe9da69c2f463c4e226b51",
-        "category": "fantasy",
+        "category": "scifi",
         "title": {
           "en": "Cosmic Mechanism Complex",
           "de": "Kosmischer Mechanismus Komplex"
