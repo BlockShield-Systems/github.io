@@ -3,7 +3,7 @@
     "title": "AI Art Gallery - Complete Collection",
     "description": "Professional collection of AI-generated artwork by Demian Lienert",
     "copyright": "© 2024 Demian Lienert | AI-TechArt.com",
-    "version": "3.2.0",
+    "version": "3.3.0",
     "totalImages": 85,
     "categories": {
       "fantasy": {
@@ -11,7 +11,7 @@
         "name": "Fantasy Settings",
         "icon": "🏰",
         "description": "Magical worlds and mystical environments",
-        "count": 24
+        "count": 21
       },
       "scifi": {
         "id": "scifi",
@@ -32,14 +32,14 @@
         "name": "Horror Settings",
         "icon": "👻",
         "description": "Dark and atmospheric horror environments",
-        "count": 17
+        "count": 19
       },
       "nsfw_horror": {
         "id": "nsfw_horror",
         "name": "NSFW +18 Horror",
         "icon": "⚠️",
         "description": "Mature horror content (18+ only)",
-        "count": 16,
+        "count": 19,
         "restricted": true
       },
       "nsfw_erotic": {
@@ -55,7 +55,7 @@
         "name": "World Environments",
         "icon": "🌍",
         "description": "Abstract and environmental landscapes",
-        "count": 4
+        "count": 2
       }
     },
     "images": [
@@ -123,7 +123,7 @@
       {
         "id": "img004",
         "url": "https://page.gensparksite.com/v1/base64_upload/05e2102bada7a81313f206f201463c45",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Skeletal Horror",
           "de": "Skeletthorror"
@@ -138,7 +138,8 @@
           "dark",
           "terrifying"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img005",
@@ -348,7 +349,7 @@
       {
         "id": "img015",
         "url": "https://page.gensparksite.com/v1/base64_upload/4ba2e75c8e834ce51122669e002052be",
-        "category": "fantasy",
+        "category": "scifi",
         "title": {
           "en": "Monstrous Guardians",
           "de": "Monströse Wächter"
@@ -363,7 +364,8 @@
           "mystical",
           "advanced technology"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img016",
@@ -939,7 +941,7 @@
       {
         "id": "img045",
         "url": "https://page.gensparksite.com/v1/base64_upload/555137e29e2eda8db41ba1e77b881b08",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Screaming Tunnel Horror",
           "de": "Schreiender Tunnel Horror"
@@ -954,7 +956,8 @@
           "circular",
           "blood"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img046",
@@ -1039,7 +1042,7 @@
       {
         "id": "img050",
         "url": "https://page.gensparksite.com/v1/base64_upload/d439196df925b062989c1db5b8c58fb6",
-        "category": "nsfw_horror",
+        "category": "scifi",
         "title": {
           "en": "Cyberpunk Energy Fusion",
           "de": "Cyberpunk Energiefusion"
@@ -1055,7 +1058,7 @@
           "digital"
         ],
         "created": "2024",
-        "mature": true
+        "mature": false
       },
       {
         "id": "img051",
@@ -1080,7 +1083,7 @@
       {
         "id": "img052",
         "url": "https://page.gensparksite.com/v1/base64_upload/36ad723b917e0797d1fff5e3f770f21d",
-        "category": "scifi",
+        "category": "environments",
         "title": {
           "en": "Luxury Spaceship Interior",
           "de": "Luxus Raumschiff Interieur"
@@ -1095,7 +1098,8 @@
           "panoramic",
           "travel"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img053",
@@ -1201,7 +1205,7 @@
       {
         "id": "img058",
         "url": "https://page.gensparksite.com/v1/base64_upload/f2964932a8dd3b5f3832677ee1225421",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Victorian Horror Bathroom",
           "de": "Viktorianisches Horror Badezimmer"
@@ -1216,7 +1220,8 @@
           "splatter",
           "unsettling"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img060",
@@ -1363,7 +1368,7 @@
       {
         "id": "img067",
         "url": "https://page.gensparksite.com/v1/base64_upload/8a125f13541767b1171d591601620b16",
-        "category": "nsfw_horror",
+        "category": "characters",
         "title": {
           "en": "Bathroom Crab Monster",
           "de": "Badezimmer Krabben Monster"
@@ -1379,12 +1384,12 @@
           "juxtaposition"
         ],
         "created": "2024",
-        "mature": true
+        "mature": false
       },
       {
         "id": "img068",
         "url": "https://page.gensparksite.com/v1/base64_upload/56c0ea9ca949ff20578e096823bcae38",
-        "category": "fantasy",
+        "category": "horror",
         "title": {
           "en": "Gothic Cathedral Portal",
           "de": "Gotisches Kathedralenportal"
@@ -1399,7 +1404,8 @@
           "romantic",
           "doorway"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img069",
@@ -1424,7 +1430,7 @@
       {
         "id": "img070",
         "url": "https://page.gensparksite.com/v1/base64_upload/1264fb0bc6fc1aa5af1df42a648726af",
-        "category": "scifi",
+        "category": "horror",
         "title": {
           "en": "Mech Warriors Apocalypse",
           "de": "Mech Krieger Apokalypse"
@@ -1439,12 +1445,13 @@
           "fiery sky",
           "epic"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img071",
         "url": "https://page.gensparksite.com/v1/base64_upload/00c09e41843d8d19210adc5e5511e32c",
-        "category": "environments",
+        "category": "horror",
         "title": {
           "en": "Toxic Wasteland Warriors",
           "de": "Giftige Ödland Krieger"
@@ -1459,12 +1466,13 @@
           "dystopian",
           "survival"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img072",
         "url": "https://page.gensparksite.com/v1/base64_upload/b03bd1a34d9097c16fd940ad852f9840",
-        "category": "characters",
+        "category": "horror",
         "title": {
           "en": "Mad Scientist Portrait",
           "de": "Verrückter Wissenschaftler Portrait"
@@ -1479,12 +1487,13 @@
           "exaggerated",
           "portrait"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img073",
         "url": "https://page.gensparksite.com/v1/base64_upload/6151e45775d484ae3e80dfe64efa1b6d",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
           "en": "Zombie Doctor Horror",
           "de": "Zombie Doktor Horror"
@@ -1499,12 +1508,13 @@
           "horror",
           "disturbing"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img074",
         "url": "https://page.gensparksite.com/v1/base64_upload/43b1468999260b2a26d142f18f52c27a",
-        "category": "fantasy",
+        "category": "nsfw_horror",
         "title": {
           "en": "Cosmic Kaleidoscope",
           "de": "Kosmisches Kaleidoskop"
@@ -1519,7 +1529,8 @@
           "mesmerizing",
           "visual"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img075",
@@ -1545,7 +1556,7 @@
       {
         "id": "img076",
         "url": "https://page.gensparksite.com/v1/base64_upload/10a36c00a59c08418504e33f8386a651",
-        "category": "environments",
+        "category": "horror",
         "title": {
           "en": "Abandoned Staircase",
           "de": "Verlassene Treppe"
@@ -1560,7 +1571,8 @@
           "spiral",
           "ruins"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img077",
@@ -1585,7 +1597,7 @@
       {
         "id": "img078",
         "url": "https://page.gensparksite.com/v1/base64_upload/f13276692d9354205d8b597d3647bbe5",
-        "category": "environments",
+        "category": "horror",
         "title": {
           "en": "Industrial Relic",
           "de": "Industrielles Relikt"
@@ -1600,7 +1612,8 @@
           "rust",
           "factory"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": false
       },
       {
         "id": "img079",
