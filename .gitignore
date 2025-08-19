@@ -22,3 +22,31 @@ node_modules/
 credentials.json
 secrets.json
 .env
+
+# Python utility scripts (nicht öffentlich)
+analyze_*.py
+fix_*.py
+manual_*.py
+screenshot_*.py
+categorize_*.py
+process_*.py
+*_audit.py
+*_fixes.py
+
+# Test files
+test_*.py
+*.test.py
+supervisord*.conf
+supervisord*.log
+supervisord*.pid
+
+# AI Drive metadata
+aidrive_*.json
+aidrive_*.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.log

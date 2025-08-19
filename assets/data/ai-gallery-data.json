@@ -11,7 +11,7 @@
         "name": "Fantasy Settings",
         "icon": "🏰",
         "description": "Magical worlds and mystical environments",
-        "count": 22
+        "count": 21
       },
       "scifi": {
         "id": "scifi",
@@ -32,7 +32,7 @@
         "name": "Horror Settings",
         "icon": "👻",
         "description": "Dark and atmospheric horror environments",
-        "count": 21
+        "count": 20
       },
       "nsfw_horror": {
         "id": "nsfw_horror",
@@ -55,7 +55,7 @@
         "name": "World Environments",
         "icon": "🌍",
         "description": "Abstract and environmental landscapes",
-        "count": 2
+        "count": 4
       }
     },
     "images": [
@@ -1342,7 +1342,7 @@
       {
         "id": "img064",
         "url": "https://page.gensparksite.com/v1/base64_upload/77ead9bbb9bfad4262ab5e193f871c31",
-        "category": "fantasy",
+        "category": "scifi",
         "title": {
           "en": "Dual World Portal",
           "de": "Portal Der Doppelwelt"
@@ -1484,7 +1484,7 @@
       {
         "id": "img071",
         "url": "https://page.gensparksite.com/v1/base64_upload/00c09e41843d8d19210adc5e5511e32c",
-        "category": "scifi",
+        "category": "environments",
         "title": {
           "en": "Toxic Wasteland Warriors",
           "de": "Giftige Ödland Krieger"
@@ -1584,7 +1584,7 @@
       {
         "id": "img076",
         "url": "https://page.gensparksite.com/v1/base64_upload/10a36c00a59c08418504e33f8386a651",
-        "category": "horror",
+        "category": "environments",
         "title": {
           "en": "Dungeon Torture Chamber",
           "de": "Kerker Folterkammer"

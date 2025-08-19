@@ -680,14 +680,21 @@
                 const lang = navigator.language.startsWith('de') ? 'de' : 'en';
                 const title = image.title[lang] || image.title.en;
                 
+                // Sanitize all text content to prevent XSS
+                const safeTitle = title.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                const safeCategory = getCategoryName(image.category).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const safeKeywords = image.keywords.slice(0, 3).map(k => 
+                    k.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                );
+                
                 item.innerHTML = `
-                    <img src="${image.url}" alt="${title}" class="gallery-image" loading="lazy" onload="this.classList.add('loaded')" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect fill=\'%23333\' width=\'400\' height=\'300\'/><text x=\'50%\' y=\'50%\' fill=\'%23666\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'sans-serif\'>Image Loading...</text></svg>'"/>
+                    <img src="${image.url}" alt="${safeTitle}" class="gallery-image" loading="lazy" onload="this.classList.add('loaded')" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect fill=\'%23333\' width=\'400\' height=\'300\'/><text x=\'50%\' y=\'50%\' fill=\'%23666\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'sans-serif\'>Image Loading...</text></svg>'"/>
                     <div class="watermark">© AI-TechArt</div>
                     <div class="gallery-overlay">
-                        <span class="gallery-category">${getCategoryName(image.category)}</span>
-                        <h3 class="gallery-title">${title}</h3>
+                        <span class="gallery-category">${safeCategory}</span>
+                        <h3 class="gallery-title">${safeTitle}</h3>
                         <div class="gallery-keywords">
-                            ${image.keywords.slice(0, 3).map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+                            ${safeKeywords.map(k => `<span class="keyword-tag">${k}</span>`).join('')}
                         </div>
                     </div>
                 `;
@@ -743,6 +750,7 @@
             
             document.getElementById('lightboxImage').src = image.url;
             document.getElementById('lightboxImage').alt = title;
+            // Use textContent for safe text insertion (prevents XSS)
             document.getElementById('lightboxTitle').textContent = title;
             document.getElementById('lightboxDescription').textContent = image.description;
             
