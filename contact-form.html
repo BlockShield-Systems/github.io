@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | IT Specialist - AI & Multimedia Expert</title>
+    <meta name="description" content="Get in touch for AI integration, development, multimedia projects and professional IT services.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="contact, AI specialist, machine learning, system architecture, web development, multimedia">
+    <meta name="author" content="Demian Lienert">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ai-techart.com/contact-form.html">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/contact-form.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">AT</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#expertise">Expertise</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="ai-gallery.html">AI Gallery</a></li>
+                    <li><a href="#contact" class="active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1 class="hero-title">Get In Touch</h1>
+                <p class="hero-subtitle">Let's collaborate on innovative AI solutions and transformative projects</p>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@ai-techart.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Switzerland (Wittenbach)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/BlockShield-Systems" target="_blank">BlockShield-Systems</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Availability</h4>
+                                <p>From July 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="expertise-areas">
+                            <h3>Areas of Expertise</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> AI Generative Design (ComfyUI, Stable Diffusion, Midjourney)</li>
+                                <li><i class="fas fa-check"></i> Prompt Engineering & Fine-Tuning</li>
+                                <li><i class="fas fa-check"></i> RAG Systems & AI Deployment</li>
+                                <li><i class="fas fa-check"></i> Full-Stack Development</li>
+                                <li><i class="fas fa-check"></i> Music & Audio Production (DAW, AIVA, FL Studio)</li>
+                                <li><i class="fas fa-check"></i> MCP (Model Context Protocol) Integration</li>
+                                <li><i class="fas fa-check"></i> Business Diagrams & Artifacts (Mermaid AI)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send a Message</h2>
+                        <form id="contactForm" action="https://formsubmit.co/contact@ai-techart.com" method="POST" class="contact-form">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://ai-techart.com/thank-you.html">
+                            
+                            <!-- Topic Selection -->
+                            <div class="form-group">
+                                <label for="topic">Topic/Subject <span class="required">*</span></label>
+                                <select id="topic" name="_subject" required>
+                                    <option value="">Please select a topic</option>
+                                    <optgroup label="AI & Machine Learning">
+                                        <option value="AI Generative Design - I2I/T2I/V2V">AI Generative Design (I2I, T2I, V2V, T2V)</option>
+                                        <option value="ComfyUI/Stable Diffusion Workflows">ComfyUI/Stable Diffusion Workflows</option>
+                                        <option value="Prompt Engineering Services">Prompt Engineering Services</option>
+                                        <option value="AI Fine-Tuning & RAG Building">AI Fine-Tuning & RAG Building</option>
+                                        <option value="AI Model Deployment">AI Model Deployment</option>
+                                        <option value="MCP Integration">MCP (Model Context Protocol) Integration</option>
+                                    </optgroup>
+                                    <optgroup label="Development Services">
+                                        <option value="Full-Stack Development">Full-Stack Development</option>
+                                        <option value="AI Solution Development">Complete AI Solutions</option>
+                                        <option value="API Development & Integration">API Development & Integration</option>
+                                        <option value="Docker & Container Solutions">Docker & Container Solutions</option>
+                                    </optgroup>
+                                    <optgroup label="Creative & Multimedia">
+                                        <option value="Music & Sound Production">Music & Sound Production (DAW, AIVA, FL Studio)</option>
+                                        <option value="Content Writing & Editing">Content Writing & Editing</option>
+                                        <option value="Story-Telling & Creative Writing">Story-Telling & Creative Writing</option>
+                                        <option value="Video & Animation Production">Video & Animation Production</option>
+                                    </optgroup>
+                                    <optgroup label="Business & Consulting">
+                                        <option value="IT Consulting - Business">IT Consulting - Business</option>
+                                        <option value="IT Freelancer Services">IT Freelancer Services</option>
+                                        <option value="Business Plans & Diagrams">Business Plans & Diagrams (Mermaid AI)</option>
+                                        <option value="Project Management">Project Management</option>
+                                    </optgroup>
+                                    <optgroup label="Job & Collaboration">
+                                        <option value="Job Offer - Full-time">Job Offer - Full-time</option>
+                                        <option value="Job Offer - Freelance">Job Offer - Freelance</option>
+                                        <option value="Partnership Opportunity">Partnership Opportunity</option>
+                                        <option value="Affiliate & Marketing">Affiliate & Marketing Opportunities</option>
+                                    </optgroup>
+                                    <optgroup label="Other">
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Tutorial Request">Tutorial Request</option>
+                                        <option value="Other">Other</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <!-- Name Fields -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="first_name" required placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="last_name" required placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+41 XX XXX XX XX">
+                                </div>
+                            </div>
+
+                            <!-- Company Information -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company/Organization</label>
+                                    <input type="text" id="company" name="company" placeholder="Company Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Position/Role</label>
+                                    <input type="text" id="position" name="position" placeholder="Your Position">
+                                </div>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType" name="project_type">
+                                    <option value="">Select if applicable</option>
+                                    <option value="Short-term (< 1 month)">Short-term (< 1 month)</option>
+                                    <option value="Medium-term (1-3 months)">Medium-term (1-3 months)</option>
+                                    <option value="Long-term (> 3 months)">Long-term (> 3 months)</option>
+                                    <option value="Ongoing/Permanent">Ongoing/Permanent</option>
+                                    <option value="One-time consultation">One-time consultation</option>
+                                </select>
+                            </div>
+
+                            <!-- Budget Range -->
+                            <div class="form-group">
+                                <label for="budget">Budget Range (CHF)</label>
+                                <select id="budget" name="budget_range">
+                                    <option value="">Prefer not to say</option>
+                                    <option value="< 5,000">< 5,000 CHF</option>
+                                    <option value="5,000 - 10,000">5,000 - 10,000 CHF</option>
+                                    <option value="10,000 - 25,000">10,000 - 25,000 CHF</option>
+                                    <option value="25,000 - 50,000">25,000 - 50,000 CHF</option>
+                                    <option value="> 50,000">> 50,000 CHF</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="6" required 
+                                    placeholder="Please describe your project or inquiry in detail..."></textarea>
+                            </div>
+
+                            <!-- Services Interested In -->
+                            <div class="form-group">
+                                <label>Services You're Interested In</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="AI Development">
+                                        <span>AI Development & Integration</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="Web Development">
+                                        <span>Web/App Development</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="Multimedia Production">
+                                        <span>Multimedia Production</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="Consulting">
+                                        <span>IT Consulting</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="services[]" value="Training">
+                                        <span>Training & Tutorials</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Privacy & Newsletter -->
+                            <div class="form-group">
+                                <label class="checkbox-label required-checkbox">
+                                    <input type="checkbox" id="privacy" name="privacy_accepted" required>
+                                    <span>I accept the <a href="#" onclick="showPrivacyPolicy(event)">Privacy Policy</a> and <a href="#" onclick="showTerms(event)">Terms & Conditions</a> <span class="required">*</span></span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter_signup">
+                                    <span>Subscribe to newsletter for updates and insights (coming soon)</span>
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                                <button type="reset" class="btn-reset">
+                                    <i class="fas fa-redo"></i> Reset Form
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Modal -->
+        <div id="privacyModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+                <h2>Privacy Policy & Data Protection</h2>
+                <div class="policy-content">
+                    <h3>1. Data Collection</h3>
+                    <p>We collect only the information you provide through this contact form to respond to your inquiry and provide requested services.</p>
+                    
+                    <h3>2. Data Usage</h3>
+                    <p>Your personal data will be used exclusively for:</p>
+                    <ul>
+                        <li>Responding to your inquiries</li>
+                        <li>Providing requested services or information</li>
+                        <li>Sending newsletter updates (only if you opted in)</li>
+                        <li>Improving our services</li>
+                    </ul>
+                    
+                    <h3>3. Data Security</h3>
+                    <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+                    
+                    <h3>4. Data Retention</h3>
+                    <p>We retain your personal data only as long as necessary to fulfill the purposes for which it was collected or as required by law.</p>
+                    
+                    <h3>5. Your Rights</h3>
+                    <p>Under GDPR and Swiss data protection laws, you have the right to:</p>
+                    <ul>
+                        <li>Access your personal data</li>
+                        <li>Correct inaccurate data</li>
+                        <li>Request deletion of your data</li>
+                        <li>Object to data processing</li>
+                        <li>Data portability</li>
+                    </ul>
+                    
+                    <h3>6. Contact</h3>
+                    <p>For any privacy-related questions, please contact: contact@ai-techart.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms Modal -->
+        <div id="termsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('termsModal')">&times;</span>
+                <h2>Terms & Conditions</h2>
+                <div class="policy-content">
+                    <h3>1. Service Agreement</h3>
+                    <p>By submitting this form, you agree to our terms of service for consultation and project engagement.</p>
+                    
+                    <h3>2. Intellectual Property</h3>
+                    <p>All content, designs, and solutions provided remain the intellectual property of the respective parties as agreed upon in project contracts.</p>
+                    
+                    <h3>3. Confidentiality</h3>
+                    <p>We maintain strict confidentiality regarding all project details and client information.</p>
+                    
+                    <h3>4. Liability</h3>
+                    <p>Services are provided on an "as is" basis with warranties as specified in individual project agreements.</p>
+                    
+                    <h3>5. Governing Law</h3>
+                    <p>These terms are governed by Swiss law, with jurisdiction in Wittenbach, Switzerland.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="ai-gallery.html">AI Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>AI Development</li>
+                        <li>Web Solutions</li>
+                        <li>Multimedia Production</li>
+                        <li>IT Consulting</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/BlockShield-Systems" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:contact@ai-techart.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI-TechArt. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Validation and Enhancement
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const privacy = document.getElementById('privacy');
+            if (!privacy.checked) {
+                e.preventDefault();
+                alert('Please accept the Privacy Policy and Terms & Conditions to proceed.');
+                return false;
+            }
+            
+            // Add loading state
+            const submitBtn = this.querySelector('.btn-submit');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+        });
+
+        // Modal Functions
+        function showPrivacyPolicy(e) {
+            e.preventDefault();
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+
+        function showTerms(e) {
+            e.preventDefault();
+            document.getElementById('termsModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Dynamic subject line based on topic selection
+        document.getElementById('topic').addEventListener('change', function() {
+            const topicValue = this.value;
+            if (topicValue) {
+                // This will be used as the email subject
+                this.setAttribute('name', '_subject');
+            }
+        });
+
+        // Form field animations
+        const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+    
+    <!-- Enhanced Form Validation and UX -->
+    <script src="assets/js/contact-form.js"></script>
+</body>
+</html>
