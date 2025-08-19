@@ -1,10 +1,13 @@
 /**
  * Gallery Images Configuration
  * 
- * INSTRUCTIONS FOR ADDING IMAGES FROM AI DRIVE:
- * 1. Upload your images to the AI Drive folder: "/Meine Dateien/Website AI-Generated Images/"
- * 2. For each image, add an entry in the appropriate category below
- * 3. Use the full path from AI Drive or a relative path if images are copied to the website
+ * ⚠️ SECURITY WARNING: This is a PUBLIC repository!
+ * DO NOT add actual NSFW image paths or sensitive content here.
+ * 
+ * INSTRUCTIONS FOR ADDING IMAGES:
+ * 1. For public-appropriate images: Add paths directly below
+ * 2. For sensitive/NSFW content: Use external secure hosting
+ * 3. Consider using a private API endpoint to load image URLs dynamically
  * 
  * Example entry:
  * {
