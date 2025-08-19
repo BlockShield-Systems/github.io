@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | IT Specialist - AI & Multimedia Expert</title>
+    <meta name="description" content="Thank you for contacting us. We'll get back to you soon!">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .thank-you-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.6s ease;
+        }
+        
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        .check-icon i {
+            color: white;
+            font-size: 40px;
+        }
+        
+        .thank-you-card h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .thank-you-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #666;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .response-time {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .response-time h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .response-time p {
+            color: #666;
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 40px 30px;
+            }
+            
+            .thank-you-card h1 {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="check-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully sent. I appreciate you taking the time to reach out and will review your inquiry carefully.</p>
+            
+            <div class="response-time">
+                <h3>What's Next?</h3>
+                <p><i class="fas fa-clock"></i> I typically respond within 24-48 hours</p>
+                <p><i class="fas fa-envelope"></i> You'll receive a reply at the email address you provided</p>
+                <p><i class="fas fa-info-circle"></i> For urgent matters, please mention it in your next message</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="ai-gallery.html" class="btn btn-secondary">
+                    <i class="fas fa-images"></i> View AI Gallery
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Redirect to home page after 10 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 10000);
+    </script>
+</body>
+</html>
