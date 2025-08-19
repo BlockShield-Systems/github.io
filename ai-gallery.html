@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Gallery | Professional AI-Generated Artwork Collection</title>
     <meta name="description" content="Explore a curated collection of AI-generated artwork across Fantasy, Sci-Fi, Horror and Character Design. Created through advanced prompt engineering by Demian Lienert.">
@@ -29,10 +30,10 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
     
     <style>
         /* Gallery-specific styles */
@@ -657,7 +658,7 @@
         // Render gallery items
         function renderGallery() {
             const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = '';
+            while (grid.firstChild) { grid.removeChild(grid.firstChild); }
             
             const filteredImages = currentFilter === 'all' 
                 ? galleryData.images 
@@ -680,24 +681,50 @@
                 const lang = navigator.language.startsWith('de') ? 'de' : 'en';
                 const title = image.title[lang] || image.title.en;
                 
-                // Sanitize all text content to prevent XSS
-                const safeTitle = title.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-                const safeCategory = getCategoryName(image.category).replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                const safeKeywords = image.keywords.slice(0, 3).map(k => 
-                    k.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-                );
+                // Create elements safely using DOM methods (no innerHTML for security)
+                const img = document.createElement('img');
+                img.src = image.url;
+                img.alt = title;
+                img.className = 'gallery-image';
+                img.loading = 'lazy';
+                img.onload = function() { this.classList.add('loaded'); };
+                img.onerror = function() { 
+                    this.src = 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect fill=\'%23333\' width=\'400\' height=\'300\'/><text x=\'50%\' y=\'50%\' fill=\'%23666\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'sans-serif\'>Image Loading...</text></svg>';
+                };
                 
-                item.innerHTML = `
-                    <img src="${image.url}" alt="${safeTitle}" class="gallery-image" loading="lazy" onload="this.classList.add('loaded')" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect fill=\'%23333\' width=\'400\' height=\'300\'/><text x=\'50%\' y=\'50%\' fill=\'%23666\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'sans-serif\'>Image Loading...</text></svg>'"/>
-                    <div class="watermark">© AI-TechArt</div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">${safeCategory}</span>
-                        <h3 class="gallery-title">${safeTitle}</h3>
-                        <div class="gallery-keywords">
-                            ${safeKeywords.map(k => `<span class="keyword-tag">${k}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
+                const watermark = document.createElement('div');
+                watermark.className = 'watermark';
+                watermark.textContent = '© AI-TechArt';
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-overlay';
+                
+                const categorySpan = document.createElement('span');
+                categorySpan.className = 'gallery-category';
+                categorySpan.textContent = getCategoryName(image.category);
+                
+                const titleH3 = document.createElement('h3');
+                titleH3.className = 'gallery-title';
+                titleH3.textContent = title;
+                
+                const keywordsDiv = document.createElement('div');
+                keywordsDiv.className = 'gallery-keywords';
+                
+                // Add keywords safely
+                image.keywords.slice(0, 3).forEach(keyword => {
+                    const keywordSpan = document.createElement('span');
+                    keywordSpan.className = 'keyword-tag';
+                    keywordSpan.textContent = keyword;
+                    keywordsDiv.appendChild(keywordSpan);
+                });
+                
+                overlay.appendChild(categorySpan);
+                overlay.appendChild(titleH3);
+                overlay.appendChild(keywordsDiv);
+                
+                item.appendChild(img);
+                item.appendChild(watermark);
+                item.appendChild(overlay);
                 
                 // Add click handlers
                 // isNSFW already declared above
@@ -755,9 +782,15 @@
             document.getElementById('lightboxDescription').textContent = image.description;
             
             const keywordsContainer = document.getElementById('lightboxKeywords');
-            keywordsContainer.innerHTML = image.keywords.map(k => 
-                `<span class="keyword-tag">${k}</span>`
-            ).join('');
+            while (keywordsContainer.firstChild) { keywordsContainer.removeChild(keywordsContainer.firstChild); }
+            image.keywords.forEach(k => {
+                const span = document.createElement('span');
+                span.className = 'keyword-tag';
+                span.textContent = k;
+                keywordsContainer.appendChild(span);
+            });
+            // OLD CODE REMOVED: image.keywords.map(k => 
+                // REMOVED for security
             
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
