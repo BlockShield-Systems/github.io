@@ -1,0 +1,532 @@
+{
+  "gallery": {
+    "title": "AI Art Gallery",
+    "description": "Professional collection of AI-generated artwork",
+    "copyright": "© 2024 Demian Lienert | AI-TechArt.com",
+    "categories": {
+      "fantasy": {
+        "id": "fantasy",
+        "name": "Fantasy Settings",
+        "icon": "🏰",
+        "description": "Magical worlds and mystical environments",
+        "count": 11
+      },
+      "scifi": {
+        "id": "scifi",
+        "name": "Sci-Fi Settings",
+        "icon": "🚀",
+        "description": "Futuristic and technological landscapes",
+        "count": 6
+      },
+      "characters": {
+        "id": "characters",
+        "name": "Characters & Models",
+        "icon": "👤",
+        "description": "AI-generated character designs and models",
+        "count": 4
+      },
+      "horror": {
+        "id": "horror",
+        "name": "Horror Settings",
+        "icon": "👻",
+        "description": "Dark and atmospheric horror environments",
+        "count": 10
+      },
+      "nsfw_horror": {
+        "id": "nsfw_horror",
+        "name": "NSFW +18 Horror",
+        "icon": "⚠️",
+        "description": "Mature horror content (18+ only)",
+        "count": 7,
+        "restricted": true
+      },
+      "environments": {
+        "id": "environments",
+        "name": "World Environments",
+        "icon": "🌍",
+        "description": "Abstract and environmental landscapes",
+        "count": 1
+      }
+    },
+    "images": [
+      {
+        "id": "img001",
+        "url": "https://page.gensparksite.com/v1/base64_upload/671d0343b9ecbfa1eb17ef2472221667",
+        "category": "fantasy",
+        "title": {
+          "en": "Winter Wonderland",
+          "de": "Winterwunderland"
+        },
+        "description": "A magical winter forest featuring snow-laden evergreen trees under a night sky filled with oversized, luminous snowflakes and a vibrant aurora. The combination of blues and greens creates a serene, mystical atmosphere.",
+        "keywords": ["fantasy", "winter", "snow", "aurora", "mystical", "serene", "forest"],
+        "created": "2024",
+        "featured": true
+      },
+      {
+        "id": "img002",
+        "url": "https://page.gensparksite.com/v1/base64_upload/8f7eea1e099a8feb2e8b6b9cc1e740a6",
+        "category": "scifi",
+        "title": {
+          "en": "Dual Worlds",
+          "de": "Doppelte Welten"
+        },
+        "description": "Two futuristic characters stand amidst a dramatic sci-fi landscape dominated by gigantic mechanical structures. The fiery, tumultuous sky suggests intense energy and conflict.",
+        "keywords": ["sci-fi", "futuristic", "adventure", "machinery", "exploration", "conflict", "armor"],
+        "created": "2024"
+      },
+      {
+        "id": "img003",
+        "url": "https://page.gensparksite.com/v1/base64_upload/59e3f67712c8e5ba423a3ece9870d93f",
+        "category": "characters",
+        "title": {
+          "en": "Alluring Beauty",
+          "de": "Verführerische Schönheit"
+        },
+        "description": "A digitally rendered character showcases striking features, with aquamarine eyes and a stylish streak of green in her hair. The soft color palette and smooth textures lend a polished, realistic appearance.",
+        "keywords": ["digital art", "beauty", "model", "character", "elegance", "aquamarine", "style"],
+        "created": "2024"
+      },
+      {
+        "id": "img004",
+        "url": "https://page.gensparksite.com/v1/base64_upload/05e2102bada7a81313f206f201463c45",
+        "category": "horror",
+        "title": {
+          "en": "Skeletal Horror",
+          "de": "Skeletthorror"
+        },
+        "description": "A menacing skeletal figure with sharp teeth and glowing red eyes is set against a dimly lit, grimy tiled background. Twisting wires and bloodied details enhance the terrifying atmosphere.",
+        "keywords": ["horror", "skeleton", "menacing", "nightmarish", "blood", "dark", "terrifying"],
+        "created": "2024"
+      },
+      {
+        "id": "img005",
+        "url": "https://page.gensparksite.com/v1/base64_upload/9997299fd07c5562acf7d455bdef47d0",
+        "category": "fantasy",
+        "title": {
+          "en": "Cosmic Realms",
+          "de": "Kosmische Welten"
+        },
+        "description": "This image portrays a dual fantasy setting divided between a futuristic cityscape and a pastoral landscape framed within celestial spheres. Each half is rich with vibrant planets and stars.",
+        "keywords": ["fantasy", "cosmic", "duality", "contrast", "landscape", "celestial", "harmony"],
+        "created": "2024"
+      },
+      {
+        "id": "img006",
+        "url": "https://page.gensparksite.com/v1/base64_upload/c8f05401c50074fa1365f7050be996b2",
+        "category": "scifi",
+        "title": {
+          "en": "Colossal Encounter",
+          "de": "Kolossale Begegnung"
+        },
+        "description": "A lone hero stands before a towering robotic giant in a dystopian landscape. The scene is filled with tension and anticipation, emphasized by dark, looming structures.",
+        "keywords": ["sci-fi", "dystopian", "giant", "machinery", "dramatic", "hero", "encounter"],
+        "created": "2024",
+        "featured": true
+      },
+      {
+        "id": "img007",
+        "url": "https://page.gensparksite.com/v1/base64_upload/b0ad5e235301be85d0b36d4878c903c6",
+        "category": "characters",
+        "title": {
+          "en": "Neon Punk",
+          "de": "Neon-Punk"
+        },
+        "description": "This image features a fashion-forward character with vibrant purple hair and a metallic outfit, exuding a cyberpunk vibe. The bold use of colors and futuristic accessories create a stylish, edgy appearance.",
+        "keywords": ["cyberpunk", "fashion", "neon", "futuristic", "style", "edgy", "character"],
+        "created": "2024"
+      },
+      {
+        "id": "img008",
+        "url": "https://page.gensparksite.com/v1/base64_upload/9ace7e9882afd097f2b7396174be5455",
+        "category": "horror",
+        "title": {
+          "en": "Haunted Asylum",
+          "de": "Verlassenes Heim"
+        },
+        "description": "A dimly lit, stone-walled room with red lighting fixtures and candles creates a sinister and foreboding atmosphere. The scattered candlelight and suspended jars suggest a haunt of dark rituals.",
+        "keywords": ["horror", "eerie", "sinister", "asylum", "ritual", "dark", "unsettling"],
+        "created": "2024"
+      },
+      {
+        "id": "img009",
+        "url": "https://page.gensparksite.com/v1/base64_upload/42c005de33c19bfa0ce224c7ad6769c8",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Flesh Abomination",
+          "de": "Fleischabomination"
+        },
+        "description": "A grotesque scene features a towering mass of flesh and tentacles, dripping with blood and grotesque anomalies. Nestled within an organic, cavernous space.",
+        "keywords": ["horror", "grotesque", "tentacles", "flesh", "blood", "visceral", "shocking"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img010",
+        "url": "https://page.gensparksite.com/v1/base64_upload/25b4e498c3fe2219cda1b7e2469ac55f",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Wretched Lair",
+          "de": "Jämmerlicher Bau"
+        },
+        "description": "This disturbing image reveals a bathroom overridden by organic tentacles, sprouting from the walls and encroaching upon a solitary toilet.",
+        "keywords": ["horror", "disturbing", "organic", "tentacles", "industrial", "unsettling", "grotesque"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img011",
+        "url": "https://page.gensparksite.com/v1/base64_upload/2f1fce16e41337e41c068811e5bf39cd",
+        "category": "fantasy",
+        "title": {
+          "en": "Floating City of Dreams",
+          "de": "Schwebende Stadt der Träume"
+        },
+        "description": "An intricately designed floating city featuring a mix of architectural styles. The city appears suspended in the air with numerous hot air balloons and lush greenery integrated into its structure.",
+        "keywords": ["floating city", "fantasy", "architecture", "hot air balloons", "magical", "ethereal", "intricate design"],
+        "created": "2024"
+      },
+      {
+        "id": "img012",
+        "url": "https://page.gensparksite.com/v1/base64_upload/c8abb4ab22f6fbe963d22f4c97b9e524",
+        "category": "scifi",
+        "title": {
+          "en": "Cyber Metropolis",
+          "de": "Cyber Metropole"
+        },
+        "description": "A sprawling futuristic cityscape at sunset, filled with towering skyscrapers and glowing lights. The intricate patterns in the sky suggest advanced technology and digital connectivity.",
+        "keywords": ["futuristic city", "skyscrapers", "neon lights", "technology", "digital", "urban", "high-tech"],
+        "created": "2024",
+        "featured": true
+      },
+      {
+        "id": "img013",
+        "url": "https://page.gensparksite.com/v1/base64_upload/97161db5e441f34e8b3591aea88e9f15",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Toothy Abyss",
+          "de": "Zahniger Abgrund"
+        },
+        "description": "A terrifying and grotesque creature emerges from a wall, characterized by sharp teeth and a sinister expression. The dark, bloody setting enhances the horror theme.",
+        "keywords": ["horror", "creature", "teeth", "grotesque", "sinister", "bloody", "terrifying"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img014",
+        "url": "https://page.gensparksite.com/v1/base64_upload/486e36123f069c7f79fc1157c6434470",
+        "category": "horror",
+        "title": {
+          "en": "Abandoned Experiment",
+          "de": "Verlassenes Experiment"
+        },
+        "description": "A lone figure in white sits in a grim, industrial room filled with machinery. The eerie blue lighting and dilapidated surroundings create a sense of abandonment and unease.",
+        "keywords": ["abandoned", "industrial", "mystery", "eerie", "blue lighting", "figure", "machinery"],
+        "created": "2024"
+      },
+      {
+        "id": "img015",
+        "url": "https://page.gensparksite.com/v1/base64_upload/4ba2e75c8e834ce51122669e002052be",
+        "category": "fantasy",
+        "title": {
+          "en": "Monstrous Guardians",
+          "de": "Monströse Wächter"
+        },
+        "description": "A vast, otherworldly scene filled with gigantic, intricate machines or entities standing guard. These colossal figures are adorned with glowing elements.",
+        "keywords": ["giant machines", "guardians", "otherworldly", "intricate", "glowing", "mystical", "advanced technology"],
+        "created": "2024"
+      },
+      {
+        "id": "img016",
+        "url": "https://page.gensparksite.com/v1/base64_upload/3736cc0d57674c17548a7942d2fd74af",
+        "category": "fantasy",
+        "title": {
+          "en": "Spiral of Realms",
+          "de": "Spirale der Welten"
+        },
+        "description": "An ornate spiral structure inside an expansive hall, depicting a journey through different realms. The spiral is richly detailed, with representations of celestial bodies and mythical creatures.",
+        "keywords": ["spiral", "realms", "mythical", "celestial", "ornate", "exploration", "vibrant"],
+        "created": "2024"
+      },
+      {
+        "id": "img017",
+        "url": "https://page.gensparksite.com/v1/base64_upload/f808e81a6b5e1e8b511873f0313f484a",
+        "category": "scifi",
+        "title": {
+          "en": "Robo-Tornado Meditations",
+          "de": "Robo-Tornado Meditationen"
+        },
+        "description": "A surreal scene combining traditional and futuristic elements. A robot emerges from a swirling vortex within a traditionally styled room, where monks are engaged in meditation.",
+        "keywords": ["robot", "tornado", "meditation", "tradition", "futuristic", "surreal", "contrast"],
+        "created": "2024"
+      },
+      {
+        "id": "img018",
+        "url": "https://page.gensparksite.com/v1/base64_upload/1e7fdc18b0471499fef7b73506541c19",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Eternal Scream",
+          "de": "Ewiger Schrei"
+        },
+        "description": "A horrifying scene featuring a screaming, skeletal face fused with organic and mechanical parts in a grim tunnel. The dark and disturbing atmosphere is enhanced by detailed depiction.",
+        "keywords": ["horror", "scream", "skeletal", "mechanical", "dark", "disturbing", "anatomy"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img019",
+        "url": "https://page.gensparksite.com/v1/base64_upload/88f8e35fe5f3221d6e481bd44b1c7c00",
+        "category": "fantasy",
+        "title": {
+          "en": "Kaleidoscope of Possibilities",
+          "de": "Kaleidoskop der Möglichkeiten"
+        },
+        "description": "An explosion of colors and textures, presenting a kaleidoscopic view filled with geometric shapes and celestial motifs. The intricate patterns and vibrant hues create a sense of infinite complexity.",
+        "keywords": ["kaleidoscope", "colors", "geometric", "cosmic", "abstract", "intricate", "vibrant"],
+        "created": "2024"
+      },
+      {
+        "id": "img020",
+        "url": "https://page.gensparksite.com/v1/base64_upload/cc7a3b2e0e943d81e34b23f93d4ec462",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Creeper in the Corridor",
+          "de": "Kriecher im Korridor"
+        },
+        "description": "A disturbing creature lurks in a dark, blood-smeared corridor. The emaciated figure with glowing red eyes conveys a feeling of unease and terror.",
+        "keywords": ["creature", "horror", "corridor", "blood", "dark", "terror", "survival horror"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img021",
+        "url": "https://page.gensparksite.com/v1/base64_upload/02aa408c808f4e7585f0903c92d4d0fc",
+        "category": "horror",
+        "title": {
+          "en": "Haunted Corridor",
+          "de": "Spukender Korridor"
+        },
+        "description": "The image depicts a chilling corridor in an old, decaying building, covered with unsettling décor. Numerous cryptic and possibly occult symbols adorn blood-stained doors and walls.",
+        "keywords": ["horror", "occult", "corridor", "blood", "decay", "symbolism", "gothic"],
+        "created": "2024"
+      },
+      {
+        "id": "img022",
+        "url": "https://page.gensparksite.com/v1/base64_upload/653c88c478d9607ef1001f3f7b3a1070",
+        "category": "fantasy",
+        "title": {
+          "en": "Vibrant Dreamscape",
+          "de": "Lebendige Traumlandschaft"
+        },
+        "description": "This image explores a fantastical world teeming with color and intrigue. Multiple spheres and geometric structures intertwine across a vibrant landscape, evoking a sense of wonder and magic.",
+        "keywords": ["fantasy", "dreamscape", "colors", "geometric", "surreal", "magical", "complex"],
+        "created": "2024"
+      },
+      {
+        "id": "img023",
+        "url": "https://page.gensparksite.com/v1/base64_upload/2d38b5b207dc83473a9f8367a8f356c6",
+        "category": "scifi",
+        "title": {
+          "en": "Epic Sci-Fi Battle",
+          "de": "Epische Sci-Fi Schlacht"
+        },
+        "description": "The scene depicts a grandiose battle between towering robotic entities with dramatic skies and distant cities. The image is rich in texture and depth, emphasizing motion and scale.",
+        "keywords": ["sci-fi", "robots", "battle", "epic", "fantasy", "futuristic", "scale"],
+        "created": "2024"
+      },
+      {
+        "id": "img024",
+        "url": "https://page.gensparksite.com/v1/base64_upload/a25fed94ed3d3ade8317cc40b8b9a1e0",
+        "category": "horror",
+        "title": {
+          "en": "Abandoned Hallway",
+          "de": "Verlassener Flur"
+        },
+        "description": "An eerie hallway set in a dilapidated building, highlighted by dim lighting penetrating through a distant window. Gothic and vintage designs adorn the walls, casting long shadows.",
+        "keywords": ["abandoned", "hallway", "gothic", "horror", "shadows", "decay", "mystery"],
+        "created": "2024"
+      },
+      {
+        "id": "img025",
+        "url": "https://page.gensparksite.com/v1/base64_upload/84aba9b6f4f94a7b191a77b2ed119f0b",
+        "category": "fantasy",
+        "title": {
+          "en": "Whimsical Wonderland",
+          "de": "Wundersames Wunderland"
+        },
+        "description": "The image showcases a whimsical and colorful fantasy landscape with swirling patterns and magical motifs. It features an array of vibrant colors and shapes, creating a complex, otherworldly environment.",
+        "keywords": ["fantasy", "wonderland", "whimsical", "colorful", "magical", "surreal", "dreamlike"],
+        "created": "2024"
+      },
+      {
+        "id": "img026",
+        "url": "https://page.gensparksite.com/v1/base64_upload/71791da6eb4094d3598e2d341f95d17b",
+        "category": "horror",
+        "title": {
+          "en": "Cursed Passageway",
+          "de": "Verfluchter Durchgang"
+        },
+        "description": "This image presents a haunting hallway lined with sinister red lanterns and mysterious symbols. The dim lighting and decayed stone walls enhance the unsettling atmosphere.",
+        "keywords": ["horror", "cursed", "lanterns", "symbols", "dark", "stone", "spooky"],
+        "created": "2024"
+      },
+      {
+        "id": "img027",
+        "url": "https://page.gensparksite.com/v1/base64_upload/a5e2747a5fee1bdfbc597c606b486e7c",
+        "category": "fantasy",
+        "title": {
+          "en": "Steampunk Dream",
+          "de": "Steampunk Traum"
+        },
+        "description": "The image is a detailed steampunk scene combining intricate clockworks and ethereal fantasy elements. A mystical figure is surrounded by gears and clouds, bridging the mechanical and the magical.",
+        "keywords": ["steampunk", "fantasy", "gears", "clouds", "mystical", "mechanical", "imaginary"],
+        "created": "2024"
+      },
+      {
+        "id": "img028",
+        "url": "https://page.gensparksite.com/v1/base64_upload/3986109449fa28250597dc2022215001",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Monstrous Maw",
+          "de": "Monströser Schlund"
+        },
+        "description": "An unsettling close-up of a monstrous open mouth lined with razor-sharp teeth. Blood and gore highlight the mouth's grotesque features, adding an element of horror and danger.",
+        "keywords": ["horror", "monster", "teeth", "gore", "danger", "threatening", "creature"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img029",
+        "url": "https://page.gensparksite.com/v1/base64_upload/4de5d002c922dd68a4f0ebaa89f0cd5e",
+        "category": "horror",
+        "title": {
+          "en": "Creepy Bathroom",
+          "de": "Gruseliges Badezimmer"
+        },
+        "description": "A uniquely disturbing design in a filthy bathroom setting, featuring a threatening organic structure growing from the wall. The use of reds and blacks conveys a sense of alarm and horror.",
+        "keywords": ["horror", "bathroom", "organic", "unnerving", "red", "creature", "decay"],
+        "created": "2024"
+      },
+      {
+        "id": "img030",
+        "url": "https://page.gensparksite.com/v1/base64_upload/e94aa52311f845c84f50a5872b681e3f",
+        "category": "characters",
+        "title": {
+          "en": "Cyberpunk Character",
+          "de": "Cyberpunk Charakter"
+        },
+        "description": "An intricately depicted character exuding a cyberpunk aesthetic, characterized by vibrant, rainbow-hued hair and a futuristic outfit. The image features meticulous detailing in the character's attire.",
+        "keywords": ["cyberpunk", "character", "futuristic", "neon", "style", "rebellious", "vibrant"],
+        "created": "2024"
+      },
+      {
+        "id": "img031",
+        "url": "https://page.gensparksite.com/v1/base64_upload/cc9d12651bcec9b581a20291a79e60d7",
+        "category": "horror",
+        "title": {
+          "en": "Terrifying Beast Opening",
+          "de": "Schreckliche Bestie öffnet sich"
+        },
+        "description": "This image portrays a grotesque, nightmarish creature with a circular mouth adorned with multiple rows of sharp, blood-stained teeth. The setting appears dark and claustrophobic.",
+        "keywords": ["horror", "creature", "teeth", "dark", "terrifying", "blood", "nightmare"],
+        "created": "2024"
+      },
+      {
+        "id": "img032",
+        "url": "https://page.gensparksite.com/v1/base64_upload/d7662c6b3f0297b3149d57fd987b009f",
+        "category": "horror",
+        "title": {
+          "en": "Abandoned Corridor",
+          "de": "Verlassener Korridor"
+        },
+        "description": "An eerie corridor in what seems to be an old, abandoned building, with red doors slightly ajar and candles on the walls leaking wax. The dim lighting mixed with the decaying interior creates dread.",
+        "keywords": ["abandoned", "corridor", "mystery", "red doors", "dim", "candle", "eerie"],
+        "created": "2024"
+      },
+      {
+        "id": "img033",
+        "url": "https://page.gensparksite.com/v1/base64_upload/9fe62013deecf6d7dbff0134429e2e33",
+        "category": "fantasy",
+        "title": {
+          "en": "Fusion of Tradition and Technology",
+          "de": "Fusion von Tradition und Technologie"
+        },
+        "description": "This visually stimulating image showcases a room split into two styles: one half traditional Chinese with red lanterns, the other a digital representation with futuristic elements.",
+        "keywords": ["fantasy", "tradition", "technology", "contrast", "fusion", "lantern", "futuristic"],
+        "created": "2024"
+      },
+      {
+        "id": "img034",
+        "url": "https://page.gensparksite.com/v1/base64_upload/eb845ecdf1edc36bb5118d4692757317",
+        "category": "characters",
+        "title": {
+          "en": "Futuristic Fashion Model",
+          "de": "Futuristisches Fashion-Model"
+        },
+        "description": "Featuring a futuristic character with vibrant purple hair, styled in playful pigtails, and wearing an edgy, shiny outfit with metallic and leather elements.",
+        "keywords": ["character", "model", "futuristic", "fashion", "purple hair", "edgy", "confident"],
+        "created": "2024"
+      },
+      {
+        "id": "img035",
+        "url": "https://page.gensparksite.com/v1/base64_upload/bbbd4de1800bd14953a3bef3b01bf4c7",
+        "category": "scifi",
+        "title": {
+          "en": "Cosmic Gateway in Turmoil",
+          "de": "Kosmisches Tor in Aufruhr"
+        },
+        "description": "This image depicts a futuristic, grand gateway with golden rings and swirling mechanisms. A large wave appears to emerge from its center, suggesting a breach between dimensions.",
+        "keywords": ["sci-fi", "gateway", "wave", "cosmic", "futuristic", "dimension", "apocalyptic"],
+        "created": "2024"
+      },
+      {
+        "id": "img036",
+        "url": "https://page.gensparksite.com/v1/base64_upload/be24d380f1febb4bed6008958e2c10e1",
+        "category": "horror",
+        "title": {
+          "en": "Spider Monster in Corridor",
+          "de": "Spinnenmonster im Korridor"
+        },
+        "description": "This image depicts a menacing, monstrous spider-like creature emerging from a dimly-lit corridor. Its body is grotesque with blood-red hues and numerous sharp legs.",
+        "keywords": ["horror", "spider", "monster", "dark corridor", "menacing", "creature", "eerie"],
+        "created": "2024"
+      },
+      {
+        "id": "img037",
+        "url": "https://page.gensparksite.com/v1/base64_upload/a657648c1962c993897c84a731fa01f2",
+        "category": "scifi",
+        "title": {
+          "en": "Post-Apocalyptic Dystopia",
+          "de": "Postapokalyptische Dystopie"
+        },
+        "description": "The image features a surreal, dystopian landscape with three individuals in futuristic attire. They stand against a backdrop of towering spires and ominous clouds tinged with orange hues.",
+        "keywords": ["sci-fi", "dystopia", "post-apocalypse", "futuristic", "spires", "cloudscape", "surreal"],
+        "created": "2024"
+      },
+      {
+        "id": "img038",
+        "url": "https://page.gensparksite.com/v1/base64_upload/490dca3cec80b6a7023fe84d80a855df",
+        "category": "nsfw_horror",
+        "title": {
+          "en": "Tentacle Horror in Water",
+          "de": "Tentakel-Horror im Wasser"
+        },
+        "description": "An unsettling image showing a humanoid figure submerged in water entangled by numerous tentacles. The tentacles are vivid and realistic, wrapping around the person's body.",
+        "keywords": ["horror", "tentacles", "underwater", "graphic", "entangled", "creepy", "NSFW"],
+        "created": "2024",
+        "mature": true
+      },
+      {
+        "id": "img039",
+        "url": "https://page.gensparksite.com/v1/base64_upload/31de0a3e00ef86195824fab2489441c1",
+        "category": "environments",
+        "title": {
+          "en": "Abstract Geometric Universe",
+          "de": "Abstraktes Geometrisches Universum"
+        },
+        "description": "A vibrant collage of abstract geometric designs featuring hexagons, cubes, and cosmic scenery. These shapes are intricately detailed with vivid colors and patterns.",
+        "keywords": ["abstract", "geometry", "universe", "cosmic", "patterns", "vibrant", "artistic"],
+        "created": "2024"
+      }
+    ]
+  }
+}
