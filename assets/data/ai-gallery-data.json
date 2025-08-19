@@ -3,8 +3,8 @@
     "title": "AI Art Gallery - Complete Collection",
     "description": "Professional collection of AI-generated artwork by Demian Lienert",
     "copyright": "© 2024 Demian Lienert | AI-TechArt.com",
-    "version": "3.1.1",
-    "totalImages": 89,
+    "version": "3.2.0",
+    "totalImages": 85,
     "categories": {
       "fantasy": {
         "id": "fantasy",
@@ -18,7 +18,7 @@
         "name": "Sci-Fi Settings",
         "icon": "🚀",
         "description": "Futuristic and technological landscapes",
-        "count": 18
+        "count": 17
       },
       "characters": {
         "id": "characters",
@@ -39,7 +39,7 @@
         "name": "NSFW +18 Horror",
         "icon": "⚠️",
         "description": "Mature horror content (18+ only)",
-        "count": 18,
+        "count": 16,
         "restricted": true
       },
       "nsfw_erotic": {
@@ -55,7 +55,7 @@
         "name": "World Environments",
         "icon": "🌍",
         "description": "Abstract and environmental landscapes",
-        "count": 5
+        "count": 4
       }
     },
     "images": [
@@ -163,7 +163,7 @@
       {
         "id": "img006",
         "url": "https://page.gensparksite.com/v1/base64_upload/c8f05401c50074fa1365f7050be996b2",
-        "category": "scifi",
+        "category": "horror",
         "title": {
           "en": "Colossal Encounter",
           "de": "Kolossale Begegnung"
@@ -572,10 +572,10 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/71791da6eb4094d3598e2d341f95d17b",
         "category": "horror",
         "title": {
-          "en": "Cursed Passageway",
-          "de": "Verfluchter Durchgang"
+          "en": "The Crimson Corridor",
+          "de": "Der Purpurrote Korridor"
         },
-        "description": "This image presents a haunting hallway lined with sinister red lanterns and mysterious symbols. The dim lighting and decayed stone walls enhance the unsettling atmosphere.",
+        "description": "An ominous hallway bathed in a crimson glow, leading to unknown dark secrets behind ancient doors.",
         "keywords": [
           "horror",
           "cursed",
@@ -585,7 +585,8 @@
           "stone",
           "spooky"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img027",
@@ -633,10 +634,10 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/4de5d002c922dd68a4f0ebaa89f0cd5e",
         "category": "horror",
         "title": {
-          "en": "Creepy Bathroom",
-          "de": "Gruseliges Badezimmer"
+          "en": "The Living Throne",
+          "de": "Der Lebende Thron"
         },
-        "description": "A uniquely disturbing design in a filthy bathroom setting, featuring a threatening organic structure growing from the wall. The use of reds and blacks conveys a sense of alarm and horror.",
+        "description": "A chilling bathroom with an alien organic growth dominating the scene, creating a terrifying and unsettling place of horror.",
         "keywords": [
           "horror",
           "bathroom",
@@ -646,7 +647,8 @@
           "creature",
           "decay"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img030",
@@ -774,10 +776,10 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/be24d380f1febb4bed6008958e2c10e1",
         "category": "nsfw_horror",
         "title": {
-          "en": "Spider Monster in Corridor",
-          "de": "Spinnenmonster im Korridor"
+          "en": "Arachnid Nightmare",
+          "de": "Spinnen-Albtraum"
         },
-        "description": "This image depicts a menacing, monstrous spider-like creature emerging from a dimly-lit corridor. Its body is grotesque with blood-red hues and numerous sharp legs.",
+        "description": "A fearsome hybrid of human and spider lies in wait within the dark corridors, its red eyes glowing with a predatory gleam.",
         "keywords": [
           "horror",
           "spider",
@@ -850,27 +852,6 @@
           "artistic"
         ],
         "created": "2024"
-      },
-      {
-        "id": "img040",
-        "url": "https://page.gensparksite.com/v1/base64_upload/71791da6eb4094d3598e2d341f95d17b",
-        "category": "horror",
-        "title": {
-          "en": "Eerie Gothic Hallway",
-          "de": "Unheimlicher Gotischer Flur"
-        },
-        "description": "A dimly lit, gothic-style hallway with red ornate doors at the end. The walls are lined with medieval lanterns casting an ominous glow. Red ornaments and decorative chains hang from the ceiling.",
-        "keywords": [
-          "gothic",
-          "hallway",
-          "red lanterns",
-          "ornaments",
-          "dark",
-          "medieval",
-          "eerie"
-        ],
-        "created": "2024",
-        "featured": true
       },
       {
         "id": "img041",
@@ -1238,27 +1219,6 @@
         "created": "2024"
       },
       {
-        "id": "img059",
-        "url": "https://page.gensparksite.com/v1/base64_upload/4de5d002c922dd68a4f0ebaa89f0cd5e",
-        "category": "nsfw_horror",
-        "title": {
-          "en": "Bathroom Tentacle Horror",
-          "de": "Badezimmer Tentakel Horror"
-        },
-        "description": "A disturbing bathroom scene with grotesque tentacles emerging from walls. The organic horror elements create deeply unsettling atmosphere.",
-        "keywords": [
-          "bathroom",
-          "tentacles",
-          "organic",
-          "grotesque",
-          "disturbing",
-          "walls",
-          "horror"
-        ],
-        "created": "2024",
-        "mature": true
-      },
-      {
         "id": "img060",
         "url": "https://page.gensparksite.com/v1/base64_upload/6b2ea883ecf9121a7e794cf917b82ef9",
         "category": "fantasy",
@@ -1362,7 +1322,7 @@
       {
         "id": "img065",
         "url": "https://page.gensparksite.com/v1/base64_upload/33068f86442be4cba7fc23772d96799a",
-        "category": "environments",
+        "category": "scifi",
         "title": {
           "en": "Alien Paradise Landscape",
           "de": "Außerirdische Paradieslandschaft"
@@ -1799,47 +1759,6 @@
           "blood",
           "tunnel",
           "menacing"
-        ],
-        "created": "2024",
-        "mature": true
-      },
-      {
-        "id": "img087",
-        "url": "https://page.gensparksite.com/v1/base64_upload/8415e19c2d6d7816a582810263e6ce1f",
-        "category": "scifi",
-        "title": {
-          "en": "Cosmic Kaleidoscope",
-          "de": "Kosmisches Kaleidoskop"
-        },
-        "description": "Psychedelic artwork with circular patterns and geometric shapes merging cosmic and earthly elements.",
-        "keywords": [
-          "psychedelic",
-          "abstract",
-          "cosmic",
-          "geometric",
-          "pattern",
-          "surreal",
-          "vivid colors"
-        ],
-        "created": "2024"
-      },
-      {
-        "id": "img088",
-        "url": "https://page.gensparksite.com/v1/base64_upload/be24d380f1febb4bed6008958e2c10e1",
-        "category": "nsfw_horror",
-        "title": {
-          "en": "The Arachnid Horror",
-          "de": "Das Arachnid-Horror"
-        },
-        "description": "Terrifying giant spider creature with glossy red exoskeleton and glowing eyes in narrow stone passageway.",
-        "keywords": [
-          "horror",
-          "spider",
-          "monster",
-          "creepy",
-          "dark",
-          "fangs",
-          "red eyes"
         ],
         "created": "2024",
         "mature": true
