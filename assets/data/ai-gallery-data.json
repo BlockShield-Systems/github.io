@@ -11,28 +11,28 @@
         "name": "Fantasy Settings",
         "icon": "🏰",
         "description": "Magical worlds and mystical environments",
-        "count": 21
+        "count": 24
       },
       "scifi": {
         "id": "scifi",
         "name": "Sci-Fi Settings",
         "icon": "🚀",
         "description": "Futuristic and technological landscapes",
-        "count": 17
+        "count": 18
       },
       "characters": {
         "id": "characters",
         "name": "Characters & Models",
         "icon": "👤",
         "description": "AI-generated character designs and models",
-        "count": 8
+        "count": 6
       },
       "horror": {
         "id": "horror",
         "name": "Horror Settings",
         "icon": "👻",
         "description": "Dark and atmospheric horror environments",
-        "count": 20
+        "count": 17
       },
       "nsfw_horror": {
         "id": "nsfw_horror",
@@ -55,7 +55,7 @@
         "name": "World Environments",
         "icon": "🌍",
         "description": "Abstract and environmental landscapes",
-        "count": 4
+        "count": 5
       }
     },
     "images": [
@@ -1564,264 +1564,262 @@
       {
         "id": "img075",
         "url": "https://page.gensparksite.com/v1/base64_upload/e7588cc53df15e788d2dccc67b62a5dc",
-        "category": "horror",
+        "category": "nsfw_horror",
         "title": {
-          "en": "Abandoned Prison Exterior",
-          "de": "Verlassenes Gefängnis Äußeres"
+          "en": "Bloodthirsty Creature",
+          "de": "Blutdürstiges Wesen"
         },
-        "description": "A stark abandoned prison building at twilight with barred windows glowing ominously. The institutional architecture creates oppressive atmosphere.",
+        "description": "Grotesque creature with skull-like head and sharp teeth emerging from blood-splattered tiled wall. Medical/experimental horror setting.",
         "keywords": [
-          "abandoned prison",
-          "twilight",
-          "barred windows",
-          "institutional",
-          "oppressive",
-          "glowing",
-          "exterior"
+          "horror",
+          "creature",
+          "blood",
+          "scalpel",
+          "tiled wall",
+          "grotesque",
+          "medical"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img076",
         "url": "https://page.gensparksite.com/v1/base64_upload/10a36c00a59c08418504e33f8386a651",
         "category": "environments",
         "title": {
-          "en": "Dungeon Torture Chamber",
-          "de": "Kerker Folterkammer"
+          "en": "Abandoned Staircase",
+          "de": "Verlassene Treppe"
         },
-        "description": "A medieval dungeon with torture devices and chains. The dark stone environment and ominous equipment create classic dungeon horror atmosphere.",
+        "description": "Dark abandoned spiral staircase in deteriorating building with debris and broken walls creating eerie atmosphere.",
         "keywords": [
-          "dungeon",
-          "torture chamber",
-          "chains",
-          "medieval",
-          "stone",
-          "ominous",
-          "classic horror"
+          "abandoned",
+          "staircase",
+          "eerie",
+          "decay",
+          "environment",
+          "spiral",
+          "ruins"
         ],
         "created": "2024"
       },
       {
         "id": "img077",
         "url": "https://page.gensparksite.com/v1/base64_upload/84fbd0eab6b8e89f631af7bddf263d81",
-        "category": "horror",
+        "category": "fantasy",
         "title": {
-          "en": "Blood-Stained Corridor",
-          "de": "Blutbefleckter Korridor"
+          "en": "Alien Oasis",
+          "de": "Außerirdische Oase"
         },
-        "description": "A horrifying corridor with blood stains and occult symbols on doors. The combination of gore and mystical elements creates ritualistic horror.",
+        "description": "Fantastical landscape under starry sky with multiple planets, calm river and exotic colorful vegetation.",
         "keywords": [
-          "blood stains",
-          "corridor",
-          "occult symbols",
-          "gore",
-          "mystical",
-          "ritualistic",
-          "horror"
+          "fantasy",
+          "landscape",
+          "planets",
+          "oasis",
+          "vegetation",
+          "alien",
+          "river"
         ],
         "created": "2024"
       },
       {
         "id": "img078",
         "url": "https://page.gensparksite.com/v1/base64_upload/f13276692d9354205d8b597d3647bbe5",
-        "category": "nsfw_horror",
+        "category": "environments",
         "title": {
-          "en": "Tentacle Horror Beast",
-          "de": "Tentakel Horror Bestie"
+          "en": "Industrial Relic",
+          "de": "Industrielles Relikt"
         },
-        "description": "A grotesque creature with multiple tentacles and menacing appearance. The organic horror design creates visceral fear with detailed disturbing elements.",
+        "description": "Large rusted mechanical device in old rundown industrial building with dust and minimal lighting.",
         "keywords": [
-          "tentacles",
-          "grotesque",
-          "creature",
-          "organic horror",
-          "visceral",
-          "menacing",
-          "disturbing"
+          "industrial",
+          "machinery",
+          "abandoned",
+          "decay",
+          "desolate",
+          "rust",
+          "factory"
         ],
-        "created": "2024",
-        "mature": true
+        "created": "2024"
       },
       {
         "id": "img079",
         "url": "https://page.gensparksite.com/v1/base64_upload/05c5567e39b8ef1b47ee15c0f64acfae",
-        "category": "nsfw_horror",
+        "category": "fantasy",
         "title": {
-          "en": "Skeletal Jaw Horror",
-          "de": "Skelettartiger Kiefer Horror"
+          "en": "Squid in the Toilet",
+          "de": "Tintenfisch im Klo"
         },
-        "description": "A nightmarish creature with exposed skeletal jaw and sharp teeth. The first-person perspective creates immersive horror experience.",
+        "description": "Surreal humorous scene of orange cartoon squid emerging from toilet in unkempt bathroom.",
         "keywords": [
-          "skeletal",
-          "jaw",
-          "sharp teeth",
-          "nightmare",
-          "first-person",
-          "immersive",
-          "horror"
+          "surreal",
+          "squid",
+          "toilet",
+          "humor",
+          "cartoon",
+          "bizarre",
+          "bathroom"
         ],
-        "created": "2024",
-        "mature": true
+        "created": "2024"
       },
       {
         "id": "img080",
         "url": "https://page.gensparksite.com/v1/base64_upload/4e62c17c59c751bd41fb04560f8a2aa4",
         "category": "horror",
         "title": {
-          "en": "Gothic Spiral Staircase",
-          "de": "Gotische Wendeltreppe"
+          "en": "The Candlelit Corridor",
+          "de": "Der Kerzenerleuchtete Korridor"
         },
-        "description": "An elegant but eerie spiral staircase in decaying gothic architecture. The curved lines and atmospheric lighting create haunting beauty.",
+        "description": "Medieval corridor with stone walls, glowing red candles and mysterious red doors creating ominous atmosphere.",
         "keywords": [
-          "gothic",
-          "spiral staircase",
-          "decay",
-          "elegant",
-          "eerie",
-          "curved",
-          "atmospheric"
+          "corridor",
+          "candles",
+          "medieval",
+          "lanterns",
+          "red doors",
+          "ominous",
+          "gothic"
         ],
         "created": "2024"
       },
       {
         "id": "img081",
         "url": "https://page.gensparksite.com/v1/base64_upload/6bce6575fb4e591eb8215ae1fbdd0e2a",
-        "category": "characters",
+        "category": "fantasy",
         "title": {
-          "en": "Anime Fashion Character",
-          "de": "Anime Mode Charakter"
+          "en": "Cosmic Whirlwind",
+          "de": "Kosmischer Wirbel"
         },
-        "description": "A stylized anime-inspired character with purple hair and fashionable outfit. The vibrant colors and modern style create appealing character design.",
+        "description": "Abstract artwork with swirling geometric shapes, spheres and tubes in vibrant colors creating cosmic energy.",
         "keywords": [
-          "anime",
-          "fashion",
-          "purple hair",
-          "stylized",
-          "vibrant",
-          "modern",
-          "character"
+          "abstract",
+          "cosmic",
+          "spheres",
+          "geometric",
+          "energy",
+          "whirlwind",
+          "colorful"
         ],
         "created": "2024"
       },
       {
         "id": "img082",
         "url": "https://page.gensparksite.com/v1/base64_upload/926d30d37ee55dc197979375dd9f3649",
-        "category": "characters",
+        "category": "scifi",
         "title": {
-          "en": "Elegant Digital Portrait",
-          "de": "Elegantes Digitales Portrait"
+          "en": "Galactic Bazaar",
+          "de": "Galaktischer Basar"
         },
-        "description": "A sophisticated digital portrait featuring elegant styling and refined features. The soft lighting and composition create professional artistic quality.",
+        "description": "Bustling futuristic marketplace with aliens, humans and spacecraft under night sky with visible planets.",
         "keywords": [
-          "digital portrait",
-          "elegant",
-          "sophisticated",
-          "refined",
-          "soft lighting",
-          "professional",
-          "artistic"
+          "futuristic",
+          "marketplace",
+          "aliens",
+          "spacecraft",
+          "bustling",
+          "bazaar",
+          "neon"
         ],
         "created": "2024"
       },
       {
         "id": "img083",
         "url": "https://page.gensparksite.com/v1/base64_upload/8e929cf00cced926768820a661466d80",
-        "category": "nsfw_horror",
+        "category": "fantasy",
         "title": {
-          "en": "Organic Bathroom Horror",
-          "de": "Organisches Badezimmer Horror"
+          "en": "Universal Balance",
+          "de": "Universelles Gleichgewicht"
         },
-        "description": "A disturbing bathroom scene with organic growths and tentacle-like appendages. The fusion of domestic and grotesque creates unsettling horror.",
+        "description": "Split circular artwork showing two contrasting cosmic landscapes with cloaked figure at the border.",
         "keywords": [
-          "organic",
-          "bathroom",
-          "growths",
-          "tentacles",
-          "domestic",
-          "grotesque",
-          "unsettling"
+          "duality",
+          "cosmic",
+          "planets",
+          "landscapes",
+          "cloaked figure",
+          "balance",
+          "contrast"
         ],
-        "created": "2024",
-        "mature": true
+        "created": "2024"
       },
       {
         "id": "img084",
         "url": "https://page.gensparksite.com/v1/base64_upload/a49e7e6f7f3781ea70ca59d27f1ca3c5",
         "category": "fantasy",
         "title": {
-          "en": "Dimensional Spiral Hall",
-          "de": "Dimensionale Spiralhalle"
+          "en": "Demon Duel",
+          "de": "Dämonen Duell"
         },
-        "description": "A magnificent hall with spiraling dimensional portals showing different worlds. The grand architecture combines classical elements with fantasy magic.",
+        "description": "Two fearsome armored demons with ornate weapons facing each other in misty battlefield.",
         "keywords": [
-          "dimensional",
-          "spiral",
-          "portals",
-          "worlds",
-          "architecture",
-          "classical",
-          "magic"
+          "demons",
+          "duel",
+          "armor",
+          "battle",
+          "dark fantasy",
+          "weapons",
+          "conflict"
         ],
-        "created": "2024",
-        "featured": true
+        "created": "2024"
       },
       {
         "id": "img085",
         "url": "https://page.gensparksite.com/v1/base64_upload/7b467b2efeba0de2281439888344867e",
         "category": "fantasy",
         "title": {
-          "en": "Floating Island Loops",
-          "de": "Schwebende Inselschleifen"
+          "en": "Gateway to Fantasy",
+          "de": "Tor zur Fantasie"
         },
-        "description": "Fantastic floating islands connected by looping pathways in the sky. The impossible architecture and dreamy atmosphere create whimsical fantasy scene.",
+        "description": "Ornate archway with decorated wooden doors, medieval carvings and ambient candlelight.",
         "keywords": [
-          "floating islands",
-          "loops",
-          "pathways",
-          "sky",
-          "impossible architecture",
-          "whimsical",
-          "fantasy"
+          "fantasy",
+          "archway",
+          "medieval",
+          "gothic",
+          "candles",
+          "decorated doors",
+          "gateway"
         ],
         "created": "2024"
       },
       {
         "id": "img086",
         "url": "https://page.gensparksite.com/v1/base64_upload/4203a4853bac61d91d89f9566733d675",
-        "category": "scifi",
+        "category": "nsfw_horror",
         "title": {
-          "en": "Apocalyptic Mech Battle",
-          "de": "Apokalyptische Mech Schlacht"
+          "en": "Monster in the Tunnel",
+          "de": "Monster im Tunnel"
         },
-        "description": "Massive mechanical warriors engaged in epic battle with fiery apocalyptic sky. The scale and destruction create intense sci-fi war atmosphere.",
+        "description": "Nightmarish creature with razor-sharp teeth and glowing eyes emerging from dark blood-splattered tunnel.",
         "keywords": [
-          "apocalyptic",
-          "mech battle",
-          "mechanical warriors",
-          "fiery sky",
-          "destruction",
-          "epic",
-          "war"
+          "horror",
+          "monster",
+          "teeth",
+          "dark",
+          "blood",
+          "tunnel",
+          "menacing"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       },
       {
         "id": "img087",
         "url": "https://page.gensparksite.com/v1/base64_upload/8415e19c2d6d7816a582810263e6ce1f",
-        "category": "horror",
+        "category": "scifi",
         "title": {
-          "en": "Circular Demon Maw",
-          "de": "Kreisförmiger Dämonenrachen"
+          "en": "Cosmic Kaleidoscope",
+          "de": "Kosmisches Kaleidoskop"
         },
-        "description": "A terrifying circular maw with rows of teeth and spikes. The tunnel-like composition creates feeling of being consumed by demonic entity.",
+        "description": "Psychedelic artwork with circular patterns and geometric shapes merging cosmic and earthly elements.",
         "keywords": [
-          "circular",
-          "demon maw",
-          "teeth",
-          "spikes",
-          "tunnel",
-          "consumed",
-          "terrifying"
+          "psychedelic",
+          "abstract",
+          "cosmic",
+          "geometric",
+          "pattern",
+          "surreal",
+          "vivid colors"
         ],
         "created": "2024"
       },
@@ -1830,18 +1828,18 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/be24d380f1febb4bed6008958e2c10e1",
         "category": "nsfw_horror",
         "title": {
-          "en": "Spider Horror Mutation",
-          "de": "Spinnen Horror Mutation"
+          "en": "The Arachnid Horror",
+          "de": "Das Arachnid-Horror"
         },
-        "description": "A grotesque spider-human hybrid creature in dark corridor. The disturbing transformation and anatomical horror create deeply unsettling imagery.",
+        "description": "Terrifying giant spider creature with glossy red exoskeleton and glowing eyes in narrow stone passageway.",
         "keywords": [
+          "horror",
           "spider",
-          "hybrid",
-          "mutation",
-          "transformation",
-          "anatomical",
-          "grotesque",
-          "disturbing"
+          "monster",
+          "creepy",
+          "dark",
+          "fangs",
+          "red eyes"
         ],
         "created": "2024",
         "mature": true
@@ -1849,22 +1847,23 @@
       {
         "id": "img089",
         "url": "https://page.gensparksite.com/v1/base64_upload/04f5e31fdd0086e96cf6921878752d81",
-        "category": "fantasy",
+        "category": "nsfw_horror",
         "title": {
-          "en": "Cosmic Energy Mandala",
-          "de": "Kosmisches Energie Mandala"
+          "en": "The Horrific Restroom",
+          "de": "Das Schreckliche Badezimmer"
         },
-        "description": "A vibrant mandala-like pattern with cosmic energy flows and intricate geometric designs. The swirling patterns create meditative and mystical atmosphere.",
+        "description": "Disturbing bathroom scene with tentacle-like organs sprawling from overflowing toilet, blood and decay.",
         "keywords": [
-          "mandala",
-          "cosmic energy",
-          "geometric",
-          "swirling patterns",
-          "meditative",
-          "mystical",
-          "vibrant"
+          "horror",
+          "bathroom",
+          "tentacles",
+          "blood",
+          "toilet",
+          "disturbing",
+          "decay"
         ],
-        "created": "2024"
+        "created": "2024",
+        "mature": true
       }
     ]
   }
