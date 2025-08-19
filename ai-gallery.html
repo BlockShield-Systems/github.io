@@ -587,7 +587,7 @@
         // Load gallery data
         async function loadGalleryData() {
             try {
-                const response = await fetch('assets/data/ai-gallery-data.json');
+                const response = await fetch('assets/data/ai-gallery-data.json?v=' + Date.now());
                 const data = await response.json();
                 galleryData = data.gallery;
                 renderGallery();
