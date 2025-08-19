@@ -6,6 +6,11 @@
     <title>AI Gallery | Professional AI-Generated Artwork Collection</title>
     <meta name="description" content="Explore a curated collection of AI-generated artwork across Fantasy, Sci-Fi, Horror and Character Design. Created through advanced prompt engineering by Demian Lienert.">
     
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="AI art, AI generated images, digital art, fantasy art, sci-fi art, AI gallery, prompt engineering, Demian Lienert">
     <meta name="author" content="Demian Lienert">
@@ -619,6 +624,12 @@
                 const item = document.createElement('div');
                 item.className = `gallery-item ${image.mature ? 'nsfw' : ''}`;
                 item.dataset.category = image.category;
+                
+                // Force NSFW styling for mature content
+                if (image.mature) {
+                    console.log(`Applying NSFW blur to image: ${image.id}`);
+                    item.classList.add('nsfw');
+                }
                 
                 // Use language based on browser settings
                 const lang = navigator.language.startsWith('de') ? 'de' : 'en';
