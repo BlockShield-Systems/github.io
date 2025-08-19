@@ -3,7 +3,7 @@
     "title": "AI Art Gallery - Complete Collection",
     "description": "Professional collection of AI-generated artwork by Demian Lienert",
     "copyright": "© 2024 Demian Lienert | AI-TechArt.com",
-    "version": "3.3.0",
+    "version": "3.3.1",
     "totalImages": 85,
     "categories": {
       "fantasy": {
@@ -1269,18 +1269,18 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/39e8ab2cd4398a460ae2907cab24005d",
         "category": "horror",
         "title": {
-          "en": "Abandoned Prison Complex",
-          "de": "Verlassener Gefängniskomplex"
+          "en": "Tentacle Bathroom Invasion",
+          "de": "Tentakel-Badezimmer-Invasion"
         },
-        "description": "A stark prison interior with multiple levels and barbed wire. The industrial decay and harsh lighting create oppressive institutional horror.",
+        "description": "A surreal bathroom overtaken by organic red tentacles and alien vegetation. The eerie atmosphere combines functional fixtures with nightmarish organic growths.",
         "keywords": [
-          "prison",
-          "abandoned",
-          "barbed wire",
-          "industrial",
-          "decay",
-          "oppressive",
-          "institutional"
+          "horror",
+          "bathroom",
+          "tentacles",
+          "organic",
+          "surreal",
+          "invasion",
+          "alien"
         ],
         "created": "2024"
       },
@@ -1289,18 +1289,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/65fc254aee333c9e7c30f0e3ae76a330",
         "category": "scifi",
         "title": {
-          "en": "Alien Marketplace",
-          "de": "Außerirdischer Marktplatz"
+          "en": "Spiral Universe Model",
+          "de": "Spiralförmiges Universum-Modell"
         },
-        "description": "A bustling futuristic marketplace with alien architecture and flying vehicles. Multiple levels and diverse beings create rich sci-fi civilization scene.",
+        "description": "A futuristic spiral structure depicting multiple interconnected worlds or dimensions in a vast indoor space.",
         "keywords": [
-          "alien",
-          "marketplace",
+          "scifi",
+          "spiral",
+          "universe",
           "futuristic",
-          "flying vehicles",
-          "architecture",
-          "civilization",
-          "bustling"
+          "dimensions",
+          "structure"
         ],
         "created": "2024"
       },
@@ -1309,18 +1308,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/77ead9bbb9bfad4262ab5e193f871c31",
         "category": "scifi",
         "title": {
-          "en": "Dual World Portal",
-          "de": "Portal Der Doppelwelt"
+          "en": "Cosmic Roller Coaster",
+          "de": "Kosmische Achterbahn"
         },
-        "description": "Two circular windows showing contrasting worlds - one fiery and industrial, the other serene with mystical landscapes. A robed figure observes the duality.",
+        "description": "Fantastical intertwining roller coaster tracks set against a sky with planets and clouds in a dreamlike landscape.",
         "keywords": [
-          "portal",
-          "dual worlds",
-          "contrast",
-          "mystical",
-          "industrial",
-          "robed figure",
-          "duality"
+          "scifi",
+          "roller coaster",
+          "cosmic",
+          "tracks",
+          "surreal",
+          "fantasy"
         ],
         "created": "2024"
       },
@@ -1329,18 +1327,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/33068f86442be4cba7fc23772d96799a",
         "category": "scifi",
         "title": {
-          "en": "Alien Paradise Landscape",
-          "de": "Außerirdische Paradieslandschaft"
+          "en": "Dystopian Mech Titans",
+          "de": "Dystopische Mech-Titanen"
         },
-        "description": "An exotic alien world with unusual plants, multiple moons in the sky, and serene pools. The tropical vegetation and cosmic sky create otherworldly paradise.",
+        "description": "Towering mechanical titans in a dystopian landscape with fiery skies and destruction.",
         "keywords": [
-          "alien world",
-          "exotic plants",
-          "multiple moons",
-          "paradise",
-          "tropical",
-          "cosmic",
-          "otherworldly"
+          "scifi",
+          "mechs",
+          "dystopian",
+          "titans",
+          "apocalyptic",
+          "mechanical"
         ],
         "created": "2024",
         "featured": true
@@ -1350,18 +1347,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/cf62eeb5fcecb07b0928b08e97a0523f",
         "category": "horror",
         "title": {
-          "en": "Industrial Horror Chamber",
-          "de": "Industrielle Horror Kammer"
+          "en": "Twisted Industrial Nightmare",
+          "de": "Verdrehter Industrie-Albtraum"
         },
-        "description": "A massive industrial space with enormous mechanical wheel and chains. The scale and decay create oppressive atmosphere of abandoned industry.",
+        "description": "A dark industrial landscape with massive intertwining mechanical structures in an apocalyptic setting.",
         "keywords": [
+          "horror",
           "industrial",
-          "mechanical wheel",
-          "chains",
-          "massive scale",
-          "decay",
-          "oppressive",
-          "abandoned"
+          "dystopian",
+          "mechanical",
+          "dark",
+          "apocalyptic"
         ],
         "created": "2024"
       },
@@ -1370,18 +1366,16 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/8a125f13541767b1171d591601620b16",
         "category": "characters",
         "title": {
-          "en": "Bathroom Crab Monster",
-          "de": "Badezimmer Krabben Monster"
+          "en": "Stylized Portrait Figure",
+          "de": "Stilisierte Portrait-Figur"
         },
-        "description": "A bizarre scene featuring a large crab-like creature in a bathroom setting. The juxtaposition of mundane and monstrous creates surreal horror.",
+        "description": "A stylized character portrait with distinctive features and artistic rendering.",
         "keywords": [
-          "crab monster",
-          "bathroom",
-          "bizarre",
-          "surreal",
-          "mundane",
-          "monstrous",
-          "juxtaposition"
+          "characters",
+          "portrait",
+          "stylized",
+          "artistic",
+          "figure"
         ],
         "created": "2024",
         "mature": false
@@ -1391,18 +1385,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/56c0ea9ca949ff20578e096823bcae38",
         "category": "horror",
         "title": {
-          "en": "Gothic Cathedral Portal",
-          "de": "Gotisches Kathedralenportal"
+          "en": "Bloodied Horror Face",
+          "de": "Blutiges Horror-Gesicht"
         },
-        "description": "An ornate gothic doorway decorated with red roses and thorny vines. The romantic gothic aesthetic combines beauty with dark undertones.",
+        "description": "A terrifying close-up of a bloodied, zombie-like face with wide staring eyes in a grimy environment.",
         "keywords": [
-          "gothic",
-          "cathedral",
-          "roses",
-          "thorny vines",
-          "ornate",
-          "romantic",
-          "doorway"
+          "horror",
+          "zombie",
+          "blood",
+          "face",
+          "terrifying",
+          "gore"
         ],
         "created": "2024",
         "mature": true
@@ -1432,18 +1425,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/1264fb0bc6fc1aa5af1df42a648726af",
         "category": "horror",
         "title": {
-          "en": "Mech Warriors Apocalypse",
-          "de": "Mech Krieger Apokalypse"
+          "en": "Abandoned Building at Dusk",
+          "de": "Verlassenes Gebäude in der Dämmerung"
         },
-        "description": "Powerful mechanical warriors in a post-apocalyptic landscape. The imposing mechs and fiery sky create epic sci-fi warfare atmosphere.",
+        "description": "A desolate abandoned building silhouetted against a twilight sky, creating an eerie atmosphere.",
         "keywords": [
-          "mech warriors",
-          "apocalyptic",
-          "mechanical",
-          "warfare",
-          "imposing",
-          "fiery sky",
-          "epic"
+          "horror",
+          "abandoned",
+          "building",
+          "dusk",
+          "desolate",
+          "eerie"
         ],
         "created": "2024",
         "mature": false
@@ -1453,18 +1445,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/00c09e41843d8d19210adc5e5511e32c",
         "category": "horror",
         "title": {
-          "en": "Toxic Wasteland Warriors",
-          "de": "Giftige Ödland Krieger"
+          "en": "Industrial Torture Chamber",
+          "de": "Industrielle Folterkammer"
         },
-        "description": "Post-apocalyptic scene with warriors in a toxic green environment. Gas masks and poisonous atmosphere create dystopian survival horror.",
+        "description": "A dark industrial room with chains and metal structures, suggesting abandonment and decay.",
         "keywords": [
-          "post-apocalyptic",
-          "toxic",
-          "wasteland",
-          "gas masks",
-          "poisonous",
-          "dystopian",
-          "survival"
+          "horror",
+          "industrial",
+          "chains",
+          "abandoned",
+          "dark",
+          "decay"
         ],
         "created": "2024",
         "mature": false
@@ -1474,18 +1465,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/b03bd1a34d9097c16fd940ad852f9840",
         "category": "horror",
         "title": {
-          "en": "Mad Scientist Portrait",
-          "de": "Verrückter Wissenschaftler Portrait"
+          "en": "Blood-Stained Corridor",
+          "de": "Blutbefleckter Korridor"
         },
-        "description": "A bizarre character with unusual eyes and scientific appearance. The exaggerated features and unsettling expression create dark comedy horror vibe.",
+        "description": "A sinister hallway with blood stains and occult symbols on the walls, lit by an ornate chandelier.",
         "keywords": [
-          "mad scientist",
-          "unusual eyes",
-          "bizarre",
-          "dark comedy",
-          "unsettling",
-          "exaggerated",
-          "portrait"
+          "horror",
+          "corridor",
+          "blood",
+          "occult",
+          "hallway",
+          "sinister"
         ],
         "created": "2024",
         "mature": true
@@ -1495,18 +1485,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/6151e45775d484ae3e80dfe64efa1b6d",
         "category": "nsfw_horror",
         "title": {
-          "en": "Zombie Doctor Horror",
-          "de": "Zombie Doktor Horror"
+          "en": "Skeletal Horror Creature",
+          "de": "Skelettartige Horror-Kreatur"
         },
-        "description": "A horrifying undead medical professional with bloodied appearance. The combination of medical setting and zombie horror creates disturbing atmosphere.",
+        "description": "A terrifying skeletal creature with sharp teeth and elongated limbs lunging forward in darkness.",
         "keywords": [
-          "zombie",
-          "doctor",
-          "medical",
-          "undead",
-          "bloodied",
-          "horror",
-          "disturbing"
+          "nsfw_horror",
+          "skeleton",
+          "creature",
+          "teeth",
+          "monster",
+          "terrifying"
         ],
         "created": "2024",
         "mature": true
@@ -1516,18 +1505,17 @@
         "url": "https://page.gensparksite.com/v1/base64_upload/43b1468999260b2a26d142f18f52c27a",
         "category": "nsfw_horror",
         "title": {
-          "en": "Cosmic Kaleidoscope",
-          "de": "Kosmisches Kaleidoskop"
+          "en": "Demonic Corridor Terror",
+          "de": "Dämonischer Korridor-Terror"
         },
-        "description": "An intricate kaleidoscopic pattern with cosmic and geometric elements. Vibrant colors and complex patterns create mesmerizing visual experience.",
+        "description": "A horrific skeletal demon creature in a blood-splattered hallway, creating an extremely disturbing scene.",
         "keywords": [
-          "kaleidoscope",
-          "cosmic",
-          "geometric",
-          "vibrant",
-          "complex patterns",
-          "mesmerizing",
-          "visual"
+          "nsfw_horror",
+          "demon",
+          "skeleton",
+          "corridor",
+          "blood",
+          "extreme_horror"
         ],
         "created": "2024",
         "mature": true
