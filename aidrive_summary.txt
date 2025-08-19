@@ -1,0 +1,20 @@
+============================================================
+AI DRIVE IMAGE CATALOG SUMMARY
+============================================================
+
+Generated: 2025-08-19T11:21:45.112830
+Total Images: 13
+
+Category Distribution:
+----------------------------------------
+world-environments            6 images ( 46.2%)
+fantasy-settings              1 images (  7.7%)
+scifi-settings                0 images (  0.0%)
+characters-models             3 images ( 23.1%)
+horror-settings               1 images (  7.7%)
+nsfw-horror                   0 images (  0.0%)
+nsfw-erotic                   2 images ( 15.4%)
+
+----------------------------------------
+SFW Images: 11
+NSFW Images: 2
