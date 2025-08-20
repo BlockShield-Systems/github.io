@@ -57,3 +57,16 @@ Server running on port 8000
 20/Aug/2025 02:20:27 - "GET /assets/css/main.css HTTP/1.1" 200 -
 20/Aug/2025 02:20:27 - "GET /assets/js/contact-form.js HTTP/1.1" 200 -
 20/Aug/2025 02:20:27 - "GET /assets/css/responsive.css HTTP/1.1" 200 -
+Server running on port 8000
+20/Aug/2025 03:20:59 - "GET /contact-form.html HTTP/1.1" 200 -
+20/Aug/2025 03:20:59 - "GET /assets/css/contact-form.css HTTP/1.1" 200 -
+20/Aug/2025 03:20:59 - "GET /assets/css/main.css HTTP/1.1" 200 -
+20/Aug/2025 03:20:59 - "GET /assets/css/responsive.css HTTP/1.1" 200 -
+20/Aug/2025 03:20:59 - "GET /assets/js/contact-form.js HTTP/1.1" 200 -
+20/Aug/2025 03:21:09 - "GET /contact-form.html HTTP/1.1" 200 -
+20/Aug/2025 03:21:09 - "GET /assets/css/main.css HTTP/1.1" 200 -
+20/Aug/2025 03:21:09 - "GET /assets/css/contact-form.css HTTP/1.1" 200 -
+20/Aug/2025 03:21:09 - "GET /assets/css/responsive.css HTTP/1.1" 200 -
+20/Aug/2025 03:21:10 - "GET /assets/js/contact-form.js HTTP/1.1" 200 -
+20/Aug/2025 03:21:10 - code 404, message File not found
+20/Aug/2025 03:21:10 - "GET /favicon.ico HTTP/1.1" 404 -
