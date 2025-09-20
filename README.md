@@ -159,7 +159,7 @@
 - Progressive Web App - installierbar auf allen Geräten
 - Service Worker für Offline-Funktionalität
 - Optimierte Ladezeiten und Caching
-- Lighthouse Score 95+
+- Lighthouse Score 85+
 
 ### 🔍 SEO & Accessibility
 - Vollständige Meta-Tags und Structured Data
