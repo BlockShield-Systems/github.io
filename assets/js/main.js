@@ -2,15 +2,79 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
-    initNavigation();
+    initB2BNavigation(); // New B2B navigation
+    initNavigation(); // Legacy navigation
     initFilterableSection('projects');
     initFilterableSection('ai-creations');
     initSkillBars();
     initScrollEffects();
     initThemeToggle();
-    
+
     console.log('Portfolio initialized successfully');
 });
+
+// B2B Navigation Toggle (New)
+function initB2BNavigation() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mainNav = document.querySelector('.main-nav');
+
+    // Mobile menu toggle
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // Add shadow on scroll
+    if (mainNav) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const headerOffset = 70;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
 
 // Navigation functionality
 function initNavigation() {

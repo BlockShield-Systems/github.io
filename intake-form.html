@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Custom Proposal | AI-TechArt</title>
+    <meta name="description" content="Fill out our intake form to receive a custom proposal for AI-generated brand visuals tailored to your needs.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/intake-form.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">AI-TechArt</span>
+            </a>
+
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/ai-gallery.html">Portfolio</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/free-starter-pack.html" class="nav-link-special">Free Pack</a></li>
+                <li><a href="/intake-form.html" class="nav-cta active">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form Page -->
+    <section class="form-page">
+        <div class="container">
+            <!-- Option A: Google Forms (Recommended) -->
+            <div class="option-box">
+                <h3>Option A: Google Forms <span class="badge">RECOMMENDED</span></h3>
+                <p>For fastest setup, we recommend using Google Forms. Simply create a form with the questions below and embed it here.</p>
+                <ul>
+                    <li>Go to <a href="https://forms.google.com" target="_blank" class="link">forms.google.com</a></li>
+                    <li>Create a new form with the fields listed in "Option B" below</li>
+                    <li>Click "Send" → "Embed HTML" and copy the iframe code</li>
+                    <li>Replace the placeholder below with your embed code</li>
+                </ul>
+                <!-- Placeholder for Google Forms embed -->
+                <div style="text-align: center; padding: 2rem; background: #f9fafb; border-radius: 8px; margin-top: 1rem;">
+                    <p style="color: #6b7280;">Google Forms embed will go here</p>
+                    <p style="color: #6b7280; font-size: 0.9rem;">Replace this section with your iframe embed code</p>
+                </div>
+            </div>
+
+            <!-- Option B: Custom HTML Form -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Get Your Custom Proposal</h1>
+                    <p>Tell us about your project and receive a tailored proposal within 24 hours</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="progress-step active">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Basic Info</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Project Scope</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Brand & Style</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-circle">4</div>
+                        <span class="step-label">Timeline & Budget</span>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="intakeForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Basic Information</h2>
+
+                        <div class="form-group">
+                            <label>Your Name <span class="required">*</span></label>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company Name <span class="required">*</span></label>
+                            <input type="text" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website URL</label>
+                            <input type="url" name="website" placeholder="https://yourcompany.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                            <small>We'll send your proposal to this email</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Industry <span class="required">*</span></label>
+                            <select name="industry" required>
+                                <option value="">Select your industry...</option>
+                                <option value="saas">SaaS/Technology</option>
+                                <option value="ecommerce">E-Commerce/Retail</option>
+                                <option value="healthcare">Healthcare/Wellness</option>
+                                <option value="corporate">Corporate/Professional Services</option>
+                                <option value="agency">Marketing/Creative Agency</option>
+                                <option value="education">Education/Training</option>
+                                <option value="finance">Finance/Banking</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-next" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Project Scope -->
+                    <div class="form-step" data-step="2">
+                        <h2>Project Scope</h2>
+
+                        <div class="form-group">
+                            <label>What will you use the images for? <span class="required">*</span></label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-website" name="use_cases[]" value="website">
+                                    <label for="use-website">Website/Landing Pages</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-social" name="use_cases[]" value="social">
+                                    <label for="use-social">Social Media</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-marketing" name="use_cases[]" value="marketing">
+                                    <label for="use-marketing">Marketing Materials</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-product" name="use_cases[]" value="product">
+                                    <label for="use-product">Product Launch</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-presentation" name="use_cases[]" value="presentation">
+                                    <label for="use-presentation">Presentations/Pitch Decks</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-ads" name="use_cases[]" value="ads">
+                                    <label for="use-ads">Advertising Campaigns</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="use-other" name="use_cases[]" value="other">
+                                    <label for="use-other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>How many images do you need?</label>
+                            <select name="image_count">
+                                <option value="">Select range...</option>
+                                <option value="50-75">50-75 images</option>
+                                <option value="100-150">100-150 images</option>
+                                <option value="200+">200+ images</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What categories of images do you need?</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-hero" name="categories[]" value="hero">
+                                    <label for="cat-hero">Hero Images/Banners</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-team" name="categories[]" value="team">
+                                    <label for="cat-team">Team/People Portraits</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-product" name="categories[]" value="product">
+                                    <label for="cat-product">Product Mockups/Scenes</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-abstract" name="categories[]" value="abstract">
+                                    <label for="cat-abstract">Abstract/Backgrounds</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-office" name="categories[]" value="office">
+                                    <label for="cat-office">Office/Workspace Scenes</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-lifestyle" name="categories[]" value="lifestyle">
+                                    <label for="cat-lifestyle">Lifestyle/Contextual</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cat-icons" name="categories[]" value="icons">
+                                    <label for="cat-icons">Icons/Graphics</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-back" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn-next" onclick="nextStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Brand & Style -->
+                    <div class="form-step" data-step="3">
+                        <h2>Brand & Style</h2>
+
+                        <div class="form-group">
+                            <label>Brand Colors (if applicable)</label>
+                            <input type="text" name="brand_colors" placeholder="e.g., #667eea, #10b981, or Blue, Green">
+                            <small>Hex codes or color names</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Brand Guidelines/Style Guide Link</label>
+                            <input type="url" name="brand_guidelines" placeholder="https://...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Inspiration/Reference Examples</label>
+                            <textarea name="inspiration" rows="4" placeholder="Share 3-5 URLs or descriptions of visual styles you like..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What to Avoid</label>
+                            <textarea name="avoid" rows="3" placeholder="Competitors, specific styles, or visual elements to avoid..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Describe your brand in 3-5 words <span class="required">*</span></label>
+                            <input type="text" name="brand_words" required placeholder="e.g., Modern, Professional, Innovative, Trustworthy">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Aspect Ratios Needed</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ratio-1-1" name="ratios[]" value="1:1">
+                                    <label for="ratio-1-1">Square (1:1) - Social</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ratio-16-9" name="ratios[]" value="16:9">
+                                    <label for="ratio-16-9">Landscape (16:9) - Website</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ratio-9-16" name="ratios[]" value="9:16">
+                                    <label for="ratio-9-16">Portrait (9:16) - Mobile</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ratio-4-3" name="ratios[]" value="4:3">
+                                    <label for="ratio-4-3">Standard (4:3)</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ratio-custom" name="ratios[]" value="custom">
+                                    <label for="ratio-custom">Custom (specify in notes)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn-next" onclick="nextStep(4)">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Timeline & Budget -->
+                    <div class="form-step" data-step="4">
+                        <h2>Timeline & Budget</h2>
+
+                        <div class="form-group">
+                            <label>When do you need the images?</label>
+                            <select name="timeline">
+                                <option value="">Select timeline...</option>
+                                <option value="asap">ASAP (within 1 week)</option>
+                                <option value="2-4weeks">2-4 weeks</option>
+                                <option value="1-2months">1-2 months</option>
+                                <option value="flexible">Flexible timeline</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estimated Budget</label>
+                            <select name="budget">
+                                <option value="">Select budget range...</option>
+                                <option value="2k-3k">CHF 2,000 - 3,000</option>
+                                <option value="3k-5k">CHF 3,000 - 5,000</option>
+                                <option value="5k-10k">CHF 5,000 - 10,000</option>
+                                <option value="10k+">CHF 10,000+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Information</label>
+                            <textarea name="additional_info" rows="4" placeholder="Any other details, specific requirements, or questions..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>How did you hear about us?</label>
+                            <select name="referral_source">
+                                <option value="">Select...</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="google">Google Search</option>
+                                <option value="upwork">Upwork</option>
+                                <option value="fiverr">Fiverr</option>
+                                <option value="referral">Personal Referral</option>
+                                <option value="social">Social Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent" class="required">I agree to receive a proposal via email</label>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div class="success-message" id="successMessage">
+                    <div class="icon">✓</div>
+                    <h2>Thank You!</h2>
+                    <p>Your intake form has been submitted successfully.</p>
+                    <div class="email-display" id="emailDisplay"></div>
+                    <p><strong>What happens next:</strong></p>
+                    <ul>
+                        <li>We'll review your requirements within 24 hours</li>
+                        <li>You'll receive a custom proposal via email</li>
+                        <li>No obligation - feel free to ask questions!</li>
+                    </ul>
+                    <a href="/" class="btn-home">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="form-benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Custom proposal within 24 hours</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🎯</div>
+                    <h3>Tailored Pricing</h3>
+                    <p>Package matched to your needs</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📧</div>
+                    <h3>No Calls</h3>
+                    <p>All communication via email</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🆓</div>
+                    <h3>Free & No Obligation</h3>
+                    <p>No commitment required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>AI-TechArt</h3>
+                    <p>Custom AI-generated brand visuals for B2B companies.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:contact@ai-techart.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services.html">Packages & Pricing</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/ai-gallery.html">Portfolio</a></li>
+                        <li><a href="/free-starter-pack.html">Free Pack</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="mailto:contact@ai-techart.com">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Started</h4>
+                    <ul>
+                        <li><a href="/intake-form.html">Get Proposal</a></li>
+                        <li><a href="/services.html#process">How It Works</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI-TechArt | Demian Lienert | All rights reserved</p>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/intake-form.js"></script>
+</body>
+</html>
