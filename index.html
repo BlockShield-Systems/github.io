@@ -45,7 +45,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="AI-TechArt">
     
-    <!-- CSS -->
+    <!-- CSS - Design System FIRST -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     
@@ -54,13 +55,166 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="assets/css/main.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    
+
+    <!-- Business Hero Styles -->
+    <style>
+        /* Business Hero Section */
+        .business-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .visual-card {
+            aspect-ratio: 1;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .visual-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--color-bg-secondary);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .trust-bar p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .business-hero {
+                padding: 60px 20px 50px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -99,12 +253,12 @@
             <nav class="navbar">
                 <div class="logo">AT</div>
                 <ul class="nav-links">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
                     <li><a href="ai-gallery.html" class="nav-link">AI Gallery</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="free-starter-pack.html" class="nav-link">Free Pack</a></li>
+                    <li><a href="intake-form.html" class="nav-link">Get Started</a></li>
                 </ul>
                 <div class="burger">
                     <div class="line1"></div>
@@ -112,18 +266,75 @@
                     <div class="line3"></div>
                 </div>
             </nav>
-            
-            <div class="hero">
-                <h1 class="fade-in">IT Specialist</h1>
-                <p class="subtitle fade-in-delay-1">AI & ML Integration | Development | UI/UX | Multimedia</p>
-                <p class="tagline fade-in-delay-2">"Transforming complex challenges into scalable solutions"</p>
-                <div class="cta-buttons fade-in-delay-3">
-                    <a href="#projects" class="btn primary-btn">View Projects</a>
-                    <a href="contact-simple.html" class="btn secondary-btn">Get In Touch</a>
+        </div>
+    </header>
+
+    <!-- ========== NEW BUSINESS HERO ========== -->
+    <section class="business-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Custom AI-Generated Brand Visuals</h1>
+                <p class="hero-subtitle">Unique, On-Brand Image Libraries for B2B Companies</p>
+                <p class="hero-tagline">
+                    No Stock Photos. No Photoshoots. No Meetings.<br>
+                    Just 100% Custom Visuals Delivered in 48-72 Hours.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="services.html" class="btn btn-primary">
+                        View Packages
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="intake-form.html" class="btn btn-secondary">Get Custom Proposal</a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14l-4-4" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                        <span>48-72h Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14l-4-4" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                        <span>Full Commercial Rights</span>
+                    </div>
+                    <div class="feature">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14l-4-4" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                        <span>100% Unique</span>
+                    </div>
+                    <div class="feature">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 6L8 14l-4-4" stroke="#10b981" stroke-width="2"/>
+                        </svg>
+                        <span>No Calls Required</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-grid">
+                    <div class="visual-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="visual-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="visual-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="visual-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p>Trusted by Tech Startups, E-Commerce Brands, and Marketing Agencies</p>
+        </div>
+    </section>
 
     <main>
         <!-- About Section -->
