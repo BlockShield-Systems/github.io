@@ -1,469 +1,921 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies | AI-TechArt - Proven Results with Custom AI Visuals</title>
-    <meta name="description" content="See real results from companies using AI-generated brand visuals. Tech startups, healthcare, and e-commerce success stories.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies | AI-TechArt - Proven Results with Custom AI Visuals</title>
+  <meta name="description" content="See real results from companies using AI-generated brand visuals. Tech startups, healthcare, and e-commerce success stories.">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/case-studies.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Design System FIRST -->
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== CASE STUDIES SPECIFIC ========== */
+
+    .case-study {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .case-study + .case-study {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .case-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .case-badges {
+      display: flex;
+      gap: var(--spacing-sm);
+      justify-content: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+    }
+
+    .case-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .case-badge.industry {
+      background: var(--color-bg-tertiary);
+      color: var(--color-text-secondary);
+    }
+
+    .case-badge.package {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .case-header h2 {
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .case-header .subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+    }
+
+    /* Section Titles */
+    .section-title-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      font-size: var(--font-size-2xl);
+    }
+
+    .section-title-icon i {
+      color: var(--color-primary);
+    }
+
+    /* Challenge Grid */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .challenge-card {
+      padding: var(--spacing-md);
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-error);
+      transition: transform var(--transition-base);
+    }
+
+    .challenge-card:hover {
+      transform: translateX(5px);
+    }
+
+    .challenge-icon {
+      font-size: 1.5rem;
+      color: var(--color-error);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .challenge-card strong {
+      color: var(--color-text-primary);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    /* Stat Boxes */
+    .stat-boxes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: var(--spacing-lg);
+      background: white;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-base);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-number {
+      font-size: var(--font-size-4xl);
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .stat-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    /* Deliverables List */
+    .deliverables {
+      background: white;
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-top: var(--spacing-md);
+    }
+
+    .deliverables h4 {
+      margin-bottom: var(--spacing-md);
+      color: var(--color-primary);
+    }
+
+    .deliverables ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-sm);
+    }
+
+    .deliverables li {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      color: var(--color-text-secondary);
+    }
+
+    .deliverables li::before {
+      content: "✓";
+      color: var(--color-success);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Visual Gallery */
+    .visual-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-base);
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      font-size: var(--font-size-sm);
+      padding: var(--spacing-sm);
+    }
+
+    /* Results Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .result-card {
+      text-align: center;
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-md);
+      border-top: 4px solid var(--color-success);
+      transition: transform var(--transition-base);
+    }
+
+    .result-card:hover {
+      transform: translateY(-5px);
+      background: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .result-icon {
+      font-size: 2rem;
+      color: var(--color-success);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .result-stat {
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .result-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    /* Testimonial */
+    .case-testimonial {
+      max-width: 800px;
+      margin: var(--spacing-xl) auto 0;
+      padding: var(--spacing-xl);
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--color-primary);
+      position: relative;
+    }
+
+    .case-testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(102, 126, 234, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .case-testimonial blockquote {
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-loose);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-md);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .testimonial-author strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-size: var(--font-size-base);
+    }
+
+    .testimonial-author span {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-primary);
+      color: white;
+      text-align: center;
+      padding: var(--spacing-2xl) var(--spacing-md);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      font-size: var(--font-size-xl);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .challenge-grid,
+      .stat-boxes,
+      .visual-gallery,
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .deliverables ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .challenge-grid,
+      .stat-boxes,
+      .visual-gallery,
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-header h2 {
+        font-size: var(--font-size-3xl);
+      }
+    }
+  </style>
 </head>
-<body class="case-studies-page">
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="logo-text">AI-TechArt</span>
-            </a>
+<body>
 
-            <button class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="logo-text">AI-TechArt</span>
+      </a>
 
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/ai-gallery.html">Portfolio</a></li>
-                <li><a href="/case-studies.html" class="active">Case Studies</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
-                <li><a href="/free-starter-pack.html" class="nav-link-special">Free Pack</a></li>
-                <li><a href="/intake-form.html" class="nav-cta">Get Proposal</a></li>
-            </ul>
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/ai-gallery.html">Portfolio</a></li>
+        <li><a href="/case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/free-starter-pack.html" class="nav-link-special">Free Pack</a></li>
+        <li><a href="/intake-form.html" class="nav-cta">Get Proposal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Case Studies</h1>
+      <p>Real projects, real results from our clients</p>
+    </div>
+  </section>
+
+  <!-- Case Study 1: Tech Startup -->
+  <section class="case-study">
+    <div class="container">
+      <div class="case-header">
+        <div class="case-badges">
+          <span class="case-badge industry">SaaS / Technology</span>
+          <span class="case-badge package">Professional Package</span>
         </div>
-    </nav>
+        <h2>Tech Startup Rebrand</h2>
+        <p class="subtitle">How TechFlow Solutions transformed their brand identity in 48 hours</p>
+      </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Case Studies</h1>
-            <p>Real results from companies using custom AI-generated brand visuals</p>
+      <!-- Challenge -->
+      <div class="challenge-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>The Challenge</span>
+        </h3>
+        <div class="challenge-grid">
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Generic Stock Photos</strong>
+            <p>Everyone in their industry was using the same images - zero brand differentiation</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>No Brand Consistency</strong>
+            <p>Mismatched visuals across website, social media, and presentations</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Limited Budget</strong>
+            <p>Couldn't afford CHF 15K for a professional photoshoot</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Tight Timeline</strong>
+            <p>Needed new visuals in 2 weeks for product launch</p>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Case Study 1: Tech Startup Rebrand -->
-    <section class="case-study">
-        <div class="container">
-            <div class="case-header">
-                <div class="case-badges">
-                    <span class="badge industry">SaaS / Technology</span>
-                    <span class="badge package">Professional Package</span>
-                </div>
-                <h2>Tech Startup Rebrand</h2>
-                <p class="subtitle">How TechFlow Solutions transformed their brand identity in 48 hours</p>
-            </div>
+      <!-- Solution -->
+      <div class="solution-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-lightbulb"></i>
+          <span>The Solution</span>
+        </h3>
 
-            <!-- Challenge -->
-            <div class="challenge-section">
-                <h3><i class="fas fa-exclamation-circle"></i> The Challenge</h3>
-                <div class="challenge-grid">
-                    <div class="challenge-card">
-                        <i class="fas fa-copy"></i>
-                        <p><strong>Generic Stock Photos:</strong> Everyone in their industry was using the same images - zero brand differentiation</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-random"></i>
-                        <p><strong>No Brand Consistency:</strong> Mismatched visuals across website, social media, and presentations</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <p><strong>Limited Budget:</strong> Couldn't afford CHF 15K for a professional photoshoot</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-clock"></i>
-                        <p><strong>Tight Timeline:</strong> Needed new visuals in 2 weeks for product launch</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Solution -->
-            <div class="solution-section">
-                <h3><i class="fas fa-lightbulb"></i> The Solution</h3>
-                <div class="solution-stats">
-                    <div class="stat-box">
-                        <div class="stat-number">100</div>
-                        <div class="stat-label">Custom Images</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Style Categories</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">48h</div>
-                        <div class="stat-label">Delivery Time</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">CHF 5K</div>
-                        <div class="stat-label">Total Investment</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Visual Examples -->
-            <div class="visual-examples">
-                <h3>Visual Examples</h3>
-                <div class="visual-grid">
-                    <div class="visual-item" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-                        <span class="placeholder-text">Hero Images<br>Tech & Modern</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
-                        <span class="placeholder-text">UI Mockups<br>Product Scenes</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
-                        <span class="placeholder-text">Abstract Backgrounds<br>Brand Colors</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results -->
-            <div class="results-section">
-                <h3><i class="fas fa-chart-line"></i> The Results</h3>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-icon">📈</div>
-                        <div class="result-stat">+40%</div>
-                        <div class="result-label">Website Engagement</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">⚡</div>
-                        <div class="result-stat">2 weeks</div>
-                        <div class="result-label">Faster Than Photoshoot</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">💰</div>
-                        <div class="result-stat">67%</div>
-                        <div class="result-label">Cost Savings</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">✨</div>
-                        <div class="result-stat">100%</div>
-                        <div class="result-label">Unique Brand Identity</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial -->
-            <div class="testimonial-section">
-                <div class="testimonial-box">
-                    <p class="testimonial-text">"We needed unique visuals fast, and AI-TechArt delivered beyond expectations. The images perfectly capture our modern, tech-forward brand, and we get compliments on them constantly. Best investment for our rebrand."</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <div class="author-name">Sarah M.</div>
-                            <div class="author-title">CTO, TechFlow Solutions</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <div class="stat-number">100</div>
+            <div class="stat-label">Custom Images</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Style Categories</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">48h</div>
+            <div class="stat-label">Delivery Time</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Revision Rounds</div>
+          </div>
         </div>
-    </section>
 
-    <div class="case-divider"></div>
-
-    <!-- Case Study 2: Healthcare Clinic -->
-    <section class="case-study">
-        <div class="container">
-            <div class="case-header">
-                <div class="case-badges">
-                    <span class="badge industry">Healthcare / Wellness</span>
-                    <span class="badge package">Starter Package</span>
-                </div>
-                <h2>Healthcare Clinic Visual Transformation</h2>
-                <p class="subtitle">Creating warm, welcoming visuals for Harmony Wellness Clinic</p>
-            </div>
-
-            <!-- Challenge -->
-            <div class="challenge-section">
-                <h3><i class="fas fa-exclamation-circle"></i> The Challenge</h3>
-                <div class="challenge-grid">
-                    <div class="challenge-card">
-                        <i class="fas fa-snowflake"></i>
-                        <p><strong>Cold & Impersonal Stock:</strong> Stock medical photos felt sterile and unwelcoming</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-user-lock"></i>
-                        <p><strong>Patient Privacy Concerns:</strong> Didn't want to photograph real patients or require releases</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-heart"></i>
-                        <p><strong>Needed Warm Aesthetic:</strong> Wanted to convey comfort, trust, and personalized care</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-wallet"></i>
-                        <p><strong>Limited Budget:</strong> New practice with tight marketing budget</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Solution -->
-            <div class="solution-section">
-                <h3><i class="fas fa-lightbulb"></i> The Solution</h3>
-                <div class="solution-stats">
-                    <div class="stat-box">
-                        <div class="stat-number">50</div>
-                        <div class="stat-label">Custom Images</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Style Variations</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">72h</div>
-                        <div class="stat-label">Delivery Time</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">CHF 2.5K</div>
-                        <div class="stat-label">Total Investment</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Visual Examples -->
-            <div class="visual-examples">
-                <h3>Visual Examples</h3>
-                <div class="visual-grid">
-                    <div class="visual-item" style="background: linear-gradient(135deg, #a8e6cf, #dcedc1);">
-                        <span class="placeholder-text">Clinic Environments<br>Warm & Welcoming</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #ffd3b6, #ffaaa5);">
-                        <span class="placeholder-text">Wellness Scenes<br>Relaxation & Care</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #a8dadc, #457b9d);">
-                        <span class="placeholder-text">Professional Portraits<br>Diverse & Friendly</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results -->
-            <div class="results-section">
-                <h3><i class="fas fa-chart-line"></i> The Results</h3>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-icon">😊</div>
-                        <div class="result-stat">Warm</div>
-                        <div class="result-label">Brand Perception</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">🔒</div>
-                        <div class="result-stat">100%</div>
-                        <div class="result-label">Privacy Compliant</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">📱</div>
-                        <div class="result-stat">+55%</div>
-                        <div class="result-label">Social Engagement</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">⏱️</div>
-                        <div class="result-stat">3 days</div>
-                        <div class="result-label">Quick Turnaround</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial -->
-            <div class="testimonial-section">
-                <div class="testimonial-box">
-                    <p class="testimonial-text">"The visuals perfectly capture the warm atmosphere we want patients to feel when they think of our clinic. No privacy concerns, no model releases, just beautiful images that represent our values. Worth every franc."</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <div class="author-name">Dr. Michael K.</div>
-                            <div class="author-title">Founder, Harmony Wellness Clinic</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="deliverables">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>Tech-forward hero images</li>
+            <li>Team collaboration scenes</li>
+            <li>Abstract data visualizations</li>
+            <li>Product interface mockups</li>
+            <li>Office environment visuals</li>
+            <li>Social media graphics</li>
+          </ul>
         </div>
-    </section>
+      </div>
 
-    <div class="case-divider"></div>
+      <!-- Visual Examples -->
+      <div class="visual-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-images"></i>
+          <span>Visual Examples</span>
+        </h3>
 
-    <!-- Case Study 3: E-Commerce Brand -->
-    <section class="case-study">
-        <div class="container">
-            <div class="case-header">
-                <div class="case-badges">
-                    <span class="badge industry">E-Commerce / Retail</span>
-                    <span class="badge package">Professional Package</span>
-                </div>
-                <h2>E-Commerce Visual Library</h2>
-                <p class="subtitle">Versatile product backgrounds for Nordic Home Goods</p>
+        <div class="visual-gallery">
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              Tech Hero<br>Image
             </div>
-
-            <!-- Challenge -->
-            <div class="challenge-section">
-                <h3><i class="fas fa-exclamation-circle"></i> The Challenge</h3>
-                <div class="challenge-grid">
-                    <div class="challenge-card">
-                        <i class="fas fa-square"></i>
-                        <p><strong>White Background Fatigue:</strong> Products looked boring on plain white backgrounds</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-images"></i>
-                        <p><strong>Inconsistent Lifestyle Shots:</strong> Expensive and time-consuming to shoot every product in lifestyle settings</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-boxes"></i>
-                        <p><strong>50+ Products:</strong> Needed scalable solution for growing product catalog</p>
-                    </div>
-                    <div class="challenge-card">
-                        <i class="fas fa-calendar"></i>
-                        <p><strong>Seasonal Content:</strong> Wanted ability to create seasonal and themed backgrounds</p>
-                    </div>
-                </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              Collaboration<br>Scene
             </div>
-
-            <!-- Solution -->
-            <div class="solution-section">
-                <h3><i class="fas fa-lightbulb"></i> The Solution</h3>
-                <div class="solution-stats">
-                    <div class="stat-box">
-                        <div class="stat-number">120</div>
-                        <div class="stat-label">Background Scenes</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">6</div>
-                        <div class="stat-label">Lifestyle Themes</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">48h</div>
-                        <div class="stat-label">Delivery Time</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">CHF 5.5K</div>
-                        <div class="stat-label">Total Investment</div>
-                    </div>
-                </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+              Data<br>Visualization
             </div>
-
-            <!-- Visual Examples -->
-            <div class="visual-examples">
-                <h3>Visual Examples</h3>
-                <div class="visual-grid">
-                    <div class="visual-item" style="background: linear-gradient(135deg, #f4e1d2, #c9ada7);">
-                        <span class="placeholder-text">Home Settings<br>Cozy & Minimalist</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #cce3de, #a4c3b2);">
-                        <span class="placeholder-text">Outdoor Scenes<br>Natural & Fresh</span>
-                    </div>
-                    <div class="visual-item" style="background: linear-gradient(135deg, #e8dff5, #fce1e4);">
-                        <span class="placeholder-text">Seasonal Themes<br>Festive & Warm</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results -->
-            <div class="results-section">
-                <h3><i class="fas fa-chart-line"></i> The Results</h3>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-icon">📊</div>
-                        <div class="result-stat">+28%</div>
-                        <div class="result-label">Product Page Conversion</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">🎨</div>
-                        <div class="result-stat">120</div>
-                        <div class="result-label">Versatile Backgrounds</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">💸</div>
-                        <div class="result-stat">80%</div>
-                        <div class="result-label">Cost Savings</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-icon">♻️</div>
-                        <div class="result-stat">Reusable</div>
-                        <div class="result-label">For All Products</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial -->
-            <div class="testimonial-section">
-                <div class="testimonial-box">
-                    <p class="testimonial-text">"Game changer for our e-commerce business. We can now showcase products in beautiful, consistent settings without expensive photoshoots. The versatile backgrounds work perfectly across our entire catalog. ROI was immediate."</p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <div class="author-name">Emma L.</div>
-                            <div class="author-title">Marketing Director, Nordic Home Goods</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Final CTA -->
-    <section class="case-studies-cta">
-        <div class="container">
-            <h2>Want Results Like These?</h2>
-            <p>Get custom AI-generated visuals for your brand</p>
-            <div class="cta-buttons">
-                <a href="/intake-form.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get Custom Proposal</a>
-                <a href="/services.html" class="btn-secondary"><i class="fas fa-info-circle"></i> View Packages</a>
-            </div>
+      <!-- Results -->
+      <div class="results-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-chart-line"></i>
+          <span>The Results</span>
+        </h3>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-icon">📈</div>
+            <div class="result-stat">+40%</div>
+            <div class="result-label">Website Engagement</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">⚡</div>
+            <div class="result-stat">2 weeks</div>
+            <div class="result-label">Faster Than Expected</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💰</div>
+            <div class="result-stat">67%</div>
+            <div class="result-label">Cost Savings vs Photoshoot</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">✨</div>
+            <div class="result-stat">100%</div>
+            <div class="result-label">Unique Brand Identity</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>AI-TechArt</h3>
-                    <p>Custom AI-generated brand visuals for B2B companies.</p>
-                    <div class="footer-social">
-                        <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="mailto:contact@ai-techart.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="/services.html">Packages & Pricing</a></li>
-                        <li><a href="/case-studies.html">Case Studies</a></li>
-                        <li><a href="/ai-gallery.html">Portfolio</a></li>
-                        <li><a href="/free-starter-pack.html">Free Pack</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/#about">About</a></li>
-                        <li><a href="mailto:contact@ai-techart.com">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Get Started</h4>
-                    <ul>
-                        <li><a href="/intake-form.html">Get Proposal</a></li>
-                        <li><a href="/services.html#process">How It Works</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 AI-TechArt | Demian Lienert | All rights reserved</p>
-                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
-            </div>
+      <!-- Testimonial -->
+      <div class="case-testimonial">
+        <blockquote>
+          "We went from generic stock photos that looked like everyone else to a completely unique visual identity that actually represents our brand. The process was seamless - all via email, no endless calls. Our website engagement jumped 40% in the first month after launching with the new visuals."
+        </blockquote>
+        <div class="testimonial-author">
+          <strong>Sarah M.</strong>
+          <span>Chief Technology Officer, TechFlow Solutions</span>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+  <!-- Case Study 2: Healthcare Clinic -->
+  <section class="case-study">
+    <div class="container">
+      <div class="case-header">
+        <div class="case-badges">
+          <span class="case-badge industry">Healthcare / Wellness</span>
+          <span class="case-badge package">Starter Package</span>
+        </div>
+        <h2>Healthcare Clinic Warmth</h2>
+        <p class="subtitle">Building trust with warm, privacy-focused visuals</p>
+      </div>
+
+      <!-- Challenge -->
+      <div class="challenge-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>The Challenge</span>
+        </h3>
+        <div class="challenge-grid">
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Cold Stock Photos</strong>
+            <p>Generic medical stock photos felt impersonal and clinical</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Privacy Concerns</strong>
+            <p>Couldn't photograph real patients due to HIPAA regulations</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Need Warm Aesthetic</strong>
+            <p>Wanted to communicate care and compassion, not sterility</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Small Budget</strong>
+            <p>Startup clinic with limited marketing funds</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="solution-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-lightbulb"></i>
+          <span>The Solution</span>
+        </h3>
+
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <div class="stat-number">50</div>
+            <div class="stat-label">Custom Images</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Style Variations</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">72h</div>
+            <div class="stat-label">Delivery Time</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Revision Round</div>
+          </div>
+        </div>
+
+        <div class="deliverables">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>Warm, welcoming clinic scenes</li>
+            <li>Diverse patient representations</li>
+            <li>Healthcare professional images</li>
+            <li>Wellness lifestyle visuals</li>
+            <li>Treatment room atmospheres</li>
+            <li>Community health themes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Visual Examples -->
+      <div class="visual-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-images"></i>
+          <span>Visual Examples</span>
+        </h3>
+
+        <div class="visual-gallery">
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              Welcoming<br>Clinic
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+              Patient<br>Care
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+              Wellness<br>Lifestyle
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-chart-line"></i>
+          <span>The Results</span>
+        </h3>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-icon">🤗</div>
+            <div class="result-stat">Warmer</div>
+            <div class="result-label">Patient Perception</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">🔒</div>
+            <div class="result-stat">100%</div>
+            <div class="result-label">Privacy Compliant</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">📱</div>
+            <div class="result-stat">+55%</div>
+            <div class="result-label">Social Engagement</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">⏱️</div>
+            <div class="result-stat">3 days</div>
+            <div class="result-label">Total Turnaround</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="case-testimonial">
+        <blockquote>
+          "As a healthcare provider, we couldn't use real patient photos due to privacy laws. AI-generated visuals solved this perfectly - we got warm, welcoming images that represent our diverse patient base without any privacy concerns. The warm aesthetic is exactly what we needed to differentiate from cold, clinical competitors."
+        </blockquote>
+        <div class="testimonial-author">
+          <strong>Dr. Michael K.</strong>
+          <span>Founder, Harmony Wellness Clinic</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study 3: E-Commerce Brand -->
+  <section class="case-study">
+    <div class="container">
+      <div class="case-header">
+        <div class="case-badges">
+          <span class="case-badge industry">E-Commerce / Retail</span>
+          <span class="case-badge package">Professional Package</span>
+        </div>
+        <h2>E-Commerce Background Library</h2>
+        <p class="subtitle">Transforming product photography for Nordic Home Goods</p>
+      </div>
+
+      <!-- Challenge -->
+      <div class="challenge-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>The Challenge</span>
+        </h3>
+        <div class="challenge-grid">
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>White Background Fatigue</strong>
+            <p>All product photos looked the same as competitors</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Inconsistent Product Shots</strong>
+            <p>Mixed quality across 200+ product listings</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Expensive Lifestyle Shoots</strong>
+            <p>Staging products in real homes cost CHF 20K+ per shoot</p>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">❌</div>
+            <strong>Seasonal Updates</strong>
+            <p>Needed to refresh imagery quarterly for seasons</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="solution-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-lightbulb"></i>
+          <span>The Solution</span>
+        </h3>
+
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <div class="stat-number">120</div>
+            <div class="stat-label">Background Scenes</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Lifestyle Themes</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">48h</div>
+            <div class="stat-label">Delivery Time</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Revision Rounds</div>
+          </div>
+        </div>
+
+        <div class="deliverables">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>Scandinavian interior backgrounds</li>
+            <li>Seasonal lifestyle settings</li>
+            <li>Minimalist product stages</li>
+            <li>Cozy home environments</li>
+            <li>Natural light compositions</li>
+            <li>Texture-rich backdrops</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Visual Examples -->
+      <div class="visual-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-images"></i>
+          <span>Visual Examples</span>
+        </h3>
+
+        <div class="visual-gallery">
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+              Nordic<br>Interior
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);">
+              Cozy<br>Home
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+              Minimalist<br>Stage
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section">
+        <h3 class="section-title-icon">
+          <i class="fas fa-chart-line"></i>
+          <span>The Results</span>
+        </h3>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-icon">🛒</div>
+            <div class="result-stat">+28%</div>
+            <div class="result-label">Conversion Rate</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💸</div>
+            <div class="result-stat">80%</div>
+            <div class="result-label">Cost Savings</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">♻️</div>
+            <div class="result-stat">Reusable</div>
+            <div class="result-label">Background Library</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">⏰</div>
+            <div class="result-stat">Instant</div>
+            <div class="result-label">Seasonal Updates</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="case-testimonial">
+        <blockquote>
+          "We were spending thousands on lifestyle photoshoots for product backgrounds. Now we have a library of 120 beautiful Nordic-style backgrounds we can use with any product. Our conversion rate increased 28% because products now show in aspirational lifestyle settings. Best ROI we've had on any marketing investment."
+        </blockquote>
+        <div class="testimonial-author">
+          <strong>Emma L.</strong>
+          <span>Marketing Director, Nordic Home Goods</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Get Similar Results?</h2>
+      <p>Join these companies transforming their brand visuals</p>
+      <div class="cta-buttons">
+        <a href="/intake-form.html" class="btn btn-primary btn-large">Get Custom Proposal</a>
+        <a href="/services.html" class="btn btn-secondary btn-large">View All Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>AI-TechArt</h3>
+          <p>Custom AI-generated brand visuals for B2B companies.</p>
+          <div class="footer-social">
+            <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:contact@ai-techart.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services.html">Packages & Pricing</a></li>
+            <li><a href="/case-studies.html">Case Studies</a></li>
+            <li><a href="/ai-gallery.html">Portfolio</a></li>
+            <li><a href="/free-starter-pack.html">Free Pack</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="mailto:contact@ai-techart.com">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Get Started</h4>
+          <ul>
+            <li><a href="/intake-form.html">Get Proposal</a></li>
+            <li><a href="/services.html#process">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI-TechArt | Demian Lienert | All rights reserved</p>
+        <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
