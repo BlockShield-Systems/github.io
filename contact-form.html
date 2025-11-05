@@ -309,11 +309,12 @@
                     <!-- Contact Form -->
                     <div class="contact-form-container">
                         <h2>Nachricht senden / Send a Message</h2>
-                        <form id="contactForm" action="https://formsubmit.co/contact@ai-techart.com" method="POST" class="contact-form">
-                            <!-- FormSubmit Configuration -->
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="https://ai-techart.com/thank-you.html">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="access_key" value="765d4c3b-9897-431a-99fe-807f88a0b67b">
+                            <input type="hidden" name="subject" value="Neue Kontaktanfrage von AI-TechArt Website">
+                            <input type="hidden" name="redirect" value="https://ai-techart.com/thank-you.html">
+                            <input type="hidden" name="from_name" value="AI-TechArt Contact Form">
                             
                             <!-- Topic Selection -->
                             <div class="form-group">
@@ -484,11 +485,11 @@
                             <div class="form-group">
                                 <label class="checkbox-label required-checkbox">
                                     <input type="checkbox" id="privacy" name="privacy_accepted" required>
-                                    <span>I accept the <a href="#" onclick="showPrivacyPolicy(event)">Privacy Policy</a> and <a href="#" onclick="showTerms(event)">Terms & Conditions</a> <span class="required">*</span></span>
+                                    <span>Ich akzeptiere die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> und <a href="/agb.html" target="_blank">AGBs</a> / I accept the <a href="/datenschutz.html" target="_blank">Privacy Policy</a> and <a href="/agb.html" target="_blank">Terms</a> <span class="required">*</span></span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" id="newsletter" name="newsletter_signup">
-                                    <span>Subscribe to newsletter for updates and insights (coming soon)</span>
+                                    <span>Newsletter abonnieren für Updates (optional) / Subscribe to newsletter for updates (optional, coming soon)</span>
                                 </label>
                             </div>
 
@@ -607,6 +608,12 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 AI-TechArt. All rights reserved.</p>
+                <p style="margin-top: 10px;">
+                    <a href="/impressum.html">Impressum</a> |
+                    <a href="/datenschutz.html">Datenschutz / Privacy</a> |
+                    <a href="/agb.html">AGB / Terms</a> |
+                    <a href="https://github.com/BlockShield-Systems/github.io" target="_blank">Open Source (MIT License)</a>
+                </p>
             </div>
         </div>
     </footer>

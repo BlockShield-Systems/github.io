@@ -173,11 +173,12 @@
             <strong>Immediately available</strong> for projects, permanent positions or freelance work.
         </div>
         
-        <form action="https://formsubmit.co/contact@ai-techart.com" method="POST">
-            <!-- Hidden Fields -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://ai-techart.com/thank-you.html">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="765d4c3b-9897-431a-99fe-807f88a0b67b">
+            <input type="hidden" name="subject" value="Neue Kontaktanfrage von AI-TechArt Website">
+            <input type="hidden" name="redirect" value="https://ai-techart.com/thank-you.html">
+            <input type="hidden" name="from_name" value="AI-TechArt Contact Form">
             
             <!-- Topic -->
             <div class="form-group">
@@ -271,7 +272,7 @@
             <div class="form-group">
                 <label class="checkbox-label">
                     <input type="checkbox" id="privacy" name="privacy_accepted" required>
-                    <span>Ich akzeptiere die Datenschutzbestimmungen / I accept the privacy policy <span class="required">*</span></span>
+                    <span>Ich akzeptiere die <a href="/datenschutz.html" target="_blank" style="color: #667eea;">Datenschutzbestimmungen</a> und <a href="/agb.html" target="_blank" style="color: #667eea;">AGBs</a> / I accept the <a href="/datenschutz.html" target="_blank" style="color: #667eea;">Privacy Policy</a> and <a href="/agb.html" target="_blank" style="color: #667eea;">Terms</a> <span class="required">*</span></span>
                 </label>
             </div>
             
