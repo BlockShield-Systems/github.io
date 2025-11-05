@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | AI-TechArt - Custom Brand Visuals</title>
+    <meta name="description" content="Custom AI-generated brand visual services. Get 50-200+ unique images in 48-72h. No stock photos, no photoshoots, no meetings required.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+
+    <style>
+        /* Why Section Styles */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .why-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .why-card.rejected {
+            opacity: 0.7;
+        }
+
+        .why-card.accepted {
+            border-color: var(--color-success);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .why-icon.rejected {
+            color: var(--color-error);
+        }
+
+        .why-icon.accepted {
+            color: var(--color-success);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            position: relative;
+            transition: all var(--transition-base);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-name {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-price {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-price small {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-regular);
+            color: var(--color-text-secondary);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-features li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .pricing-features i {
+            color: var(--color-success);
+            flex-shrink: 0;
+        }
+
+        /* Industries Grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .industry-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .industry-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .industry-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .industry-name {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-2xl);
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            box-shadow: var(--shadow-md);
+            z-index: 1;
+        }
+
+        .process-content h3 {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .process-time {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--color-bg-medium);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+
+        .process-highlight {
+            background: #d1fae5;
+            color: var(--color-success-dark);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .pricing-grid,
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pricing-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                padding-left: 70px;
+            }
+
+            .process-number {
+                width: 50px;
+                height: 50px;
+                font-size: var(--font-size-xl);
+            }
+
+            .process-timeline::before {
+                left: 25px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI-TechArt</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-gallery.html" class="nav-link">Portfolio</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="free-starter-pack.html" class="btn-success btn-small">Free Pack</a></li>
+                <li><a href="intake-form.html" class="nav-cta">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Custom Brand Visual Services</h1>
+        <p>Professional AI-generated image libraries tailored to your brand. No stock photos, no photoshoots, no meetings.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Why Choose AI Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Why Choose AI-Generated Visuals?</h2>
+                <div class="why-grid">
+                    <!-- Stock Photos -->
+                    <div class="why-card rejected">
+                        <div class="why-icon rejected">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h3>Stock Photos</h3>
+                        <p><strong>Generic & Overused</strong></p>
+                        <ul style="list-style: none; text-align: left; margin-top: var(--spacing-md); color: var(--color-text-secondary);">
+                            <li>❌ Seen on 1000s of sites</li>
+                            <li>❌ Doesn't match your brand</li>
+                            <li>❌ Limited selection</li>
+                            <li>❌ Ongoing license fees</li>
+                        </ul>
+                    </div>
+
+                    <!-- Photoshoots -->
+                    <div class="why-card rejected">
+                        <div class="why-icon rejected">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h3>Photoshoots</h3>
+                        <p><strong>Expensive & Slow</strong></p>
+                        <ul style="list-style: none; text-align: left; margin-top: var(--spacing-md); color: var(--color-text-secondary);">
+                            <li>❌ CHF 10,000+ budget</li>
+                            <li>❌ 4-8 weeks timeline</li>
+                            <li>❌ Coordination nightmare</li>
+                            <li>❌ Limited revisions</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI-Generated -->
+                    <div class="why-card accepted">
+                        <div class="why-icon accepted">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>AI-Generated</h3>
+                        <p><strong>Fast & Unique</strong></p>
+                        <ul style="list-style: none; text-align: left; margin-top: var(--spacing-md); color: var(--color-text-secondary);">
+                            <li>✅ 100% unique to you</li>
+                            <li>✅ 48-72h delivery</li>
+                            <li>✅ Email-only process</li>
+                            <li>✅ Full commercial rights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Packages -->
+        <section class="section section-light">
+            <div class="container">
+                <h2 class="section-title">Service Packages</h2>
+                <p class="section-subtitle">Choose the perfect package for your needs. All packages include full commercial rights and high-resolution files.</p>
+
+                <div class="pricing-grid">
+                    <!-- Starter Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">Starter</div>
+                            <div class="pricing-price">CHF 2,500</div>
+                            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Perfect for small businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 50 custom images</li>
+                            <li><i class="fas fa-check"></i> 3 visual styles</li>
+                            <li><i class="fas fa-check"></i> 1 revision round</li>
+                            <li><i class="fas fa-check"></i> 48-72h delivery</li>
+                            <li><i class="fas fa-check"></i> High-res files (3000px)</li>
+                            <li><i class="fas fa-check"></i> Full commercial rights</li>
+                            <li><i class="fas fa-check"></i> Email support</li>
+                        </ul>
+                        <a href="intake-form.html" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+                    </div>
+
+                    <!-- Professional Package -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <div class="pricing-name">Professional</div>
+                            <div class="pricing-price">CHF 5,000</div>
+                            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Ideal for growing companies</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 100 custom images</li>
+                            <li><i class="fas fa-check"></i> 5 visual styles</li>
+                            <li><i class="fas fa-check"></i> 2 revision rounds</li>
+                            <li><i class="fas fa-check"></i> 48h delivery</li>
+                            <li><i class="fas fa-check"></i> High-res files (4000px)</li>
+                            <li><i class="fas fa-check"></i> Full commercial rights</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                            <li><i class="fas fa-check"></i> Brand guidelines doc</li>
+                        </ul>
+                        <a href="intake-form.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">Enterprise</div>
+                            <div class="pricing-price">CHF 10,000<small>+</small></div>
+                            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">For established brands</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 200+ custom images</li>
+                            <li><i class="fas fa-check"></i> 10+ visual styles</li>
+                            <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                            <li><i class="fas fa-check"></i> 24-48h delivery</li>
+                            <li><i class="fas fa-check"></i> Ultra-high-res (5000px+)</li>
+                            <li><i class="fas fa-check"></i> Full commercial rights</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                            <li><i class="fas fa-check"></i> Brand strategy session</li>
+                            <li><i class="fas fa-check"></i> Ongoing updates (3 months)</li>
+                        </ul>
+                        <a href="intake-form.html" class="btn btn-primary" style="width: 100%;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries We Serve -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Our AI-generated visuals work for any industry. Here are some of our specialties.</p>
+
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <div class="industry-icon">💻</div>
+                        <div class="industry-name">SaaS & Tech</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Product demos, dashboards, team collaboration</p>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-icon">🛒</div>
+                        <div class="industry-name">E-Commerce</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Product backgrounds, lifestyle shots, banners</p>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-icon">🏥</div>
+                        <div class="industry-name">Healthcare</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Medical facilities, wellness, patient care</p>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-icon">🏢</div>
+                        <div class="industry-name">Corporate</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Office environments, team photos, presentations</p>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-icon">📱</div>
+                        <div class="industry-name">Agencies</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Client projects, marketing assets, campaigns</p>
+                    </div>
+
+                    <div class="industry-card">
+                        <div class="industry-icon">🎓</div>
+                        <div class="industry-name">Education</div>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--spacing-xs);">Learning platforms, course materials, students</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="section section-light">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple, transparent process. No calls, no complexity—just results.</p>
+
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Fill Intake Form</h3>
+                            <p>Share your brand details, visual needs, and preferences through our comprehensive online form.</p>
+                            <span class="process-time">5-10 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Receive Custom Proposal</h3>
+                            <p>We analyze your requirements and send a tailored proposal with package recommendations and timeline.</p>
+                            <span class="process-time">Within 24 hours</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Review & Approve</h3>
+                            <p>Review the proposal via email, ask questions, and approve when ready—all without scheduling a single call.</p>
+                            <span class="process-time process-highlight">📧 All via email - no calls needed</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Make Payment</h3>
+                            <p>Secure payment via invoice. We accept bank transfer, credit card, and PayPal.</p>
+                            <span class="process-time">Same day</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>We Start Creating</h3>
+                            <p>Our AI specialists begin generating your custom visuals based on your brand guidelines and requirements.</p>
+                            <span class="process-time">Day 1-2</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>First Draft Delivery</h3>
+                            <p>Receive initial batch via email for review. Preview all images in organized categories.</p>
+                            <span class="process-time">48-72 hours</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">7</div>
+                        <div class="process-content">
+                            <h3>Revisions (If Needed)</h3>
+                            <p>Request changes via email. We'll refine specific images or generate alternatives based on your feedback.</p>
+                            <span class="process-time">24-48 hours per round</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">8</div>
+                        <div class="process-content">
+                            <h3>Final Delivery</h3>
+                            <p>Download all final images in high resolution via secure link. Organized by category with usage guidelines.</p>
+                            <span class="process-time">Immediate download</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="final-cta">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Get your custom proposal within 24 hours. No calls, no pressure—just a clear plan tailored to your needs.</p>
+                    <div class="cta-buttons">
+                        <a href="intake-form.html" class="btn btn-large" style="background: white; color: var(--color-primary); font-weight: 700;">Get Custom Proposal</a>
+                        <a href="free-starter-pack.html" class="btn btn-large btn-secondary" style="background: transparent; color: white; border-color: white;">Try Free Pack First</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AI-TechArt</h4>
+                <p>Custom AI-generated brand visuals for B2B companies. Fast, unique, and affordable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="services.html">Pricing & Packages</a></p>
+                <p><a href="case-studies.html">Case Studies</a></p>
+                <p><a href="ai-gallery.html">Portfolio</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+                <p><a href="intake-form.html">Get Proposal</a></p>
+                <p><a href="free-starter-pack.html">Free Starter Pack</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI-TechArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

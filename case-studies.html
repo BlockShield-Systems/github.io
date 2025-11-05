@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | AI-TechArt - Real Results with Custom Brand Visuals</title>
+    <meta name="description" content="See how SaaS companies, healthcare clinics, and e-commerce brands increased engagement by 28-55% with our custom AI-generated brand visuals.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+
+    <style>
+        /* Case Study Styles */
+        .case-study {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .case-study-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .case-study-badges {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .case-study-title {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .case-study-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+        }
+
+        /* Challenge Section */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .challenge-card {
+            background: #fee2e2;
+            border: 2px solid var(--color-error);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            display: flex;
+            align-items: start;
+            gap: var(--spacing-md);
+        }
+
+        .challenge-icon {
+            font-size: 1.5rem;
+            color: var(--color-error);
+            flex-shrink: 0;
+        }
+
+        /* Solution Stats */
+        .solution-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .stat-box {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+
+        .deliverables-list {
+            background: var(--color-bg-light);
+            border-left: 4px solid var(--color-success);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .deliverables-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .deliverables-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--color-text-secondary);
+        }
+
+        .deliverables-list i {
+            color: var(--color-success);
+        }
+
+        /* Visual Examples */
+        .visual-examples {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .visual-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .result-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .result-card:hover {
+            border-color: var(--color-success);
+            transform: translateY(-2px);
+        }
+
+        .result-icon {
+            font-size: 2.5rem;
+            color: var(--color-success);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .result-stat {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .result-label {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--color-bg-light);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .testimonial-quote {
+            font-size: var(--font-size-xl);
+            font-style: italic;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-md);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
+            margin-right: var(--spacing-xs);
+        }
+
+        .testimonial-quote::after {
+            content: '"';
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
+            margin-left: var(--spacing-xs);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .testimonial-author-info h4 {
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author-title {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Divider */
+        .case-study-divider {
+            height: 2px;
+            background: var(--color-border);
+            margin: var(--spacing-3xl) 0;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .solution-stats,
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .visual-examples {
+                grid-template-columns: 1fr;
+            }
+
+            .deliverables-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .challenge-grid,
+            .solution-stats,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-title {
+                font-size: var(--font-size-3xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI-TechArt</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-gallery.html" class="nav-link">Portfolio</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="free-starter-pack.html" class="btn-success btn-small">Free Pack</a></li>
+                <li><a href="intake-form.html" class="nav-cta">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Case Studies</h1>
+        <p>Real projects, real results. See how our custom AI-generated visuals helped businesses increase engagement and conversions.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- CASE STUDY 1: Tech Startup (SaaS) -->
+            <article class="case-study">
+                <header class="case-study-header">
+                    <div class="case-study-badges">
+                        <span class="badge badge-primary">SaaS</span>
+                        <span class="badge badge-warning">Professional Package</span>
+                    </div>
+                    <h2 class="case-study-title">Tech Startup Increases Social Engagement by 40%</h2>
+                    <p class="case-study-subtitle">How a B2B SaaS company replaced generic stock photos with on-brand AI visuals</p>
+                </header>
+
+                <!-- Challenge -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Challenge</h3>
+                    <div class="challenge-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Generic Stock Photos</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Website looked like every other SaaS company</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Low Social Engagement</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Blog posts and social content underperforming</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Budget Constraints</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Couldn't afford CHF 15K+ photoshoot</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Time Pressure</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Needed visuals for product launch in 2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Solution -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Solution</h3>
+                    <div class="solution-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">100</div>
+                            <div class="stat-label">Custom Images</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Visual Styles</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">48h</div>
+                            <div class="stat-label">Delivery Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">CHF 5K</div>
+                            <div class="stat-label">Total Investment</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverables-list">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hero section backgrounds (20 images)</li>
+                            <li><i class="fas fa-check"></i> Product dashboard mockups (25 images)</li>
+                            <li><i class="fas fa-check"></i> Team collaboration scenes (20 images)</li>
+                            <li><i class="fas fa-check"></i> Abstract tech backgrounds (20 images)</li>
+                            <li><i class="fas fa-check"></i> Social media graphics (15 images)</li>
+                            <li><i class="fas fa-check"></i> Brand guidelines document</li>
+                        </ul>
+                    </div>
+
+                    <div class="visual-examples">
+                        <div class="visual-placeholder">Hero 1</div>
+                        <div class="visual-placeholder">Dashboard 1</div>
+                        <div class="visual-placeholder">Team 1</div>
+                    </div>
+                </section>
+
+                <!-- Results -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Results</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-arrow-up"></i></div>
+                            <div class="result-stat">+40%</div>
+                            <div class="result-label">Social Engagement</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-clock"></i></div>
+                            <div class="result-stat">+25%</div>
+                            <div class="result-label">Time on Site</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="result-stat">+65%</div>
+                            <div class="result-label">Content Shares</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-user-plus"></i></div>
+                            <div class="result-stat">+18%</div>
+                            <div class="result-label">Sign-ups</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonial -->
+                <div class="testimonial">
+                    <p class="testimonial-quote">We were blown away by the quality and speed. These visuals perfectly capture our brand's modern, tech-forward vibe. Our marketing team now has a library of unique images that make us stand out from competitors. Best investment we made this quarter.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p class="testimonial-author-title">Head of Marketing, CloudSync Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="case-study-divider"></div>
+
+            <!-- CASE STUDY 2: Healthcare Clinic -->
+            <article class="case-study">
+                <header class="case-study-header">
+                    <div class="case-study-badges">
+                        <span class="badge badge-primary">Healthcare</span>
+                        <span class="badge badge-warning">Starter Package</span>
+                    </div>
+                    <h2 class="case-study-title">Healthcare Clinic Boosts Social Engagement by 55%</h2>
+                    <p class="case-study-subtitle">How a wellness clinic created a welcoming brand presence without photoshoots</p>
+                </header>
+
+                <!-- Challenge -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Challenge</h3>
+                    <div class="challenge-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Privacy Concerns</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Couldn't photograph real patients</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Stock Photos Too Generic</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Needed authentic, welcoming imagery</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Limited Budget</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Small clinic with tight marketing budget</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Urgent Rebrand</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">New website launch in 3 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Solution -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Solution</h3>
+                    <div class="solution-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">50</div>
+                            <div class="stat-label">Custom Images</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Visual Styles</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">72h</div>
+                            <div class="stat-label">Delivery Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">CHF 2.5K</div>
+                            <div class="stat-label">Total Investment</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverables-list">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Wellness & spa environments (15 images)</li>
+                            <li><i class="fas fa-check"></i> Treatment room settings (10 images)</li>
+                            <li><i class="fas fa-check"></i> Calming nature scenes (10 images)</li>
+                            <li><i class="fas fa-check"></i> Professional staff portraits (style-consistent, 10 images)</li>
+                            <li><i class="fas fa-check"></i> Social media templates (5 images)</li>
+                            <li><i class="fas fa-check"></i> Usage guidelines</li>
+                        </ul>
+                    </div>
+
+                    <div class="visual-examples">
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Wellness 1</div>
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Treatment 1</div>
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Nature 1</div>
+                    </div>
+                </section>
+
+                <!-- Results -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Results</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-heart"></i></div>
+                            <div class="result-stat">+55%</div>
+                            <div class="result-label">Social Engagement</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-phone"></i></div>
+                            <div class="result-stat">+30%</div>
+                            <div class="result-label">Booking Inquiries</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-star"></i></div>
+                            <div class="result-stat">4.8/5</div>
+                            <div class="result-label">Trust Rating</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-comments"></i></div>
+                            <div class="result-stat">+42%</div>
+                            <div class="result-label">Positive Feedback</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonial -->
+                <div class="testimonial">
+                    <p class="testimonial-quote">Finally, visuals that reflect the calm, professional atmosphere we create for our patients. No awkward stock photos of models pretending to be relaxed. These AI-generated images feel authentic and align perfectly with our brand values. Our patients even commented on how welcoming our website looks now.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4>Dr. Emma Rodriguez</h4>
+                            <p class="testimonial-author-title">Founder, Serenity Wellness Clinic</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="case-study-divider"></div>
+
+            <!-- CASE STUDY 3: E-Commerce Brand -->
+            <article class="case-study">
+                <header class="case-study-header">
+                    <div class="case-study-badges">
+                        <span class="badge badge-primary">E-Commerce</span>
+                        <span class="badge badge-warning">Professional Package</span>
+                    </div>
+                    <h2 class="case-study-title">E-Commerce Brand Increases Conversions by 28%</h2>
+                    <p class="case-study-subtitle">How a premium lifestyle brand created consistent product photography at scale</p>
+                </header>
+
+                <!-- Challenge -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Challenge</h3>
+                    <div class="challenge-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Inconsistent Visuals</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Mixed product photos from different sources</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>High Production Costs</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Spending CHF 20K+ per photoshoot every quarter</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Slow Content Creation</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">6-8 weeks between shoot and delivery</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon"><i class="fas fa-times-circle"></i></div>
+                            <div>
+                                <h4>Limited Flexibility</h4>
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0;">Expensive to test new visual styles</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Solution -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Solution</h3>
+                    <div class="solution-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">100</div>
+                            <div class="stat-label">Custom Images</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Visual Styles</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">48h</div>
+                            <div class="stat-label">Delivery Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">CHF 5K</div>
+                            <div class="stat-label">Total Investment</div>
+                        </div>
+                    </div>
+
+                    <div class="deliverables-list">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Product backgrounds (30 images)</li>
+                            <li><i class="fas fa-check"></i> Lifestyle contexts (25 images)</li>
+                            <li><i class="fas fa-check"></i> Interior settings (20 images)</li>
+                            <li><i class="fas fa-check"></i> Promotional banners (15 images)</li>
+                            <li><i class="fas fa-check"></i> Social media templates (10 images)</li>
+                            <li><i class="fas fa-check"></i> Brand style guide</li>
+                        </ul>
+                    </div>
+
+                    <div class="visual-examples">
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">Product 1</div>
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">Lifestyle 1</div>
+                        <div class="visual-placeholder" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">Interior 1</div>
+                    </div>
+                </section>
+
+                <!-- Results -->
+                <section>
+                    <h3 style="margin-bottom: var(--spacing-md);">The Results</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="result-stat">+28%</div>
+                            <div class="result-label">Conversion Rate</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="result-stat">-75%</div>
+                            <div class="result-label">Production Costs</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="result-stat">+35%</div>
+                            <div class="result-label">Time on Product Pages</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-undo"></i></div>
+                            <div class="result-stat">-12%</div>
+                            <div class="result-label">Return Rate</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonial -->
+                <div class="testimonial">
+                    <p class="testimonial-quote">This changed our entire content strategy. We went from quarterly photoshoots costing CHF 20K+ to getting 100 brand-consistent images in 48 hours for CHF 5K. The quality is indistinguishable from professional photography, and we can now test new visual directions without breaking the bank. ROI was positive within the first month.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4>Marcus Chen</h4>
+                            <p class="testimonial-author-title">Creative Director, Luxe Home Interiors</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Final CTA -->
+            <section style="margin-top: var(--spacing-3xl);">
+                <div class="final-cta">
+                    <h2>Want Results Like These?</h2>
+                    <p>Get your custom proposal within 24 hours. See exactly what we can create for your brand—no calls, no pressure.</p>
+                    <div>
+                        <a href="intake-form.html" class="btn btn-large" style="background: white; color: var(--color-primary); font-weight: 700; margin-right: var(--spacing-md);">Get Custom Proposal</a>
+                        <a href="services.html" class="btn btn-large btn-secondary" style="background: transparent; color: white; border-color: white;">View Packages</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AI-TechArt</h4>
+                <p>Custom AI-generated brand visuals for B2B companies. Fast, unique, and affordable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="services.html">Pricing & Packages</a></p>
+                <p><a href="case-studies.html">Case Studies</a></p>
+                <p><a href="ai-gallery.html">Portfolio</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+                <p><a href="intake-form.html">Get Proposal</a></p>
+                <p><a href="free-starter-pack.html">Free Starter Pack</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI-TechArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

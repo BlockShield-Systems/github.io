@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | AI-TechArt - Custom Brand Visuals Questions Answered</title>
+    <meta name="description" content="Frequently asked questions about our custom AI-generated brand visual services. Learn about pricing, licensing, delivery, and our email-only process.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+
+    <style>
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            overflow-x: auto;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .category-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            font-family: var(--font-family);
+        }
+
+        .category-tab:hover {
+            color: var(--color-primary);
+        }
+
+        .category-tab.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        /* FAQ Accordion */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            display: none;
+        }
+
+        .faq-category.active {
+            display: block;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-primary);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: var(--spacing-lg);
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+            font-family: var(--font-family);
+            transition: color var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            color: var(--color-primary);
+        }
+
+        .faq-icon {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            transition: transform var(--transition-base);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-base);
+        }
+
+        .faq-answer-content {
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .faq-answer-content p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .faq-answer-content ul {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .faq-answer-content strong {
+            color: var(--color-text-primary);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin-top: var(--spacing-3xl);
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contact-options {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-lg);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .category-tabs {
+                flex-wrap: nowrap;
+            }
+
+            .faq-question {
+                font-size: var(--font-size-base);
+                padding: var(--spacing-md);
+            }
+
+            .faq-answer-content {
+                padding: 0 var(--spacing-md) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI-TechArt</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-gallery.html" class="nav-link">Portfolio</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="free-starter-pack.html" class="btn-success btn-small">Free Pack</a></li>
+                <li><a href="intake-form.html" class="nav-cta">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about our custom AI-generated brand visual services.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <!-- Category Tabs -->
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="general">General</button>
+                    <button class="category-tab" data-category="process">Process & Communication</button>
+                    <button class="category-tab" data-category="licensing">Licensing & Rights</button>
+                    <button class="category-tab" data-category="technical">Technical</button>
+                    <button class="category-tab" data-category="payment">Payment</button>
+                </div>
+
+                <div class="faq-container">
+                    <!-- GENERAL CATEGORY -->
+                    <div class="faq-category active" id="general">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What exactly do you offer?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We create custom AI-generated image libraries tailored to your brand. You receive 50-200+ unique, high-resolution images perfectly aligned with your brand colors, style, and visual identity.</p>
+                                    <p><strong>What you get:</strong></p>
+                                    <ul>
+                                        <li>100% unique images (not stock photos)</li>
+                                        <li>High-resolution files (3000-5000px)</li>
+                                        <li>Multiple visual styles</li>
+                                        <li>Full commercial rights</li>
+                                        <li>Organized by category</li>
+                                        <li>Delivery in 48-72 hours</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How is this different from stock photos?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Stock photos:</strong> Generic, overused, seen on thousands of websites, limited selection, ongoing license fees.</p>
+                                    <p><strong>Our AI visuals:</strong> 100% unique to your brand, created specifically for you, unlimited usage rights, perfectly matched to your brand colors and style.</p>
+                                    <p>Your competitors won't have the same images. Your brand looks distinctive and professional.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do I need to have a call with you?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>No calls required!</strong> Our entire process is email-only.</p>
+                                    <p>You fill out a detailed intake form, we send you a proposal, you approve, we create, you receive images. Everything happens via email at your convenience.</p>
+                                    <p>This saves you time and eliminates scheduling headaches. Work with us from anywhere, anytime.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Which industries do you work with?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We specialize in B2B and service-based businesses, including:</p>
+                                    <ul>
+                                        <li>SaaS & Tech companies</li>
+                                        <li>E-Commerce brands</li>
+                                        <li>Healthcare & Wellness</li>
+                                        <li>Corporate & Consulting</li>
+                                        <li>Marketing Agencies</li>
+                                        <li>Education & E-Learning</li>
+                                    </ul>
+                                    <p>If your industry isn't listed, don't worry—our AI can adapt to any brand aesthetic.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I see examples of your work?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes! Check out our <a href="ai-gallery.html" style="color: var(--color-primary); font-weight: 600;">Portfolio Gallery</a> and <a href="case-studies.html" style="color: var(--color-primary); font-weight: 600;">Case Studies</a> to see examples across different industries and visual styles.</p>
+                                    <p>You can also <a href="free-starter-pack.html" style="color: var(--color-primary); font-weight: 600;">download our Free Starter Pack</a> (20 premium images) to test the quality before committing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROCESS & COMMUNICATION CATEGORY -->
+                    <div class="faq-category" id="process">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How does the process work?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>8 simple steps:</strong></p>
+                                    <ol style="margin-left: var(--spacing-lg);">
+                                        <li>You fill out our intake form (5-10 min)</li>
+                                        <li>We send custom proposal (within 24h)</li>
+                                        <li>You review & approve via email</li>
+                                        <li>You make payment</li>
+                                        <li>We create your visuals</li>
+                                        <li>You receive first draft (48-72h)</li>
+                                        <li>Request revisions if needed</li>
+                                        <li>Final delivery via download link</li>
+                                    </ol>
+                                    <p>Total timeline: 2-5 business days from payment to final delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How long does it take?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <ul>
+                                        <li><strong>Starter Package:</strong> 48-72 hours</li>
+                                        <li><strong>Professional Package:</strong> 48 hours</li>
+                                        <li><strong>Enterprise Package:</strong> 24-48 hours</li>
+                                    </ul>
+                                    <p>This is from payment confirmation to first draft delivery. Need it faster? Enterprise clients get priority 24-48h delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I request changes/revisions?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes!</strong> Revisions are included in all packages:</p>
+                                    <ul>
+                                        <li>Starter: 1 revision round</li>
+                                        <li>Professional: 2 revision rounds</li>
+                                        <li>Enterprise: Unlimited revisions</li>
+                                    </ul>
+                                    <p>Just send us feedback via email. We'll refine specific images or generate alternatives within 24-48 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What if I'm not satisfied?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We work closely with you during revisions to ensure you're happy. If after revisions you're still not satisfied, we offer a satisfaction guarantee:</p>
+                                    <p><strong>If we can't create visuals you're happy with after your included revision rounds, we'll refund 50% of your payment.</strong></p>
+                                    <p>This has never happened—our intake process ensures we understand exactly what you need before we start.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I see samples before committing?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We don't create custom samples before payment (that's essentially delivering the service for free), but you can:</p>
+                                    <ul>
+                                        <li>Download our <a href="free-starter-pack.html" style="color: var(--color-primary); font-weight: 600;">Free Starter Pack</a> (20 images)</li>
+                                        <li>Review our <a href="ai-gallery.html" style="color: var(--color-primary); font-weight: 600;">Portfolio</a></li>
+                                        <li>Read <a href="case-studies.html" style="color: var(--color-primary); font-weight: 600;">Case Studies</a> from similar industries</li>
+                                    </ul>
+                                    <p>This gives you a clear idea of quality and style before purchasing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LICENSING & RIGHTS CATEGORY -->
+                    <div class="faq-category" id="licensing">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do I own the images?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes, 100%.</strong> You receive full commercial rights to all images we create for you.</p>
+                                    <p><strong>What you can do:</strong></p>
+                                    <ul>
+                                        <li>Use on your website, social media, marketing materials</li>
+                                        <li>Modify, crop, or edit as needed</li>
+                                        <li>Use for advertising and promotions</li>
+                                        <li>Include in client projects (agencies)</li>
+                                        <li>Use indefinitely with no expiration</li>
+                                    </ul>
+                                    <p>No ongoing fees, no attribution required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Are the images truly unique?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes, 100% unique.</strong> Every image is generated specifically for your project based on your brand guidelines.</p>
+                                    <p>We don't reuse images across clients. Your visuals are exclusive to you.</p>
+                                    <p>Unlike stock photos (seen on thousands of sites), your images are one-of-a-kind.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I use these for advertising?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes!</strong> Full commercial rights include advertising use—print ads, digital ads, billboards, social media ads, Google Ads, etc.</p>
+                                    <p>No restrictions, no additional fees.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What about copyright and legal issues?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>All images are AI-generated from scratch—no copyrighted material is used in creation.</p>
+                                    <p>You receive full indemnification: if any legal issues arise (they never have), we cover it.</p>
+                                    <p>Our AI models are trained ethically and legally, complying with all copyright laws.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TECHNICAL CATEGORY -->
+                    <div class="faq-category" id="technical">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What file formats do you provide?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Standard formats:</strong> PNG and JPG (high-resolution)</p>
+                                    <p><strong>Optional formats:</strong> WebP (for web optimization), TIFF (for print)</p>
+                                    <p>All images are delivered in RGB color space, optimized for digital use. Need specific formats? Just ask in your intake form.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What resolution/size are the images?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <ul>
+                                        <li><strong>Starter:</strong> 3000px (long edge)</li>
+                                        <li><strong>Professional:</strong> 4000px (long edge)</li>
+                                        <li><strong>Enterprise:</strong> 5000px+ (long edge)</li>
+                                    </ul>
+                                    <p>These sizes work for websites, social media, presentations, and even print (up to poster size).</p>
+                                    <p>Need specific dimensions? We can deliver custom sizes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can you match my exact brand colors?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes!</strong> Provide your brand color hex codes in the intake form, and we'll ensure all images align with your color palette.</p>
+                                    <p>We can work with your full brand guidelines (fonts, colors, visual style) to create perfectly on-brand imagery.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can you add text or logos to images?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We deliver images without text or logos—this gives you maximum flexibility to use them across different contexts.</p>
+                                    <p>You can easily add your own text/logos using design tools (Canva, Photoshop, etc.).</p>
+                                    <p><strong>Need text included?</strong> Enterprise clients can request custom overlays for an additional fee.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can you create images with people/faces?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes</strong>, but with limitations. AI-generated faces are realistic but clearly AI-created (to comply with ethical standards).</p>
+                                    <p>We can create:</p>
+                                    <ul>
+                                        <li>Team/office scenes (people from behind, silhouettes)</li>
+                                        <li>Abstract/stylized human figures</li>
+                                        <li>Professional settings with partial faces</li>
+                                    </ul>
+                                    <p>We avoid creating photorealistic faces to prevent misrepresentation and ethical concerns.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do you deliver the files?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Secure download link via email (Dropbox, Google Drive, or WeTransfer).</p>
+                                    <p>Files are organized by category in folders (e.g., "Hero Images", "Backgrounds", "Product Contexts").</p>
+                                    <p>Download links remain active for 30 days. Need longer access? Just ask.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAYMENT CATEGORY -->
+                    <div class="faq-category" id="payment">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How much does it cost?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <ul>
+                                        <li><strong>Starter:</strong> CHF 2,500 (50 images, 3 styles, 1 revision)</li>
+                                        <li><strong>Professional:</strong> CHF 5,000 (100 images, 5 styles, 2 revisions) — Most Popular</li>
+                                        <li><strong>Enterprise:</strong> CHF 10,000+ (200+ images, 10+ styles, unlimited revisions)</li>
+                                    </ul>
+                                    <p>All packages include full commercial rights and high-res files. See <a href="services.html" style="color: var(--color-primary); font-weight: 600;">full details</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What payment methods do you accept?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <ul>
+                                        <li>Bank transfer (SEPA, SWIFT)</li>
+                                        <li>Credit card (Visa, Mastercard, Amex)</li>
+                                        <li>PayPal</li>
+                                    </ul>
+                                    <p>We send a secure invoice after you approve the proposal. Payment is processed through trusted platforms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>When do I need to pay?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>50% upfront, 50% upon delivery</strong> (for packages CHF 5,000+).</p>
+                                    <p><strong>100% upfront</strong> for Starter package (CHF 2,500).</p>
+                                    <p>This protects both parties and ensures commitment. Work begins immediately after initial payment is confirmed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do you offer refunds?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Partial refund policy:</strong> If after your included revision rounds you're still not satisfied, we refund 50% of your payment.</p>
+                                    <p>Once work has begun, no full refunds (since AI generation costs and time are already invested).</p>
+                                    <p>However, this has never been necessary—our thorough intake process ensures we deliver what you need.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Are there any hidden fees?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>No hidden fees.</strong> The price you see in your proposal is the final price.</p>
+                                    <p>Included in all packages:</p>
+                                    <ul>
+                                        <li>All images in high-resolution</li>
+                                        <li>Multiple visual styles</li>
+                                        <li>Revisions (as specified in package)</li>
+                                        <li>Full commercial rights</li>
+                                        <li>Delivery via download link</li>
+                                    </ul>
+                                    <p>No per-image fees, no licensing fees, no expiration dates.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Do you offer discounts or bulk pricing?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>Yes!</strong> We offer:</p>
+                                    <ul>
+                                        <li><strong>Volume discounts:</strong> 10-15% off for 3+ projects per year</li>
+                                        <li><strong>Agency partnerships:</strong> Special rates for recurring client work</li>
+                                        <li><strong>Nonprofit discounts:</strong> 20% off for verified nonprofits</li>
+                                    </ul>
+                                    <p>Contact us at <a href="mailto:contact@ai-techart.com" style="color: var(--color-primary); font-weight: 600;">contact@ai-techart.com</a> to discuss custom pricing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="final-cta">
+                    <h2>Still Have Questions?</h2>
+                    <p>We're happy to help! Reach out via email or get a custom proposal tailored to your needs.</p>
+                    <div class="contact-options">
+                        <a href="mailto:contact@ai-techart.com" class="btn btn-large" style="background: white; color: var(--color-primary); font-weight: 700;">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                        <a href="intake-form.html" class="btn btn-large btn-secondary" style="background: transparent; color: white; border-color: white;">
+                            Get Custom Proposal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AI-TechArt</h4>
+                <p>Custom AI-generated brand visuals for B2B companies. Fast, unique, and affordable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="services.html">Pricing & Packages</a></p>
+                <p><a href="case-studies.html">Case Studies</a></p>
+                <p><a href="ai-gallery.html">Portfolio</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+                <p><a href="intake-form.html">Get Proposal</a></p>
+                <p><a href="free-starter-pack.html">Free Starter Pack</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI-TechArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Category tabs
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const faqCategories = document.querySelectorAll('.faq-category');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Show corresponding category
+                faqCategories.forEach(cat => {
+                    if (cat.id === category) {
+                        cat.classList.add('active');
+                    } else {
+                        cat.classList.remove('active');
+                    }
+                });
+
+                // Close all open FAQ items when switching categories
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('open');
+                    const answer = item.querySelector('.faq-answer');
+                    answer.style.maxHeight = null;
+                });
+            });
+        });
+
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const isOpen = faqItem.classList.contains('open');
+
+                // Close all other items in the same category
+                const category = faqItem.closest('.faq-category');
+                category.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('open');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current item
+                if (isOpen) {
+                    faqItem.classList.remove('open');
+                    answer.style.maxHeight = null;
+                } else {
+                    faqItem.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

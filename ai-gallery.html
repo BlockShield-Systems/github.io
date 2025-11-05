@@ -566,28 +566,25 @@
     <!-- Category Filter -->
     <div class="category-filter">
         <button class="filter-btn active" data-filter="all">
-            <i class="fas fa-th"></i> All <span class="count">89</span>
+            <i class="fas fa-th"></i> All Styles <span class="count">89</span>
         </button>
-        <button class="filter-btn" data-filter="fantasy">
-            <i class="fas fa-dragon"></i> Fantasy <span class="count">25</span>
+        <button class="filter-btn" data-filter="corporate">
+            <i class="fas fa-building"></i> Corporate <span class="count">15</span>
         </button>
-        <button class="filter-btn" data-filter="scifi">
-            <i class="fas fa-rocket"></i> Sci-Fi <span class="count">15</span>
+        <button class="filter-btn" data-filter="tech">
+            <i class="fas fa-laptop-code"></i> Tech/Modern <span class="count">20</span>
         </button>
-        <button class="filter-btn" data-filter="characters">
-            <i class="fas fa-user"></i> Characters <span class="count">8</span>
+        <button class="filter-btn" data-filter="healthcare">
+            <i class="fas fa-heartbeat"></i> Healthcare <span class="count">12</span>
         </button>
-        <button class="filter-btn" data-filter="horror">
-            <i class="fas fa-ghost"></i> Horror <span class="count">23</span>
+        <button class="filter-btn" data-filter="ecommerce">
+            <i class="fas fa-shopping-bag"></i> E-Commerce <span class="count">18</span>
         </button>
-        <button class="filter-btn" data-filter="nsfw_horror">
-            <i class="fas fa-skull"></i> NSFW Horror 18+ <span class="count">15</span>
+        <button class="filter-btn" data-filter="abstract">
+            <i class="fas fa-paint-brush"></i> Abstract <span class="count">14</span>
         </button>
-        <button class="filter-btn" data-filter="nsfw_erotic">
-            <i class="fas fa-heart"></i> NSFW Soft Erotic 18+ <span class="count">1</span>
-        </button>
-        <button class="filter-btn" data-filter="environments">
-            <i class="fas fa-globe"></i> Environments <span class="count">2</span>
+        <button class="filter-btn" data-filter="various">
+            <i class="fas fa-ellipsis-h"></i> Various <span class="count">10</span>
         </button>
     </div>
 
@@ -595,6 +592,22 @@
     <section class="gallery-section">
         <div class="gallery-grid" id="galleryGrid">
             <!-- Gallery items will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 20px; text-align: center; margin-top: 60px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Need Custom Visuals Like These?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 40px; line-height: 1.6;">Get 50-200+ AI-generated images perfectly tailored to your brand. Fast delivery, full commercial rights, and 100% unique.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="services.html" style="display: inline-block; padding: 16px 32px; background: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                    <i class="fas fa-cube"></i> Explore Packages
+                </a>
+                <a href="intake-form.html" style="display: inline-block; padding: 16px 32px; background: transparent; color: white; text-decoration: none; border: 2px solid white; border-radius: 8px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
+                    <i class="fas fa-paper-plane"></i> Get Proposal
+                </a>
+            </div>
         </div>
     </section>
 
@@ -749,13 +762,12 @@
         // Get category display name
         function getCategoryName(categoryId) {
             const categories = {
-                'fantasy': '🏰 Fantasy',
-                'scifi': '🚀 Sci-Fi',
-                'characters': '👤 Characters',
-                'horror': '👻 Horror',
-                'nsfw_horror': '⚠️ NSFW Horror',
-                'nsfw_erotic': '🔞 NSFW Erotic',
-                'environments': '🌍 Environments'
+                'corporate': '🏢 Corporate',
+                'tech': '💻 Tech/Modern',
+                'healthcare': '🏥 Healthcare',
+                'ecommerce': '🛒 E-Commerce',
+                'abstract': '🎨 Abstract',
+                'various': '✨ Various'
             };
             return categories[categoryId] || categoryId;
         }

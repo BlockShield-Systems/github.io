@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Custom Proposal | AI-TechArt</title>
+    <meta name="description" content="Fill out our intake form and receive a tailored proposal for custom AI-generated brand visuals within 24 hours. No calls required.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+
+    <style>
+        /* Form Container */
+        .form-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+
+        /* Progress Indicator */
+        .progress-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-border);
+            z-index: 0;
+        }
+
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width var(--transition-base);
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-xs);
+            transition: all var(--transition-base);
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--color-success);
+            color: white;
+            border-color: var(--color-success);
+        }
+
+        .step-label {
+            font-size: var(--font-size-sm);
+            text-align: center;
+            color: var(--color-text-secondary);
+        }
+
+        .progress-step.active .step-label {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* Form Steps */
+        .form-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .step-title {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .step-description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Checkbox Grid */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Navigation Buttons */
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+
+        .form-navigation button {
+            min-width: 120px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-xl);
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .success-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .success-message h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .success-message p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .submitted-email {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* Required indicator */
+        .required {
+            color: var(--color-error);
+            margin-left: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .progress-steps {
+                flex-wrap: wrap;
+            }
+
+            .step-label {
+                font-size: var(--font-size-xs);
+            }
+
+            .step-circle {
+                width: 30px;
+                height: 30px;
+                font-size: var(--font-size-sm);
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-navigation {
+                flex-direction: column-reverse;
+            }
+
+            .form-navigation button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI-TechArt</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-gallery.html" class="nav-link">Portfolio</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="free-starter-pack.html" class="btn-success btn-small">Free Pack</a></li>
+                <li><a href="intake-form.html" class="nav-cta">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Get Your Custom Proposal</h1>
+        <p>Fill out this form and receive a tailored proposal within 24 hours</p>
+        <div class="hero-badges">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                <span>24h Response</span>
+            </div>
+            <div class="hero-badge">
+                <i class="fas fa-envelope"></i>
+                <span>No Calls Required</span>
+            </div>
+            <div class="hero-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>Free Consultation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <!-- Progress Indicator -->
+                    <div class="progress-container">
+                        <div class="progress-steps">
+                            <div class="progress-line" id="progressLine" style="width: 25%;"></div>
+                            <div class="progress-step active" data-step="1">
+                                <div class="step-circle">1</div>
+                                <span class="step-label">Basic Info</span>
+                            </div>
+                            <div class="progress-step" data-step="2">
+                                <div class="step-circle">2</div>
+                                <span class="step-label">Project Scope</span>
+                            </div>
+                            <div class="progress-step" data-step="3">
+                                <div class="step-circle">3</div>
+                                <span class="step-label">Brand & Style</span>
+                            </div>
+                            <div class="progress-step" data-step="4">
+                                <div class="step-circle">4</div>
+                                <span class="step-label">Timeline & Budget</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="intakeForm" class="form-card">
+                        <!-- STEP 1: Basic Info -->
+                        <div class="form-step active" data-step="1">
+                            <h2 class="step-title">Basic Information</h2>
+                            <p class="step-description">Let's start with some basic details about you and your company.</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Full Name <span class="required">*</span></label>
+                                <input type="text" name="name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Company Name <span class="required">*</span></label>
+                                <input type="text" name="company" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Website URL</label>
+                                <input type="url" name="website" class="form-input" placeholder="https://">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Industry <span class="required">*</span></label>
+                                <select name="industry" class="form-select" required>
+                                    <option value="">Select your industry</option>
+                                    <option value="saas">SaaS & Tech</option>
+                                    <option value="ecommerce">E-Commerce</option>
+                                    <option value="healthcare">Healthcare & Wellness</option>
+                                    <option value="corporate">Corporate & Consulting</option>
+                                    <option value="agency">Marketing Agency</option>
+                                    <option value="education">Education & E-Learning</option>
+                                    <option value="finance">Finance & FinTech</option>
+                                    <option value="real-estate">Real Estate</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-navigation">
+                                <div></div>
+                                <button type="button" class="btn btn-primary btn-large" onclick="nextStep()">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: Project Scope -->
+                        <div class="form-step" data-step="2">
+                            <h2 class="step-title">Project Scope</h2>
+                            <p class="step-description">Tell us about how you'll use these visuals and how many images you need.</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Where will you use these images? <span class="required">*</span></label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-website" name="use_cases" value="website">
+                                        <label for="use-website">Website</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-social" name="use_cases" value="social">
+                                        <label for="use-social">Social Media</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-marketing" name="use_cases" value="marketing">
+                                        <label for="use-marketing">Marketing Materials</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-ads" name="use_cases" value="ads">
+                                        <label for="use-ads">Advertising</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-presentations" name="use_cases" value="presentations">
+                                        <label for="use-presentations">Presentations</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="use-email" name="use_cases" value="email">
+                                        <label for="use-email">Email Marketing</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">How many images do you need? <span class="required">*</span></label>
+                                <select name="image_count" class="form-select" required>
+                                    <option value="">Select range</option>
+                                    <option value="50-75">50-75 images (Starter)</option>
+                                    <option value="100-150">100-150 images (Professional)</option>
+                                    <option value="200+">200+ images (Enterprise)</option>
+                                    <option value="unsure">Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">What categories of images do you need?</label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-hero" name="categories" value="hero">
+                                        <label for="cat-hero">Hero/Header Images</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-team" name="categories" value="team">
+                                        <label for="cat-team">Team/Office Scenes</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-product" name="categories" value="product">
+                                        <label for="cat-product">Product Contexts</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-abstract" name="categories" value="abstract">
+                                        <label for="cat-abstract">Abstract/Backgrounds</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-lifestyle" name="categories" value="lifestyle">
+                                        <label for="cat-lifestyle">Lifestyle/Contextual</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cat-tech" name="categories" value="tech">
+                                        <label for="cat-tech">Tech/Digital</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary btn-large" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary btn-large" onclick="nextStep()">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: Brand & Style -->
+                        <div class="form-step" data-step="3">
+                            <h2 class="step-title">Brand & Style</h2>
+                            <p class="step-description">Help us understand your brand's visual identity to create perfectly aligned images.</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Brand Colors (Hex Codes)</label>
+                                <input type="text" name="brand_colors" class="form-input" placeholder="e.g., #667eea, #10b981, #f59e0b">
+                                <small style="color: var(--color-text-light); font-size: var(--font-size-sm);">Provide 2-5 primary brand colors</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Brand Guidelines URL</label>
+                                <input type="url" name="brand_guidelines" class="form-input" placeholder="https://">
+                                <small style="color: var(--color-text-light); font-size: var(--font-size-sm);">Link to your brand guidelines or style guide (if available)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Visual Inspiration Examples</label>
+                                <textarea name="inspiration" class="form-textarea" rows="4" placeholder="Share URLs or describe visual styles you like (e.g., 'modern and minimalistic', 'warm and inviting', 'bold and vibrant')"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Styles to Avoid</label>
+                                <textarea name="avoid" class="form-textarea" rows="3" placeholder="What visual styles should we avoid? (e.g., 'too corporate', 'overly stock-photo-like', 'dark and moody')"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Brand Keywords (3-5 adjectives)</label>
+                                <input type="text" name="brand_keywords" class="form-input" placeholder="e.g., professional, innovative, approachable, modern, trustworthy">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Preferred Aspect Ratios</label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="ratio-1-1" name="aspect_ratios" value="1:1" checked>
+                                        <label for="ratio-1-1">1:1 (Square)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="ratio-16-9" name="aspect_ratios" value="16:9" checked>
+                                        <label for="ratio-16-9">16:9 (Landscape)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="ratio-4-3" name="aspect_ratios" value="4:3">
+                                        <label for="ratio-4-3">4:3 (Standard)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="ratio-9-16" name="aspect_ratios" value="9:16">
+                                        <label for="ratio-9-16">9:16 (Portrait/Stories)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary btn-large" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary btn-large" onclick="nextStep()">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4: Timeline & Budget -->
+                        <div class="form-step" data-step="4">
+                            <h2 class="step-title">Timeline & Budget</h2>
+                            <p class="step-description">Final details to help us create the perfect proposal for you.</p>
+
+                            <div class="form-group">
+                                <label class="form-label">When do you need the images? <span class="required">*</span></label>
+                                <select name="timeline" class="form-select" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="asap">ASAP (within 1 week)</option>
+                                    <option value="2-4-weeks">2-4 weeks</option>
+                                    <option value="1-2-months">1-2 months</option>
+                                    <option value="flexible">Flexible timeline</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Estimated Budget <span class="required">*</span></label>
+                                <select name="budget" class="form-select" required>
+                                    <option value="">Select budget range</option>
+                                    <option value="2-3k">CHF 2,000-3,000 (Starter)</option>
+                                    <option value="3-5k">CHF 3,000-5,000</option>
+                                    <option value="5-10k">CHF 5,000-10,000 (Professional)</option>
+                                    <option value="10k+">CHF 10,000+ (Enterprise)</option>
+                                    <option value="unsure">Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Additional Information or Special Requests</label>
+                                <textarea name="additional_info" class="form-textarea" rows="5" placeholder="Any other details we should know? Specific requirements, concerns, or questions?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">How did you hear about us?</label>
+                                <select name="referral_source" class="form-select">
+                                    <option value="">Select source</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="blog">Blog/Article</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <label for="consent">
+                                        I agree to receive a custom proposal via email and understand that AI-TechArt will use my information only for this purpose. <span class="required">*</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary btn-large" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    <i class="fas fa-paper-plane"></i> Submit & Get Proposal
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h2>Thank You!</h2>
+                        <p>Your intake form has been submitted successfully.</p>
+                        <p>We'll send your custom proposal to <span class="submitted-email" id="submittedEmail">your email</span> within the next 24 hours.</p>
+                        <p style="margin-top: var(--spacing-lg); color: var(--color-text-secondary);">In the meantime, check out our <a href="ai-gallery.html" style="color: var(--color-primary); font-weight: 600;">Portfolio</a> or <a href="free-starter-pack.html" style="color: var(--color-primary); font-weight: 600;">Download Free Pack</a>.</p>
+                        <div style="margin-top: var(--spacing-xl);">
+                            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AI-TechArt</h4>
+                <p>Custom AI-generated brand visuals for B2B companies. Fast, unique, and affordable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="services.html">Pricing & Packages</a></p>
+                <p><a href="case-studies.html">Case Studies</a></p>
+                <p><a href="ai-gallery.html">Portfolio</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+                <p><a href="intake-form.html">Get Proposal</a></p>
+                <p><a href="free-starter-pack.html">Free Starter Pack</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI-TechArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        // Mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Multi-step form navigation
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                currentStep++;
+                updateForm();
+            }
+        }
+
+        function prevStep() {
+            currentStep--;
+            updateForm();
+        }
+
+        function updateForm() {
+            // Update step visibility
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+            // Update progress indicator
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+
+                if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                } else if (stepNum === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+
+            // Update progress line
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.getElementById('progressLine').style.width = progress + '%';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateStep(step) {
+            const stepElement = document.querySelector(`.form-step[data-step="${step}"]`);
+            const requiredInputs = stepElement.querySelectorAll('[required]');
+
+            for (let input of requiredInputs) {
+                if (input.type === 'checkbox') {
+                    if (!input.checked) {
+                        alert('Please check the required checkbox.');
+                        input.focus();
+                        return false;
+                    }
+                } else if (!input.value.trim()) {
+                    alert('Please fill in all required fields.');
+                    input.focus();
+                    return false;
+                }
+            }
+
+            // Special validation for Step 2 checkboxes
+            if (step === 2) {
+                const useCases = stepElement.querySelectorAll('input[name="use_cases"]:checked');
+                if (useCases.length === 0) {
+                    alert('Please select at least one use case.');
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Form submission
+        document.getElementById('intakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            // Get form data
+            const formData = new FormData(this);
+            const email = formData.get('email');
+
+            // Here you would normally send data to your backend
+            // For demo purposes, we'll just show the success message
+
+            // Simulate form submission
+            console.log('Form submitted:', Object.fromEntries(formData));
+
+            // Show success message
+            document.getElementById('intakeForm').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+            document.getElementById('submittedEmail').textContent = email;
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // TODO: Integrate with your form handling service
+            // Examples:
+            // - Formspree: https://formspree.io/
+            // - Web3Forms: https://web3forms.com/
+            // - Google Forms (with Apps Script)
+            // - Custom backend API
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

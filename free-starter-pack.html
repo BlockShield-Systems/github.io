@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Brand Visual Starter Pack | AI-TechArt</title>
+    <meta name="description" content="Download 20 premium AI-generated images for free. Perfect for websites, social media, and presentations. Full commercial use included.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/design-system.css">
+
+    <style>
+        /* Hero Enhancements */
+        .page-hero {
+            padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
+        }
+
+        .value-props {
+            display: flex;
+            gap: var(--spacing-lg);
+            justify-content: center;
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .value-prop {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: white;
+        }
+
+        .value-prop i {
+            font-size: var(--font-size-2xl);
+        }
+
+        .value-prop-text {
+            text-align: left;
+        }
+
+        .value-prop-label {
+            font-size: var(--font-size-xs);
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .value-prop-value {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Email Capture Form */
+        .email-capture {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            max-width: 600px;
+            margin: calc(var(--spacing-3xl) * -1) auto var(--spacing-3xl);
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-light);
+            margin-top: var(--spacing-sm);
+        }
+
+        .email-capture .btn {
+            width: 100%;
+            font-size: var(--font-size-lg);
+        }
+
+        /* What's Included */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .included-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .included-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .included-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            color: white;
+            font-size: var(--font-size-2xl);
+        }
+
+        .included-count {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .included-category {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .included-desc {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Preview Grid */
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .preview-image {
+            aspect-ratio: 16/9;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            transition: all var(--transition-base);
+        }
+
+        .preview-image:hover {
+            transform: scale(1.05);
+        }
+
+        .preview-image:nth-child(even) {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .preview-image:nth-child(3n) {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        /* How to Use */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .use-case-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .use-case-card:hover {
+            border-color: var(--color-success);
+            transform: translateY(-2px);
+        }
+
+        .use-case-icon {
+            font-size: 2.5rem;
+            color: var(--color-success);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .use-case-title {
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .use-case-desc {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Upgrade CTA */
+        .upgrade-section {
+            background: var(--color-bg-light);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: var(--spacing-xl) auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-cell {
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+        }
+
+        .comparison-header {
+            background: var(--color-bg-medium);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+        }
+
+        .comparison-label {
+            font-weight: var(--font-weight-medium);
+        }
+
+        .comparison-value {
+            justify-content: center;
+            color: var(--color-text-secondary);
+        }
+
+        .comparison-value.highlight {
+            color: var(--color-success);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-3xl);
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .success-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .included-grid,
+            .preview-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr 1fr 1fr;
+                font-size: var(--font-size-sm);
+            }
+
+            .value-props {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .included-grid,
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-cell {
+                justify-content: space-between;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .comparison-cell::before {
+                content: attr(data-label);
+                font-weight: var(--font-weight-semibold);
+            }
+
+            .comparison-header {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI-TechArt</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-gallery.html" class="nav-link">Portfolio</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="free-starter-pack.html" class="btn-success btn-small">Free Pack</a></li>
+                <li><a href="intake-form.html" class="nav-cta">Get Proposal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Free Brand Visual Starter Pack</h1>
+        <p style="font-size: var(--font-size-2xl); margin: var(--spacing-md) 0;">20 Premium AI-Generated Images for Your Business</p>
+        <p>Test the quality before you commit. Use them on your website, social media, or presentations—completely free.</p>
+
+        <div class="value-props">
+            <div class="value-prop">
+                <i class="fas fa-check-circle"></i>
+                <div class="value-prop-text">
+                    <div class="value-prop-label">License</div>
+                    <div class="value-prop-value">Commercial Use</div>
+                </div>
+            </div>
+            <div class="value-prop">
+                <i class="fas fa-image"></i>
+                <div class="value-prop-text">
+                    <div class="value-prop-label">Quality</div>
+                    <div class="value-prop-value">High-Res (3000px)</div>
+                </div>
+            </div>
+            <div class="value-prop">
+                <i class="fas fa-layer-group"></i>
+                <div class="value-prop-text">
+                    <div class="value-prop-label">Variety</div>
+                    <div class="value-prop-value">5 Categories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <!-- Email Capture Form -->
+                <div class="email-capture" id="emailForm">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-md);">Download Your Free Pack</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">Enter your details to receive instant access to 20 premium images.</p>
+
+                    <form id="downloadForm">
+                        <div class="form-row">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-large">
+                            <i class="fas fa-download"></i> Download Now (Free)
+                        </button>
+                        <p class="form-note">No credit card required. Instant download link sent to your email.</p>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h2>Check Your Email!</h2>
+                    <p style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md);">Your free starter pack download link has been sent to:</p>
+                    <p class="submitted-email" style="color: var(--color-primary); font-weight: var(--font-weight-bold); font-size: var(--font-size-xl); margin-bottom: var(--spacing-lg);" id="submittedEmail"></p>
+                    <p style="color: var(--color-text-secondary);">Can't find it? Check your spam folder or <a href="mailto:contact@ai-techart.com" style="color: var(--color-primary); font-weight: 600;">contact us</a>.</p>
+                </div>
+
+                <!-- What's Included -->
+                <h2 class="section-title">What's Included in the Free Pack</h2>
+                <p class="section-subtitle">20 carefully curated images across 5 professional categories</p>
+
+                <div class="included-grid">
+                    <div class="included-card">
+                        <div class="included-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="included-count">4</div>
+                        <div class="included-category">Corporate</div>
+                        <p class="included-desc">Professional office scenes and business contexts</p>
+                    </div>
+
+                    <div class="included-card">
+                        <div class="included-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="included-count">4</div>
+                        <div class="included-category">Tech/Modern</div>
+                        <p class="included-desc">Digital interfaces and modern technology</p>
+                    </div>
+
+                    <div class="included-card">
+                        <div class="included-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="included-count">4</div>
+                        <div class="included-category">Backgrounds</div>
+                        <p class="included-desc">Abstract gradients and clean backgrounds</p>
+                    </div>
+
+                    <div class="included-card">
+                        <div class="included-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="included-count">4</div>
+                        <div class="included-category">E-Commerce</div>
+                        <p class="included-desc">Product contexts and retail settings</p>
+                    </div>
+
+                    <div class="included-card">
+                        <div class="included-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="included-count">4</div>
+                        <div class="included-category">Creative</div>
+                        <p class="included-desc">Artistic and eye-catching visuals</p>
+                    </div>
+                </div>
+
+                <!-- Preview Grid -->
+                <h2 class="section-title">Preview</h2>
+                <p class="section-subtitle">A glimpse of what you'll receive</p>
+
+                <div class="preview-grid">
+                    <div class="preview-image">Corporate 1</div>
+                    <div class="preview-image">Tech 1</div>
+                    <div class="preview-image">Background 1</div>
+                    <div class="preview-image">E-Commerce 1</div>
+                    <div class="preview-image">Creative 1</div>
+                    <div class="preview-image">Corporate 2</div>
+                    <div class="preview-image">Tech 2</div>
+                    <div class="preview-image">Background 2</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section class="section section-light">
+            <div class="container">
+                <h2 class="section-title">How to Use These Images</h2>
+                <p class="section-subtitle">Perfect for multiple business applications</p>
+
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="use-case-title">Website Headers</h3>
+                        <p class="use-case-desc">Perfect for hero sections, page banners, and featured images</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3 class="use-case-title">Social Media</h3>
+                        <p class="use-case-desc">LinkedIn posts, Instagram stories, Twitter headers</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-presentation"></i>
+                        </div>
+                        <h3 class="use-case-title">Presentations</h3>
+                        <p class="use-case-desc">Slide backgrounds, pitch decks, and client proposals</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3 class="use-case-title">Marketing</h3>
+                        <p class="use-case-desc">Email newsletters, brochures, and promotional materials</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upgrade CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="upgrade-section">
+                    <h2 class="section-title">Need More Custom Visuals?</h2>
+                    <p class="section-subtitle">Compare the free pack with our custom services</p>
+
+                    <div class="comparison-table">
+                        <div class="comparison-row comparison-header">
+                            <div class="comparison-cell">Feature</div>
+                            <div class="comparison-cell">Free Pack</div>
+                            <div class="comparison-cell">Custom Project</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Images">Number of Images</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">20</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">50-200+</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Brand Aligned">Brand Aligned</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">Generic</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">100% Custom</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Styles">Visual Styles</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">Pre-selected</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">3-10+ Styles</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Colors">Brand Colors</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">—</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">✓ Matched</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Revisions">Revisions</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">—</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">1-Unlimited</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Delivery">Delivery Time</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">Instant</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">48-72h</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Support">Support</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack">Email</div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom">Priority Support</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-cell comparison-label" data-label="Price">Price</div>
+                            <div class="comparison-cell comparison-value" data-label="Free Pack"><strong>FREE</strong></div>
+                            <div class="comparison-cell comparison-value highlight" data-label="Custom"><strong>From CHF 2,500</strong></div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: var(--spacing-xl);">
+                        <a href="intake-form.html" class="btn btn-primary btn-large" style="margin-right: var(--spacing-md);">Get Custom Proposal</a>
+                        <a href="services.html" class="btn btn-secondary btn-large">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AI-TechArt</h4>
+                <p>Custom AI-generated brand visuals for B2B companies. Fast, unique, and affordable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="services.html">Pricing & Packages</a></p>
+                <p><a href="case-studies.html">Case Studies</a></p>
+                <p><a href="ai-gallery.html">Portfolio</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="mailto:contact@ai-techart.com">contact@ai-techart.com</a></p>
+                <p><a href="intake-form.html">Get Proposal</a></p>
+                <p><a href="free-starter-pack.html">Free Starter Pack</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI-TechArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Form submission
+        document.getElementById('downloadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const email = formData.get('email');
+            const name = formData.get('name');
+
+            // Here you would normally integrate with email service
+            // Examples: Mailchimp, ConvertKit, EmailOctopus, etc.
+            console.log('Submitted:', { name, email });
+
+            // Show success message
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+            document.getElementById('submittedEmail').textContent = email;
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // TODO: Integrate with your email service
+            // Example with Mailchimp:
+            // fetch('YOUR_MAILCHIMP_ENDPOINT', {
+            //     method: 'POST',
+            //     body: formData
+            // })
+
+            // Example with ConvertKit:
+            // fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email, first_name: name })
+            // })
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
