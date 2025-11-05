@@ -1,0 +1,328 @@
+/* ============================================
+   ACCESSIBILITY & CONTRAST IMPROVEMENTS
+   WCAG AA Standard: 4.5:1 für normalen Text
+   WCAG AA Standard: 3:1 für große Texte (18pt+)
+   ============================================ */
+
+/* Fix: Helle Texte auf hellem Hintergrund */
+.hero-indicators div,
+.pricing-tagline,
+.metric-label {
+    color: #374151 !important; /* Dunkleres Grau statt #6b7280 */
+}
+
+/* Fix: Links & Buttons - bessere Kontraste */
+.nav-link {
+    color: #1f2937 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea !important;
+}
+
+/* Fix: Helle Schrift auf dunklem Hintergrund */
+.section-dark,
+.trust-section,
+.comfyui-section,
+.guarantees-section,
+footer {
+    background: #0f172a !important; /* Noch dunkler für besseren Kontrast */
+}
+
+.section-dark *,
+.trust-section *,
+.comfyui-section *,
+.guarantees-section *,
+footer * {
+    color: #f1f5f9 !important; /* Heller für besseren Kontrast */
+}
+
+.section-dark h2,
+.section-dark h3,
+.trust-section h2,
+.trust-section h3,
+.comfyui-section h2,
+.comfyui-section h3 {
+    color: #ffffff !important;
+}
+
+/* Fix: Button Hover States */
+.btn-primary-cta:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #633a8f 100%) !important;
+}
+
+.btn-secondary-cta:hover {
+    background: #667eea !important;
+    color: white !important;
+    border-color: #667eea !important;
+}
+
+/* Fix: Disabled/Subtle Text */
+.hero h2,
+.pricing-tagline,
+blockquote {
+    color: #1f2937 !important; /* Dunkleres Grau */
+}
+
+/* Fix: Trust Bar - Text auf Gradient */
+.trust-bar,
+.final-cta {
+    background: linear-gradient(135deg, #5568d3 0%, #633a8f 100%) !important;
+}
+
+.trust-bar *,
+.final-cta * {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix: Card Backgrounds für bessere Lesbarkeit */
+.package-card,
+.case-card,
+.expertise-card,
+.skill-category-card,
+.pricing-card {
+    background: #ffffff !important;
+}
+
+.package-card *:not(.btn-primary-cta):not(.btn-secondary-cta),
+.case-card *:not(.btn-primary-cta),
+.expertise-card *,
+.skill-category-card *,
+.pricing-card * {
+    color: #1f2937 !important;
+}
+
+/* Fix: Comparison Cards */
+.comparison-card.bad {
+    background: #fef2f2 !important;
+    border: 2px solid #dc2626 !important;
+}
+
+.comparison-card.good {
+    background: #f0fdf4 !important;
+    border: 2px solid #16a34a !important;
+}
+
+/* Fix: Metric Values */
+.metric-value {
+    color: #5568d3 !important;
+}
+
+/* Fix: Headings auf hellem Hintergrund */
+h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+}
+
+.section-title {
+    color: #111827 !important;
+}
+
+/* Fix: Paragraph Text */
+p, li, td {
+    color: #374151 !important;
+    line-height: 1.75;
+}
+
+/* Fix: Links in Content */
+a:not(.btn-primary-cta):not(.btn-secondary-cta):not(.nav-link) {
+    color: #5568d3 !important;
+    text-decoration: underline;
+}
+
+a:not(.btn-primary-cta):not(.btn-secondary-cta):not(.nav-link):hover {
+    color: #3b3f8f !important;
+}
+
+/* Fix: Form Inputs */
+input, select, textarea {
+    color: #111827 !important;
+    background: #ffffff !important;
+    border: 2px solid #d1d5db !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #667eea !important;
+    outline: none;
+}
+
+input::placeholder {
+    color: #6b7280 !important;
+}
+
+/* Fix: Labels */
+label {
+    color: #111827 !important;
+    font-weight: 600;
+}
+
+/* Fix: Skill Dots */
+.skill-dot.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.skill-dot {
+    background: #e5e7eb !important;
+}
+
+/* FIX: Abgeschnittene Textboxen - Skills Section */
+.skill-category-card {
+    background: white !important;
+    padding: 2.5rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease !important;
+    min-height: auto !important; /* Keine feste Höhe */
+    height: auto !important; /* Automatische Höhe */
+}
+
+.skill-item {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    overflow: visible !important; /* Kein Overflow-Hidden */
+}
+
+.skill-item p {
+    color: #4b5563 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+.skill-item h4 {
+    color: #111827 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1.125rem !important;
+}
+
+/* Fix: Details/Summary (FAQ) */
+summary {
+    color: #111827 !important;
+    font-weight: 600;
+}
+
+details p {
+    color: #374151 !important;
+}
+
+details strong {
+    color: #667eea !important;
+}
+
+/* Fix: Footer Links */
+footer a {
+    color: #a5b4fc !important;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+/* Fix: Case Study Headers */
+.case-header {
+    background: linear-gradient(135deg, #5568d3 0%, #633a8f 100%) !important;
+}
+
+.case-header * {
+    color: #ffffff !important;
+}
+
+/* Fix: Badge/Tag Elements */
+.popular-badge,
+.trust-item {
+    color: #ffffff !important;
+}
+
+/* Fix: Hover States für Cards */
+.package-card:hover,
+.case-card:hover,
+.expertise-card:hover,
+.skill-category-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Fix: Icons auf dunklem Hintergrund */
+.comfyui-section i,
+.trust-section i,
+.guarantees-section i {
+    color: #a5b4fc !important;
+}
+
+/* Fix: Guarantee Cards */
+.guarantee-card,
+.comfyui-benefit,
+.trust-card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.guarantee-card h3,
+.comfyui-benefit h3,
+.trust-card h3 {
+    color: #a5b4fc !important;
+}
+
+/* Fix: Tabellen */
+.comparison-table th {
+    background: linear-gradient(135deg, #5568d3 0%, #633a8f 100%) !important;
+    color: #ffffff !important;
+}
+
+.comparison-table td {
+    color: #374151 !important;
+}
+
+.comparison-table .check {
+    color: #16a34a !important;
+}
+
+.comparison-table .cross {
+    color: #dc2626 !important;
+}
+
+/* Fix: Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        background: #ffffff !important;
+        padding: 1rem !important;
+        border-radius: 8px !important;
+    }
+
+    .nav-link {
+        color: #111827 !important;
+        padding: 0.75rem !important;
+    }
+}
+
+/* Accessibility: Focus States */
+*:focus {
+    outline: 2px solid #667eea !important;
+    outline-offset: 2px !important;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Screen Reader Only (für Accessibility) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

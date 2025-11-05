@@ -8,6 +8,8 @@
     <link rel="canonical" href="https://ai-techart.com/intake-form.html">
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/accessibility-fixes.css">
+    <link rel="stylesheet" href="assets/css/language-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -60,77 +62,249 @@
                         </ul>
                     </div>
 
-                    <!-- Formular-Embedding-Bereich -->
-                    <div style="margin: 3rem 0; text-align: center;">
-                        <h3 style="color: #1a202c; margin-bottom: 2rem;">Projekt-Intake-Formular</h3>
+                    <!-- Web3Forms Integration -->
+                    <!-- SETUP: Gehen Sie zu https://web3forms.com und registrieren Sie contact@ai-techart.com um Ihren Access Key zu erhalten -->
+                    <!-- Ersetzen Sie dann YOUR_ACCESS_KEY_HERE mit Ihrem echten Key -->
 
-                        <!-- OPTION 1: Google Forms Embedding -->
-                        <!-- Bitte ersetzen Sie [YOUR_GOOGLE_FORM_ID] mit Ihrer tatsächlichen Google Forms ID -->
-                        <!--
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/[YOUR_GOOGLE_FORM_ID]/viewform?embedded=true"
-                            width="100%"
-                            height="1800"
-                            frameborder="0"
-                            marginheight="0"
-                            marginwidth="0">
-                            Wird geladen…
-                        </iframe>
-                        -->
+                    <form action="https://api.web3forms.com/submit" method="POST" id="intake-form" style="text-align: left;">
+                        <!-- Web3Forms Access Key (WICHTIG: Ersetzen Sie mit Ihrem Key von web3forms.com) -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="Neue Projekt-Anfrage von AI-TechArt Website">
+                        <input type="hidden" name="redirect" value="https://ai-techart.com/thank-you.html">
 
-                        <!-- OPTION 2: Typeform Embedding -->
-                        <!-- Bitte ersetzen Sie [YOUR_TYPEFORM_ID] mit Ihrer tatsächlichen Typeform ID -->
-                        <!--
-                        <div data-tf-widget="[YOUR_TYPEFORM_ID]" style="width:100%;height:600px;"></div>
-                        <script src="//embed.typeform.com/next/embed.js"></script>
-                        -->
+                        <!-- SECTION 1: Unternehmensinfo -->
+                        <h3 style="color: #667eea; margin: 2rem 0 1.5rem; font-size: 1.5rem;"><i class="fas fa-building"></i> Unternehmensinfo</h3>
 
-                        <!-- TEMPORÄRER PLATZHALTER (bitte ersetzen!) -->
-                        <div style="background: #f9fafb; padding: 4rem 2rem; border-radius: 12px; border: 2px dashed #e5e7eb;">
-                            <i class="fas fa-file-alt" style="font-size: 4rem; color: #667eea; margin-bottom: 1.5rem;"></i>
-                            <h3 style="color: #1a202c; margin-bottom: 1rem;">Formular wird geladen...</h3>
-                            <p style="color: #6b7280; margin-bottom: 2rem;">
-                                Für die Aktivierung des Formulars kontaktieren Sie uns bitte direkt per E-Mail.
-                            </p>
-                            <a href="mailto:contact@ai-techart.com?subject=Projekt-Anfrage&body=Hallo,%0A%0AIch%20interessiere%20mich%20für%20Custom%20AI-Brand-Visuals.%0A%0AFirmenname:%0ABranche:%0AGewünschtes%20Paket:%0AAnzahl%20Bilder:%0A%0ABeste%20Grüße"
-                               style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
-                                <i class="fas fa-envelope"></i> Per E-Mail anfragen
-                            </a>
+                        <label for="company-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Firmenname *</label>
+                        <input type="text" id="company-name" name="Firmenname" required
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="Ihre Firma AG">
+
+                        <label for="industry" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Branche *</label>
+                        <select id="industry" name="Branche" required
+                                style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">-- Bitte wählen --</option>
+                            <option value="SaaS">SaaS / Software</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="E-Commerce">E-Commerce</option>
+                            <option value="Beratung">Beratung</option>
+                            <option value="Marketing">Marketing / Agentur</option>
+                            <option value="Fintech">Fintech</option>
+                            <option value="Andere">Andere</option>
+                        </select>
+
+                        <label for="website" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Website-URL</label>
+                        <input type="url" id="website" name="Website"
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="https://ihre-website.com">
+
+                        <label for="contact-person" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Kontaktperson *</label>
+                        <input type="text" id="contact-person" name="Kontaktperson" required
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="Max Mustermann">
+
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">E-Mail *</label>
+                        <input type="email" id="email" name="Email" required
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="max.mustermann@firma.com">
+
+                        <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Telefon (Optional)</label>
+                        <input type="tel" id="phone" name="Telefon"
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="+41 79 123 45 67">
+
+                        <!-- SECTION 2: Projekt-Details -->
+                        <h3 style="color: #667eea; margin: 2.5rem 0 1.5rem; font-size: 1.5rem;"><i class="fas fa-project-diagram"></i> Projekt-Details</h3>
+
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #1a202c;">Gewünschtes Paket *</label>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Paket" value="Starter (CHF 2'500)" required style="margin-right: 0.75rem;">
+                                <strong>Starter</strong> – CHF 2'500 (50 Bilder)
+                            </label>
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #667eea; border-radius: 8px; background: #f0f9ff;">
+                                <input type="radio" name="Paket" value="Professional (CHF 5'000)" style="margin-right: 0.75rem;">
+                                <strong>Professional</strong> – CHF 5'000 (100 Bilder) ⭐ MOST POPULAR
+                            </label>
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Paket" value="Enterprise (CHF 10'000+)" style="margin-right: 0.75rem;">
+                                <strong>Enterprise</strong> – CHF 10'000+ (200+ Bilder)
+                            </label>
+                            <label style="display: block; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Paket" value="Unsicher / Beratung gewünscht" style="margin-right: 0.75rem;">
+                                Unsicher – Ich benötige Beratung
+                            </label>
                         </div>
 
-                        <!-- FORMULAR-FELDER REFERENZ (für Google Forms / Typeform Erstellung) -->
-                        <!--
-                        SECTION 1: Unternehmensinfo
-                        - Firmenname* (Text)
-                        - Branche* (Dropdown: SaaS, Healthcare, E-Commerce, Beratung, Andere)
-                        - Website-URL (Text)
-                        - Kontaktperson* (Text)
-                        - E-Mail* (Email)
-                        - Telefon (Optional) (Tel)
+                        <label for="image-count" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Anzahl benötigter Bilder *</label>
+                        <input type="number" id="image-count" name="Anzahl_Bilder" min="1" required
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="z.B. 50">
 
-                        SECTION 2: Projekt-Details
-                        - Gewünschtes Paket* (Radio: Starter/Professional/Enterprise/Unsicher)
-                        - Anzahl benötigter Bilder* (Number)
-                        - Use Cases* (Checkboxes: Website, Social Media, Präsentationen, Print, Merchandise, Werbung)
-                        - Gewünschte Bildkategorien* (Checkboxes: Hero-Images, Backgrounds, Product Shots, Team Visuals, Lifestyle, Other)
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #1a202c;">Use Cases * (Mehrfachauswahl möglich)</label>
+                        <div style="margin-bottom: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Website" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Website
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Social Media" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Social Media
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Präsentationen" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Präsentationen
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Print" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Print
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Merchandise" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Merchandise
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Use_Cases" value="Werbung" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Werbung
+                            </label>
+                        </div>
 
-                        SECTION 3: Marken-Info
-                        - Brand Colors (Text: Hex-Codes)
-                        - Logo Upload (Optional) (File Upload)
-                        - Brand Guidelines Upload (Optional) (File Upload)
-                        - Stil-Präferenzen (Checkboxes: Minimalistisch, Bold, Elegant, Tech-Forward, Playful, Professional)
-                        - Referenzbilder-Upload (Optional) (File Upload)
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #1a202c;">Gewünschte Bildkategorien * (Mehrfachauswahl möglich)</label>
+                        <div style="margin-bottom: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Hero Images" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Hero Images
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Backgrounds" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Backgrounds
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Product Shots" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Product Shots
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Team Visuals" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Team Visuals
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Lifestyle" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Lifestyle
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Bildkategorien" value="Andere" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Andere
+                            </label>
+                        </div>
 
-                        SECTION 4: Timeline & Budget
-                        - Gewünschter Start-Termin* (Date)
-                        - Deadline (Optional) (Date)
-                        - Budget-Range* (Radio: CHF 2'500, CHF 5'000, CHF 10'000+, Individuell)
-                        - Zusätzliche Anforderungen (Textarea)
+                        <!-- SECTION 3: Marken-Info -->
+                        <h3 style="color: #667eea; margin: 2.5rem 0 1.5rem; font-size: 1.5rem;"><i class="fas fa-palette"></i> Marken-Info</h3>
 
-                        SECTION 5: Wie haben Sie uns gefunden?
-                        - Quelle (Dropdown: Google Search, LinkedIn, Empfehlung, Andere)
-                        -->
-                    </div>
+                        <label for="brand-colors" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Brand Colors (Hex-Codes)</label>
+                        <input type="text" id="brand-colors" name="Brand_Colors"
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                               placeholder="z.B. #667eea, #764ba2, #ffffff">
+
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #1a202c;">Stil-Präferenzen (Mehrfachauswahl möglich)</label>
+                        <div style="margin-bottom: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Minimalistisch" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Minimalistisch
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Bold" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Bold
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Elegant" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Elegant
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Tech-Forward" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Tech-Forward
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Playful" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Playful
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="Stil_Praeferenzen" value="Professional" style="margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;">
+                                Professional
+                            </label>
+                        </div>
+
+                        <!-- SECTION 4: Timeline & Budget -->
+                        <h3 style="color: #667eea; margin: 2.5rem 0 1.5rem; font-size: 1.5rem;"><i class="fas fa-calendar-alt"></i> Timeline & Budget</h3>
+
+                        <label for="start-date" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Gewünschter Start-Termin *</label>
+                        <input type="date" id="start-date" name="Start_Termin" required
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+
+                        <label for="deadline" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Deadline (Optional)</label>
+                        <input type="date" id="deadline" name="Deadline"
+                               style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 600; color: #1a202c;">Budget-Range *</label>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Budget" value="CHF 2'500" required style="margin-right: 0.75rem;">
+                                CHF 2'500
+                            </label>
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Budget" value="CHF 5'000" style="margin-right: 0.75rem;">
+                                CHF 5'000
+                            </label>
+                            <label style="display: block; margin-bottom: 0.75rem; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Budget" value="CHF 10'000+" style="margin-right: 0.75rem;">
+                                CHF 10'000+
+                            </label>
+                            <label style="display: block; cursor: pointer; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px;">
+                                <input type="radio" name="Budget" value="Individuell" style="margin-right: 0.75rem;">
+                                Individuell (bitte im Textfeld erläutern)
+                            </label>
+                        </div>
+
+                        <label for="additional-requirements" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Zusätzliche Anforderungen & Kommentare</label>
+                        <textarea id="additional-requirements" name="Zusaetzliche_Anforderungen" rows="5"
+                                  style="width: 100%; padding: 0.875rem; margin-bottom: 1.5rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; font-family: inherit;"
+                                  placeholder="Beschreiben Sie hier weitere Details zu Ihrem Projekt..."></textarea>
+
+                        <!-- SECTION 5: Quelle -->
+                        <h3 style="color: #667eea; margin: 2.5rem 0 1.5rem; font-size: 1.5rem;"><i class="fas fa-lightbulb"></i> Wie haben Sie uns gefunden?</h3>
+
+                        <label for="source" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a202c;">Quelle</label>
+                        <select id="source" name="Quelle"
+                                style="width: 100%; padding: 0.875rem; margin-bottom: 2rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">-- Bitte wählen --</option>
+                            <option value="Google Search">Google Search</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="Empfehlung">Empfehlung</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Andere">Andere</option>
+                        </select>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                                style="width: 100%; padding: 1.25rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.25rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-paper-plane"></i> Anfrage absenden
+                        </button>
+
+                        <p style="text-align: center; color: #6b7280; font-size: 0.9rem; margin-top: 1.5rem;">
+                            <i class="fas fa-lock"></i> Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
+                        </p>
+                    </form>
+
+                    <!-- Setup Instructions (nur für Sie sichtbar) -->
+                    <!--
+                    WICHTIG: Um das Formular zu aktivieren, gehen Sie zu https://web3forms.com
+                    1. Registrieren Sie sich kostenlos
+                    2. Geben Sie Ihre E-Mail ein: contact@ai-techart.com
+                    3. Sie erhalten einen Access Key
+                    4. Ersetzen Sie oben "YOUR_ACCESS_KEY_HERE" mit Ihrem echten Key
+                    5. Das Formular sendet dann alle Submissions an contact@ai-techart.com
+
+                    Optional: Erstellen Sie eine thank-you.html Seite für die Weiterleitung nach dem Submit
+                    -->
 
                     <div style="background: #f0f9ff; padding: 2rem; border-radius: 8px; margin-top: 3rem;">
                         <h4 style="color: #667eea; margin-bottom: 1rem;">Alternative: Direkter Kontakt</h4>
@@ -157,5 +331,14 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/navigation.js"></script>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Language Switcher -->
+    <script src="assets/js/language-switcher.js"></script>
 </body>
 </html>
