@@ -1,0 +1,42 @@
+# Robots.txt für AI-TechArt B2B Website
+# https://ai-techart.com
+
+User-agent: *
+Allow: /
+
+# B2B Service Pages - Crawlen erlaubt
+Allow: /index.html
+Allow: /services.html
+Allow: /about-expertise.html
+Allow: /case-studies.html
+Allow: /faq.html
+Allow: /free-starter-pack.html
+Allow: /intake-form.html
+
+# Legal Pages - Crawlen erlaubt
+Allow: /impressum.html
+Allow: /datenschutz.html
+Allow: /nutzungsbedingungen.html
+Allow: /lizenz.html
+Allow: /sicherheit.html
+
+# Archive/Legacy - NICHT crawlen
+Disallow: /archive/
+Disallow: /dist/
+
+# Assets - NICHT crawlen (CSS/JS werden automatisch erkannt)
+Disallow: /assets/
+
+# Scripts & Config - NICHT crawlen
+Disallow: /scripts/
+Disallow: /config/
+Disallow: /server/
+
+# Temporary/Hidden Files - NICHT crawlen
+Disallow: /*.log
+Disallow: /*-backup.html
+Disallow: /modern-design-preview.html
+Disallow: /modern-index-sections.html
+
+# Sitemap
+Sitemap: https://ai-techart.com/sitemap.xml
