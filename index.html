@@ -1,961 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://translate.googleapis.com; frame-src https://translate.google.com;">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Custom AI-Generated Brand Visuals für B2B | ComfyUI Workflows | AI-TechArt</title>
-    <meta name="description" content="Einzigartige AI-generierte Markenbilder für B2B-Unternehmen. 100% individuell, 48-72h Lieferung, CHF 2'500-10'000. ComfyUI-Workflows für Ihre Markenidentität.">
-    <meta name="keywords" content="AI Brand Visuals, Custom AI Images, ComfyUI Workflows, B2B Visual Content, AI-Generated Marketing Visuals, Brand Photography Alternative, Schweiz">
-    <meta name="author" content="Demian Lienert - AI-TechArt">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ai-techart.com/">
-
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Custom AI-Generated Brand Visuals für B2B | AI-TechArt">
-    <meta property="og:description" content="Einzigartige AI-generierte Markenbilder für B2B-Unternehmen. 100% individuell, 48-72h Lieferung. ComfyUI-Workflows für perfekte Markenkonsistenz.">
-    <meta property="og:url" content="https://ai-techart.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AI-TechArt">
-    <meta property="og:locale" content="de_CH">
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Custom AI-Generated Brand Visuals für B2B">
-    <meta name="twitter:description" content="100% unique, markenscharf, in 48-72h geliefert. ComfyUI-Workflows für Ihre Markenidentität.">
-
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="AI-TechArt">
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/main.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css?v=2.0">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/accessibility-fixes.css">
-    <link rel="stylesheet" href="assets/css/language-switcher.css">
-    <link rel="stylesheet" href="assets/css/modern-design.css">
-
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
-
-    <!-- Structured Data - Organization Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AI-TechArt",
-        "url": "https://ai-techart.com",
-        "logo": "https://ai-techart.com/assets/images/icons/apple-touch-icon.png",
-        "description": "Custom AI-Generated Brand Visuals für B2B-Unternehmen mit ComfyUI-Workflows",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Wittenbach",
-            "addressCountry": "CH"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "contact@ai-techart.com",
-            "contactType": "Customer Service",
-            "availableLanguage": ["German", "English"]
-        },
-        "founder": {
-            "@type": "Person",
-            "name": "Demian Lienert",
-            "jobTitle": "IT Specialist & AI Expert"
-        },
-        "sameAs": [
-            "https://github.com/BlockShield-Systems"
-        ]
-    }
-    </script>
-
-    <!-- Service Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Custom AI-Generated Brand Visuals",
-        "provider": {
-            "@type": "Organization",
-            "name": "AI-TechArt",
-            "url": "https://ai-techart.com"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "Switzerland"
-        },
-        "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "CHF",
-            "lowPrice": "2500",
-            "highPrice": "10000",
-            "offerCount": "3"
-        },
-        "description": "Professionelle AI-generierte Markenbilder mit ComfyUI-Workflows. 100% unique, 48-72h Lieferung, volle kommerzielle Nutzungsrechte."
-    }
-    </script>
-
-    <style>
-        /* Additional Custom Styles for B2B Service Page */
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .trust-bar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        .trust-bar-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .trust-item i {
-            font-size: 1.2rem;
-        }
-
-        .hero-b2b {
-            padding: 6rem 0 4rem;
-            text-align: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .hero-b2b h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-b2b h2 {
-            font-size: 1.75rem;
-            color: #4a5568;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin: 2.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary-cta {
-            display: inline-block;
-            padding: 1.25rem 3rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary-cta {
-            display: inline-block;
-            padding: 1.25rem 3rem;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            border: 2px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary-cta:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .hero-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            color: #4a5568;
-            font-size: 1rem;
-        }
-
-        .hero-indicators div {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-indicators i {
-            color: #10b981;
-            font-size: 1.2rem;
-        }
-
-        .problem-solution {
-            padding: 4rem 0;
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .comparison-card {
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .comparison-card.bad {
-            background: #fee;
-            border: 2px solid #fcc;
-        }
-
-        .comparison-card.good {
-            background: #efe;
-            border: 2px solid #9f9;
-            transform: scale(1.05);
-        }
-
-        .comparison-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .comparison-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .comparison-card.bad .icon {
-            color: #e53e3e;
-        }
-
-        .comparison-card.good .icon {
-            color: #10b981;
-        }
-
-        .services-preview {
-            padding: 4rem 0;
-            background: #f9fafb;
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .package-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .package-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .package-card.popular {
-            border: 3px solid #667eea;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.875rem;
-        }
-
-        .package-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #667eea;
-            margin: 1rem 0;
-        }
-
-        .package-features {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .package-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .package-features li i {
-            color: #10b981;
-        }
-
-        .comfyui-section {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-        }
-
-        .comfyui-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .comfyui-benefit {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comfyui-benefit h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-
-        .comfyui-benefit i {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .case-studies-preview {
-            padding: 4rem 0;
-        }
-
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .case-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .case-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .case-header {
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .case-content {
-            padding: 2rem;
-        }
-
-        .case-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .metric {
-            text-align: center;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #667eea;
-        }
-
-        .metric-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-
-        .final-cta {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .final-cta p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .hero-b2b h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-b2b h2 {
-                font-size: 1.35rem;
-            }
-
-            .cta-group {
-                flex-direction: column;
-            }
-
-            .btn-primary-cta, .btn-secondary-cta {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Sticky Navigation -->
-    <nav class="sticky-nav">
-        <div class="container">
-            <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
-                <a href="/" class="logo" style="font-size: 1.75rem; font-weight: 700; color: #667eea; text-decoration: none;">AI-TechArt</a>
-                <ul class="nav-links" style="display: flex; gap: 2rem; list-style: none; margin: 0;">
-                    <li><a href="services.html" class="nav-link">Service-Pakete</a></li>
-                    <li><a href="case-studies.html" class="nav-link">Erfolgsgeschichten</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
-                    <li><a href="about-expertise.html" class="nav-link">Expertise</a></li>
-                    <li><a href="free-starter-pack.html" class="nav-link">Gratis-Bilder</a></li>
-                    <li><a href="intake-form.html" class="nav-link" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 6px;">Angebot anfragen</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Techart & Dynamics | Creative AI Solutions</title>
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="dark">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-white fs-4" href="#">AI-Techart</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-4">
+            <li class="nav-item">
+              <a class="nav-link text-white fw-medium" href="#brands">Marken</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fw-medium" href="#transformations"
+                >Transformationen</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fw-medium" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fw-medium" href="#workflows"
+                >Workflows</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fw-medium" href="#contact"
+                >Kontakt</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        <div class="container">
-            <div class="trust-bar-content">
-                <div class="trust-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>100% Unique – Keine Stockfotos</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>48-72h Lieferung</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>CHF 2'500-10'000 (vs CHF 15'000+ Photoshoot)</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>100% Zufriedenheitsgarantie</span>
-                </div>
+    <!-- Hero -->
+    <header class="hero min-vh-100 d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10">
+            <h1 class="display-3 fw-bold mb-4 text-white">
+              AI-Techart &amp; Dynamics
+            </h1>
+            <p class="lead text-light mb-5">
+              Wo Kreativität auf fortschrittliche KI trifft.<br />
+              Von atemberaubenden Visuals bis hin zu intelligenten
+              Agenten-Systemen.
+            </p>
+
+            <div class="row g-4 justify-content-center mb-5">
+              <div class="col-6 col-md-4 col-lg-3">
+                <img
+                  src="/assets/images/logos/twisted4chaos.jpg"
+                  alt="Twisted_4_Chaos"
+                  class="img-fluid brand-logo"
+                />
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <img
+                  src="/assets/images/logos/ai-techart.png"
+                  alt="AI-Techart & Dynamics"
+                  class="img-fluid brand-logo"
+                />
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <img
+                  src="/assets/images/logos/blockshield.png"
+                  alt="Blockshield Systems"
+                  class="img-fluid brand-logo"
+                />
+              </div>
             </div>
+
+            <a href="#transformations" class="btn btn-primary btn-lg px-5"
+              >Meine Arbeiten entdecken</a
+            >
+          </div>
         </div>
-    </div>
+      </div>
+    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-b2b">
-            <div class="container">
-                <h1>Einzigartige AI-generierte Markenbilder<br>für B2B-Unternehmen</h1>
-                <h2>100% unique, markenscharf & in 48-72h geliefert – ohne teure Photoshoots</h2>
-
-                <div class="cta-group">
-                    <a href="intake-form.html" class="btn-primary-cta">
-                        <i class="fas fa-rocket"></i> Kostenloses Angebot anfragen
-                    </a>
-                    <a href="free-starter-pack.html" class="btn-secondary-cta">
-                        <i class="fas fa-gift"></i> 20 Gratis-Bilder erhalten
-                    </a>
-                </div>
-
-                <div class="hero-indicators">
-                    <div><i class="fas fa-check"></i> Keine Stockfotos mehr</div>
-                    <div><i class="fas fa-check"></i> 70% Kostenersparnis</div>
-                    <div><i class="fas fa-check"></i> 90% schnellere Lieferung</div>
-                    <div><i class="fas fa-check"></i> Unlimited Nutzungsrechte</div>
-                </div>
+    <!-- Brands Section -->
+    <section id="brands" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 text-white">Meine Marken</h2>
+        <div class="row g-5 text-center">
+          <div class="col-md-4">
+            <div class="brand-card p-4">
+              <img
+                src="/assets/images/logos/twisted4chaos.jpg"
+                alt="Twisted_4_Chaos"
+                class="img-fluid mb-3"
+                style="max-height: 180px"
+              />
+              <h4>Twisted_4_Chaos</h4>
+              <p class="text-light">Kreative KI-Visuals & Cyberpunk-Art</p>
             </div>
-        </section>
-
-        <!-- Problem/Solution Section -->
-        <section class="problem-solution section">
-            <div class="container">
-                <h2 class="section-title">Das Problem mit traditionellen Markenbildern</h2>
-                <p style="text-align: center; color: #6b7280; font-size: 1.125rem; max-width: 800px; margin: 1rem auto 0;">
-                    Stockfotos sind austauschbar, Photoshoots sind teuer und zeitaufwendig. Es gibt eine bessere Lösung.
-                </p>
-
-                <div class="comparison-grid">
-                    <div class="comparison-card bad">
-                        <div class="icon"><i class="fas fa-images"></i></div>
-                        <h3>Stockfotos</h3>
-                        <p><strong>Problem:</strong> Austauschbar & überall zu sehen</p>
-                        <p>✗ Keine Exklusivität<br>✗ Generisch<br>✗ Lizenz-Einschränkungen</p>
-                    </div>
-
-                    <div class="comparison-card bad">
-                        <div class="icon"><i class="fas fa-camera"></i></div>
-                        <h3>Photoshoots</h3>
-                        <p><strong>Problem:</strong> Teuer & zeitaufwendig</p>
-                        <p>✗ CHF 15'000-50'000<br>✗ Wochenlange Planung<br>✗ Wetter-/Location-abhängig</p>
-                    </div>
-
-                    <div class="comparison-card good">
-                        <div class="icon"><i class="fas fa-magic"></i></div>
-                        <h3>AI-Generierte Visuals</h3>
-                        <p><strong>Lösung:</strong> Unique & schnell</p>
-                        <p>✓ 100% exklusiv für Sie<br>✓ CHF 2'500-10'000<br>✓ 48-72h Lieferung<br>✓ Unlimited Nutzung</p>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="brand-card p-4">
+              <img
+                src="/assets/images/logos/ai-techart.png"
+                alt="AI-Techart & Dynamics"
+                class="img-fluid mb-3"
+                style="max-height: 180px"
+              />
+              <h4>AI-Techart & Dynamics</h4>
+              <p class="text-light">AI-gestützte Kreativ- & Design-Lösungen</p>
             </div>
-        </section>
-
-        <!-- Services Preview -->
-        <section class="services-preview">
-            <div class="container">
-                <h2 class="section-title">Wählen Sie Ihr Paket</h2>
-                <p style="text-align: center; color: #6b7280; font-size: 1.125rem;">
-                    Transparent, fair & skalierbar – für jedes B2B-Unternehmen das richtige Paket
-                </p>
-
-                <div class="packages-grid">
-                    <!-- Starter Package -->
-                    <div class="package-card">
-                        <h3>Starter</h3>
-                        <div class="package-price">CHF 2'500</div>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Ideal für erste Tests & kleinere Projekte</p>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> 50 Custom AI-Bilder</li>
-                            <li><i class="fas fa-check"></i> 2 Stile/Kategorien</li>
-                            <li><i class="fas fa-check"></i> 2 Revision-Runden</li>
-                            <li><i class="fas fa-check"></i> 48-72h Lieferung</li>
-                            <li><i class="fas fa-check"></i> Volle kommerzielle Rechte</li>
-                        </ul>
-                        <a href="services.html#starter" class="btn-primary-cta" style="display: block; text-align: center; margin-top: 1.5rem; padding: 1rem;">Details ansehen</a>
-                    </div>
-
-                    <!-- Professional Package (Most Popular) -->
-                    <div class="package-card popular">
-                        <div class="popular-badge">🔥 MOST POPULAR</div>
-                        <h3>Professional</h3>
-                        <div class="package-price">CHF 5'000</div>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Perfekt für komplette Markentransformation</p>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> 100 Custom AI-Bilder</li>
-                            <li><i class="fas fa-check"></i> 4 Stile/Kategorien</li>
-                            <li><i class="fas fa-check"></i> 4 Revision-Runden</li>
-                            <li><i class="fas fa-check"></i> 48h Express-Lieferung</li>
-                            <li><i class="fas fa-check"></i> Volle kommerzielle Rechte</li>
-                            <li><i class="fas fa-check"></i> <strong>Priority Support</strong></li>
-                        </ul>
-                        <a href="services.html#professional" class="btn-primary-cta" style="display: block; text-align: center; margin-top: 1.5rem; padding: 1rem;">Jetzt buchen</a>
-                    </div>
-
-                    <!-- Enterprise Package -->
-                    <div class="package-card">
-                        <h3>Enterprise</h3>
-                        <div class="package-price">ab CHF 10'000</div>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Für große Projekte & laufende Betreuung</p>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> 200+ Custom AI-Bilder</li>
-                            <li><i class="fas fa-check"></i> Unlimited Stile</li>
-                            <li><i class="fas fa-check"></i> <strong>Unlimited Revisions</strong></li>
-                            <li><i class="fas fa-check"></i> 24h Express-Lieferung</li>
-                            <li><i class="fas fa-check"></i> Volle kommerzielle Rechte</li>
-                            <li><i class="fas fa-check"></i> <strong>Workflow-Transfer-Option</strong></li>
-                            <li><i class="fas fa-check"></i> <strong>Monatliches Expansion-Abo</strong></li>
-                        </ul>
-                        <a href="intake-form.html" class="btn-primary-cta" style="display: block; text-align: center; margin-top: 1.5rem; padding: 1rem;">Individuelles Angebot</a>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="services.html" class="btn-secondary-cta">
-                        Alle Pakete im Detail vergleichen →
-                    </a>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="brand-card p-4">
+              <img
+                src="/assets/images/logos/blockshield.png"
+                alt="Blockshield Systems"
+                class="img-fluid mb-3"
+                style="max-height: 180px"
+              />
+              <h4>Blockshield Systems</h4>
+              <p class="text-light">Sichere AI- & Smart-Tech Lösungen</p>
             </div>
-        </section>
-
-        <!-- ComfyUI Differentiator Section -->
-        <section class="comfyui-section">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">Warum ComfyUI-Workflows?</h2>
-                <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.125rem; max-width: 800px; margin: 1rem auto 0;">
-                    Während andere AI-Services generische Tools nutzen (Midjourney, DALL-E), arbeiten wir mit <strong>ComfyUI</strong> –
-                    der professionellen Workflow-Engine für AI-Bildgenerierung.
-                </p>
-
-                <div class="comfyui-grid">
-                    <div class="comfyui-benefit">
-                        <i class="fas fa-sync-alt"></i>
-                        <h3>Perfekte Konsistenz</h3>
-                        <p>Ihre Markenfarben, Stil & Ästhetik exakt replizierbar – nicht zufällig, sondern designt.</p>
-                    </div>
-
-                    <div class="comfyui-benefit">
-                        <i class="fas fa-sliders-h"></i>
-                        <h3>Maximale Kontrolle</h3>
-                        <p>Jeder Parameter feinabgestimmt. Kein Glücksspiel – präzise Ergebnisse nach Ihren Spezifikationen.</p>
-                    </div>
-
-                    <div class="comfyui-benefit">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Unbegrenzt Skalierbar</h3>
-                        <p>100 oder 1'000 Bilder – alle mit identischem Look & Feel. Workflows lassen sich beliebig erweitern.</p>
-                    </div>
-
-                    <div class="comfyui-benefit">
-                        <i class="fas fa-file-export"></i>
-                        <h3>Workflow-Transfer möglich</h3>
-                        <p>Einzigartig: Optional erhalten Sie Ihre Custom-Workflows zur eigenen Nutzung – volle Unabhängigkeit.</p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; font-style: italic;">
-                        "Ihre Marken-DNA wird in wiederverwendbare, präzise Workflows kodiert – nicht in zufällige Prompts."
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Case Studies Preview -->
-        <section class="case-studies-preview section">
-            <div class="container">
-                <h2 class="section-title">Erfolgsgeschichten unserer Kunden</h2>
-                <p style="text-align: center; color: #6b7280; font-size: 1.125rem;">
-                    Echte Resultate von B2B-Unternehmen, die ihre Markenidentität transformiert haben
-                </p>
-
-                <div class="case-grid">
-                    <!-- Case Study 1: SaaS -->
-                    <div class="case-card">
-                        <div class="case-header">
-                            <h3>SaaS-Startup</h3>
-                            <p style="opacity: 0.9; margin: 0.5rem 0 0;">Unternehmens-Software-Plattform</p>
-                        </div>
-                        <div class="case-content">
-                            <p><strong>Problem:</strong> Generische Stockfotos auf Website & Marketing – keine Differenzierung zur Konkurrenz.</p>
-                            <p><strong>Lösung:</strong> 100 Custom AI-Bilder mit einheitlichem Tech-Forward-Stil in Markenfarben.</p>
-
-                            <div class="case-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">+40%</div>
-                                    <div class="metric-label">Engagement</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">-67%</div>
-                                    <div class="metric-label">Kosten</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">+28%</div>
-                                    <div class="metric-label">Verweildauer</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">72h</div>
-                                    <div class="metric-label">Lieferzeit</div>
-                                </div>
-                            </div>
-
-                            <blockquote style="border-left: 4px solid #667eea; padding-left: 1rem; color: #4a5568; font-style: italic; margin: 1.5rem 0;">
-                                "Endlich Bilder, die unsere Innovation widerspiegeln – nicht austauschbare Stockfotos. ROI innerhalb von 3 Monaten."
-                                <br><strong>— Sarah M., Head of Marketing</strong>
-                            </blockquote>
-                        </div>
-                    </div>
-
-                    <!-- Case Study 2: Healthcare -->
-                    <div class="case-card">
-                        <div class="case-header">
-                            <h3>Healthcare Provider</h3>
-                            <p style="opacity: 0.9; margin: 0.5rem 0 0;">Digitale Gesundheitslösungen</p>
-                        </div>
-                        <div class="case-content">
-                            <p><strong>Problem:</strong> Photoshoot-Budget CHF 25'000 + 6 Wochen Vorlaufzeit – zu langsam für Launch.</p>
-                            <p><strong>Lösung:</strong> 75 Custom AI-Bilder in warmem, vertrauensvollem Stil – bereit in 48h.</p>
-
-                            <div class="case-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">CHF 18K</div>
-                                    <div class="metric-label">Gespart</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">48h</div>
-                                    <div class="metric-label">vs 6 Wochen</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">+52%</div>
-                                    <div class="metric-label">Trust Signals</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">4.9/5</div>
-                                    <div class="metric-label">User Feedback</div>
-                                </div>
-                            </div>
-
-                            <blockquote style="border-left: 4px solid #667eea; padding-left: 1rem; color: #4a5568; font-style: italic; margin: 1.5rem 0;">
-                                "Launch rechtzeitig geschafft – und die Bilder sind professioneller als jedes Stockfoto. Absolute Gamechanger."
-                                <br><strong>— Dr. Thomas K., CMO</strong>
-                            </blockquote>
-                        </div>
-                    </div>
-
-                    <!-- Case Study 3: E-Commerce -->
-                    <div class="case-card">
-                        <div class="case-header">
-                            <h3>E-Commerce Brand</h3>
-                            <p style="opacity: 0.9; margin: 0.5rem 0 0;">Premium Lifestyle-Produkte</p>
-                        </div>
-                        <div class="case-content">
-                            <p><strong>Problem:</strong> Produktbilder gut, aber keine passenden Lifestyle-Shots – Stockfotos wirken billig.</p>
-                            <p><strong>Lösung:</strong> 150 Custom AI-Lifestyle-Bilder perfekt abgestimmt auf Produktästhetik & Zielgruppe.</p>
-
-                            <div class="case-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">+67%</div>
-                                    <div class="metric-label">Social Engagement</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">+34%</div>
-                                    <div class="metric-label">Conversion Rate</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">-89%</div>
-                                    <div class="metric-label">Image Costs</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">5/5</div>
-                                    <div class="metric-label">Brand Fit</div>
-                                </div>
-                            </div>
-
-                            <blockquote style="border-left: 4px solid #667eea; padding-left: 1rem; color: #4a5568; font-style: italic; margin: 1.5rem 0;">
-                                "Unsere Instagram-Engagement ist explodiert. Die Bilder sind so on-brand, dass niemand merkt, dass sie AI-generiert sind."
-                                <br><strong>— Lisa R., Brand Director</strong>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="case-studies.html" class="btn-primary-cta">
-                        Alle Erfolgsgeschichten ansehen →
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="final-cta">
-            <div class="container">
-                <h2>Bereit für einzigartige Markenbilder?</h2>
-                <p>Starten Sie jetzt mit einem kostenlosen Angebot – oder testen Sie unsere Qualität mit 20 Gratis-Bildern.</p>
-
-                <div class="cta-group">
-                    <a href="intake-form.html" class="btn-primary-cta" style="background: white; color: #667eea;">
-                        <i class="fas fa-rocket"></i> Kostenloses Angebot anfragen
-                    </a>
-                    <a href="free-starter-pack.html" class="btn-secondary-cta" style="border-color: white; color: white;">
-                        <i class="fas fa-gift"></i> 20 Gratis-Bilder sichern
-                    </a>
-                </div>
-
-                <div style="margin-top: 3rem; opacity: 0.9;">
-                    <p style="font-size: 0.95rem;">
-                        <i class="fas fa-shield-alt"></i> 100% Zufriedenheitsgarantie &nbsp;|&nbsp;
-                        <i class="fas fa-clock"></i> Nur 3 Projektplätze pro Monat verfügbar &nbsp;|&nbsp;
-                        <i class="fas fa-lock"></i> Keine Vorauszahlung erforderlich
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Showcase Link -->
-        <section class="section" style="background: #f9fafb;">
-            <div class="container" style="text-align: center;">
-                <h2 class="section-title">Überzeugen Sie sich selbst</h2>
-                <p style="color: #6b7280; font-size: 1.125rem; margin-bottom: 2rem;">
-                    Sehen Sie Beispiele unserer AI-generierten Kunst & Visuals
-                </p>
-                <a href="ai-gallery.html" class="btn-primary-cta">
-                    <i class="fas fa-images"></i> AI-Gallery ansehen
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer style="background: #1a1a2e; color: white; padding: 3rem 0 1.5rem;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <!-- Company Info -->
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: #667eea;">AI-TechArt</h3>
-                    <p style="color: #aaa; line-height: 1.7;">
-                        Custom AI-Generated Brand Visuals für B2B-Unternehmen.
-                        100% unique, markenscharf, in 48-72h geliefert.
-                    </p>
-                    <p style="color: #aaa; margin-top: 1rem;">
-                        <i class="fas fa-map-marker-alt"></i> Wittenbach, Switzerland<br>
-                        <i class="fas fa-envelope"></i> <a href="mailto:contact@ai-techart.com" style="color: #667eea;">contact@ai-techart.com</a><br>
-                        <i class="fab fa-github"></i> <a href="https://github.com/BlockShield-Systems" target="_blank" style="color: #667eea;">BlockShield-Systems</a>
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: #667eea;">Services</h3>
-                    <ul style="list-style: none; padding: 0; color: #aaa; line-height: 2;">
-                        <li><a href="services.html" style="color: #aaa; text-decoration: none;">Service-Pakete</a></li>
-                        <li><a href="services.html#starter" style="color: #aaa; text-decoration: none;">Starter Paket</a></li>
-                        <li><a href="services.html#professional" style="color: #aaa; text-decoration: none;">Professional Paket</a></li>
-                        <li><a href="services.html#enterprise" style="color: #aaa; text-decoration: none;">Enterprise Paket</a></li>
-                        <li><a href="intake-form.html" style="color: #aaa; text-decoration: none;">Individuelles Angebot</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources -->
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: #667eea;">Ressourcen</h3>
-                    <ul style="list-style: none; padding: 0; color: #aaa; line-height: 2;">
-                        <li><a href="case-studies.html" style="color: #aaa; text-decoration: none;">Erfolgsgeschichten</a></li>
-                        <li><a href="faq.html" style="color: #aaa; text-decoration: none;">FAQ</a></li>
-                        <li><a href="about-expertise.html" style="color: #aaa; text-decoration: none;">Über uns / Expertise</a></li>
-                        <li><a href="ai-gallery.html" style="color: #aaa; text-decoration: none;">AI-Gallery</a></li>
-                        <li><a href="free-starter-pack.html" style="color: #aaa; text-decoration: none;">Gratis-Starter-Pack</a></li>
-                    </ul>
-                </div>
-
-                <!-- CTA -->
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: #667eea;">Jetzt starten</h3>
-                    <p style="color: #aaa; margin-bottom: 1.5rem;">
-                        Erhalten Sie ein kostenloses Angebot für Ihr Projekt – oder testen Sie unsere Qualität mit 20 Gratis-Bildern.
-                    </p>
-                    <a href="intake-form.html" class="btn-primary-cta" style="display: block; text-align: center; margin-bottom: 1rem;">
-                        Angebot anfragen
-                    </a>
-                    <a href="free-starter-pack.html" class="btn-secondary-cta" style="display: block; text-align: center; background: transparent; color: white; border-color: white;">
-                        Gratis-Pack holen
-                    </a>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #aaa;">
-                <p>&copy; 2025 AI-TechArt | Demian Lienert | Alle Rechte vorbehalten</p>
-                <div style="margin-top: 1.5rem;">
-                    <a href="impressum.html" style="color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Impressum</a>
-                    <a href="datenschutz.html" style="color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Datenschutz</a>
-                    <a href="nutzungsbedingungen.html" style="color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">AGB</a>
-                    <a href="lizenz.html" style="color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Lizenz</a>
-                    <a href="sicherheit.html" style="color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Sicherheit</a>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://github.com/BlockShield-Systems" target="_blank" aria-label="GitHub" style="color: #667eea; margin: 0 0.5rem; font-size: 1.5rem;">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:contact@ai-techart.com" aria-label="Email" style="color: #667eea; margin: 0 0.5rem; font-size: 1.5rem;">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Hidden Google Translate Element -->
-    <div id="google_translate_element" style="display: none;"></div>
+    <!-- Transformations Section -->
+    <section id="transformations" class="py-5 bg-dark">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="text-white mb-3">Transformationen</h2>
+          <p class="lead text-light">
+            Bevor & Nachher – sieh, was mit KI möglich wird
+          </p>
+        </div>
 
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/modern-animations.js"></script>
+        <div class="row g-4" id="transformation-gallery">
+          <!-- Hier werden die Before/After Karten dynamisch eingefügt -->
+        </div>
+      </div>
+    </section>
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Language Switcher -->
-    <script src="assets/js/language-switcher.js"></script>
-</body>
+    <script type="module" src="/src/ts/main.ts"></script>
+  </body>
 </html>
