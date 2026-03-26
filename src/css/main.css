@@ -39,3 +39,17 @@ body.dark {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
 }
+
+.transformation-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transformation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 212, 255, 0.15);
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
