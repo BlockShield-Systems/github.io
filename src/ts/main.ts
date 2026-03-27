@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==================== TRANSFORMATIONS GALLERY ====================
+  console.log('🎨 Transformations Gallery wird initialisiert...');
+
   interface Transformation {
     title: string;
     before: string;
@@ -40,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('transformations-grid') as HTMLDivElement;
 
   if (grid) {
-    grid.innerHTML = transformations.map(t => `
+    console.log(`✅ Grid gefunden – ${transformations.length} Transformationen werden eingefügt...`);
+
+    const htmlContent = transformations.map(t => `
     <div class="col-md-6 col-lg-4">
       <div class="card bg-dark border-0 h-100 transformation-card overflow-hidden">
         <div class="position-relative">
@@ -62,21 +66,31 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   `).join('');
+
+    grid.innerHTML = htmlContent;
+    console.log('✅ Gallery erfolgreich mit HTML gefüllt');
+  } else {
+    console.error('❌ #transformations-grid Element NICHT gefunden!');
   }
 
-  // Hover-Effekt bleibt gleich
-  document.querySelectorAll('.transformation-card').forEach(card => {
-    const beforeImg = card.querySelector('.before-img') as HTMLImageElement;
-    const afterImg = card.querySelector('.after-img') as HTMLImageElement;
+  // Hover-Effekt
+  setTimeout(() => {
+    document.querySelectorAll('.transformation-card').forEach(card => {
+      const beforeImg = card.querySelector('.before-img') as HTMLImageElement;
+      const afterImg = card.querySelector('.after-img') as HTMLImageElement;
 
-    card.addEventListener('mouseenter', () => {
-      beforeImg.style.opacity = '0';
-      afterImg.style.opacity = '1';
-    });
+      if (beforeImg && afterImg) {
+        card.addEventListener('mouseenter', () => {
+          beforeImg.style.opacity = '0';
+          afterImg.style.opacity = '1';
+        });
 
-    card.addEventListener('mouseleave', () => {
-      beforeImg.style.opacity = '1';
-      afterImg.style.opacity = '0';
+        card.addEventListener('mouseleave', () => {
+          beforeImg.style.opacity = '1';
+          afterImg.style.opacity = '0';
+        });
+      }
     });
-  });
+    console.log('✅ Hover-Events hinzugefügt');
+  }, 100);
 });
