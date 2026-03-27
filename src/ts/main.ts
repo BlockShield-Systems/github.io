@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dark Mode
   document.documentElement.classList.add('dark');
 
-  // Smooth Scroll
+  // Smooth Scroll for Navigation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -16,9 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==================== TRANSFORMATIONS GALLERY ====================
-  console.log('🎨 Gallery Script started');
+  console.log('🎨 Transformations Gallery initializing...');
 
-  const transformations = [
+  interface Transformation {
+    title: string;
+    before: string;
+    after: string;
+  }
+
+  const transformations: Transformation[] = [
     { title: "Traditional Home → Smart Home", before: "traditional-home-4k-before.png", after: "smart-home-4k-after.png" },
     { title: "Car Interior → Smart Car Interior", before: "car-interior-4k-before.png", after: "car-interior-after.png" },
     { title: "Low-Tech Fitness → Smart Fitness", before: "low-tech-fitness-4k-before.png", after: "smart-fitness-4k-after.png" },
@@ -33,38 +39,59 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "Basic Reception Lobby → Advanced Biometrics", before: "basic-reception-lobby-4k-before.png", after: "advanced-biometrics-after.png" },
   ];
 
-  const grid = document.getElementById('transformations-grid');
+  const grid = document.getElementById('transformations-grid') as HTMLDivElement;
 
   if (grid) {
-    console.log(`✅ Grid gefunden – ${transformations.length} Bilder werden eingefügt`);
+    console.log(`✅ Grid found – rendering ${transformations.length} transformation cards...`);
+
     grid.innerHTML = transformations.map(t => `
-    <div class="col-md-6 col-lg-4">
-      <div class="card bg-dark border-0 h-100 transformation-card overflow-hidden">
-        <div class="position-relative">
-          <img src="/assets/images/transformations/${t.before}" class="before-img w-100 h-100 object-fit-cover" alt="${t.title} Before" style="transition: opacity 0.5s ease;">
-          <img src="/assets/images/transformations/${t.after}" class="after-img w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="${t.title} After" style="opacity: 0; transition: opacity 0.5s ease;">
-          <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-gradient">
-            <h5 class="text-white fw-bold mb-1">${t.title}</h5>
-            <small class="text-light opacity-75">Hover für den Wow-Effekt</small>
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark border-0 h-100 transformation-card overflow-hidden">
+          <div class="position-relative">
+            <img src="/assets/images/transformations/${t.before}" 
+                 class="before-img w-100 h-100 object-fit-cover" 
+                 alt="${t.title} Before"
+                 style="transition: opacity 0.5s ease;">
+            
+            <img src="/assets/images/transformations/${t.after}" 
+                 class="after-img w-100 h-100 object-fit-cover position-absolute top-0 start-0" 
+                 alt="${t.title} After"
+                 style="opacity: 0; transition: opacity 0.5s ease;">
+
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-gradient">
+              <h5 class="text-white fw-bold mb-1">${t.title}</h5>
+              <small class="text-light opacity-75">Hover to see the difference</small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  `).join('');
-    console.log('✅ Gallery HTML eingefügt');
+    `).join('');
+
+    console.log('✅ Gallery successfully rendered');
   } else {
-    console.error('❌ Grid Element nicht gefunden!');
+    console.error('❌ #transformations-grid element not found!');
   }
 
-  // Hover
+  // Hover Effect
   setTimeout(() => {
     document.querySelectorAll('.transformation-card').forEach(card => {
       const beforeImg = card.querySelector('.before-img') as HTMLImageElement;
       const afterImg = card.querySelector('.after-img') as HTMLImageElement;
+
       if (beforeImg && afterImg) {
-        card.addEventListener('mouseenter', () => { beforeImg.style.opacity = '0'; afterImg.style.opacity = '1'; });
-        card.addEventListener('mouseleave', () => { beforeImg.style.opacity = '1'; afterImg.style.opacity = '0'; });
+        card.addEventListener('mouseenter', () => {
+          beforeImg.style.opacity = '0';
+          afterImg.style.opacity = '1';
+        });
+
+        card.addEventListener('mouseleave', () => {
+          beforeImg.style.opacity = '1';
+          afterImg.style.opacity = '0';
+        });
       }
     });
+    console.log('✅ Hover effects attached');
   }, 100);
+
+  console.log('🎨 Transformations Gallery setup completed');
 });
