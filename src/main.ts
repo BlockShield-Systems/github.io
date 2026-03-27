@@ -29,18 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const transformations: Transformation[] = [
-    { title: 'Traditional Home → Smart Home', before: 'traditional-home-4k-before.png', after: 'smart-home-4k-after.png' },
-    { title: 'Car Interior → Smart Car Interior', before: 'car-interior-4k-before.png', after: 'car-interior-after.png' },
-    { title: 'Low-Tech Fitness → Smart Fitness', before: 'low-tech-fitness-4k-before.png', after: 'smart-fitness-4k-after.png' },
-    { title: 'Physical Storefront → Smart Fashion', before: 'physical-storefront-4k-before.png', after: 'smart-fashion-4k-after.png' },
-    { title: 'Ordinary Supermarket → Smart Retail', before: 'ordinary-supermarket-4k-before.png', after: 'smart-retail-4k-after.png' },
-    { title: 'Empty Render Stage → Metaverse', before: 'empty-render-stage-4k-before.png', after: 'metaverse-4k-after.png' },
-    { title: 'Old-School Kitchen → Smart Kitchen', before: 'oldschool-kitchen-4k-before.png', after: 'smart-kitchen-4k-after.png' },
-    { title: 'Legacy Healthcare → AI Healthcare', before: 'legacy-healthcare-4k-before.png', after: 'ai-healthcare-after.png' },
-    { title: 'Analog Bank → Digital Banking', before: 'analog-bank-interior-before.png', after: 'digital-banking-4k-after.png' },
-    { title: 'Conventional Office → AR Spatial Computing', before: 'conventional-office-4k-before.png', after: 'ar-spatial-computing-after.png' },
-    { title: 'Classic Computer Lab → AI Research Lab', before: 'classic-computer-lab-4k-before.png', after: 'ai-research-lab-after.png' },
-    { title: 'Basic Reception Lobby → Advanced Biometrics', before: 'basic-reception-lobby-4k-before.png', after: 'advanced-biometrics-after.png' },
+    { title: 'Traditional Home → Smart Home', before: 'traditional-home-4k-before.webp', after: 'smart-home-4k-after.webp' },
+    { title: 'Car Interior → Smart Car Interior', before: 'car-interior-4k-before.webp', after: 'car-interior-after.webp' },
+    { title: 'Low-Tech Fitness → Smart Fitness', before: 'low-tech-fitness-4k-before.webp', after: 'smart-fitness-4k-after.webp' },
+    { title: 'Physical Storefront → Smart Fashion', before: 'physical-storefront-4k-before.webp', after: 'smart-fashion-4k-after.webp' },
+    { title: 'Ordinary Supermarket → Smart Retail', before: 'ordinary-supermarket-4k-before.webp', after: 'smart-retail-4k-after.webp' },
+    { title: 'Empty Render Stage → Metaverse', before: 'empty-render-stage-4k-before.webp', after: 'metaverse-4k-after.webp' },
+    { title: 'Old-School Kitchen → Smart Kitchen', before: 'oldschool-kitchen-4k-before.webp', after: 'smart-kitchen-4k-after.webp' },
+    { title: 'Legacy Healthcare → AI Healthcare', before: 'legacy-healthcare-4k-before.webp', after: 'ai-healthcare-after.webp' },
+    { title: 'Analog Bank → Digital Banking', before: 'analog-bank-interior-before.webp', after: 'digital-banking-4k-after.webp' },
+    { title: 'Conventional Office → AR Spatial Computing', before: 'conventional-office-4k-before.webp', after: 'ar-spatial-computing-after.webp' },
+    { title: 'Classic Computer Lab → AI Research Lab', before: 'classic-computer-lab-4k-before.webp', after: 'ai-research-lab-after.webp' },
+    { title: 'Basic Reception Lobby → Advanced Biometrics', before: 'basic-reception-lobby-4k-before.webp', after: 'advanced-biometrics-after.webp' },
   ];
 
   const grid = document.getElementById('transformations-grid') as HTMLDivElement | null;
@@ -111,3 +111,4 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ Hover effects attached');
   console.log('🎨 Transformations Gallery setup completed');
 });
+
