@@ -7,10 +7,10 @@ export function renderSkillsSection(): string {
     <section id="skills" class="py-5">
       <div class="container">
         ${renderSectionHeader({
-    eyebrow: 'Skills & Tech Stack',
-    title: 'Technical Breadth Meets Execution Depth',
+    eyebrow: 'Skills & Technical Focus',
+    title: 'Broad Technical Range, Structured Execution',
     description:
-      'My profile combines enterprise IT foundations, modern web engineering, creative AI generation and structured automation workflows.'
+      'My profile combines modern frontend work, workflow-based AI systems, creative AI generation and long-term technical depth across IT-related disciplines.'
   })}
 
         <div class="row g-4">

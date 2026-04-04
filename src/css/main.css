@@ -196,4 +196,22 @@ p.text-light,
   .btn-outline-light {
     width: 100%;
   }
+
+  .skill-focus-box,
+  .service-outcome-box {
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid var(--primary);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+
+  .skill-card .badge,
+  .service-card .badge {
+    font-weight: 500;
+  }
+
+  .skill-card,
+  .service-card {
+    min-height: 100%;
+  }
 }

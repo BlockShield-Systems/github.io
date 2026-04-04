@@ -8,9 +8,9 @@ export function renderServicesSection(): string {
       <div class="container">
         ${renderSectionHeader({
     eyebrow: 'Services',
-    title: 'What I Offer',
+    title: 'What I Can Build and Deliver',
     description:
-      'I help turn complex ideas into tangible technical and creative outcomes — from workflow logic to visual concepts and structured digital delivery.'
+      'I focus on work that combines technical clarity, workflow logic, creative execution and modern digital presentation — with an emphasis on useful, structured outcomes.'
   })}
 
         <div class="row g-4">
