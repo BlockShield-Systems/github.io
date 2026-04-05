@@ -88,7 +88,7 @@ function getTransformationImagePath(fileName: string): string {
 
 export function renderGallerySection(): string {
   return `
-    <section id="transformations" class="py-5 bg-dark">
+    <section id="transformations" class="py-5">
       <div class="container">
         ${renderSectionHeader({
     eyebrow: 'Transformations Gallery',
@@ -102,7 +102,7 @@ export function renderGallerySection(): string {
       .map(
         t => `
                 <div class="col-md-6 col-lg-4">
-                  <article class="card bg-dark border-0 h-100 transformation-card overflow-hidden cursor-pointer">
+                  <article class="card border-0 h-100 transformation-card overflow-hidden cursor-pointer">
                     <div class="position-relative transformation-media">
                       <img
                         src="${getTransformationImagePath(t.before)}"

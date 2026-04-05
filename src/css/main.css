@@ -1,25 +1,74 @@
 :root {
   --primary: #00d4ff;
   --accent: #a855f7;
-  --dark-bg: #0a0a0a;
+  --dark-bg: #090b12;
   --card-bg: rgba(255, 255, 255, 0.05);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body,
 body.dark {
   background-color: var(--dark-bg);
   color: #e0e0e0;
 }
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
-    url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
   position: relative;
   overflow: hidden;
+  padding-top: 140px;
+  padding-bottom: 110px;
+  background:
+    linear-gradient(90deg,
+      rgba(5, 8, 15, 0.86) 0%,
+      rgba(5, 8, 15, 0.8) 24%,
+      rgba(5, 8, 15, 0.62) 48%,
+      rgba(5, 8, 15, 0.45) 100%),
+    linear-gradient(180deg,
+      rgba(7, 10, 18, 0.62) 0%,
+      rgba(7, 10, 18, 0.48) 42%,
+      rgba(7, 10, 18, 0.74) 100%),
+    url("/images/backgrounds/hero-bg-tech-network.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 72% center;
+}
+
+.hero .container,
+.hero .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at left center,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.04) 34%,
+      rgba(0, 0, 0, 0) 68%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 180px;
+  background: linear-gradient(to bottom,
+      rgba(9, 11, 18, 0) 0%,
+      rgba(9, 11, 18, 0.42) 45%,
+      rgba(9, 11, 18, 0.82) 72%,
+      rgba(9, 11, 18, 1) 100%);
+  pointer-events: none;
 }
 
 .brand-logo {
-  transition: transform 0.4s ease, filter 0.4s ease;
   max-height: 140px;
+  transition: transform 0.4s ease, filter 0.4s ease;
   filter: drop-shadow(0 10px 20px rgba(0, 212, 255, 0.3));
 }
 
@@ -28,16 +77,25 @@ body.dark {
   filter: drop-shadow(0 15px 30px rgba(168, 85, 247, 0.5));
 }
 
+.logo-card .brand-logo {
+  max-height: 160px;
+}
+
 .btn-primary {
-  background: linear-gradient(45deg, var(--primary), var(--accent));
-  border: none;
   padding: 14px 40px;
   font-weight: 600;
+  border: none;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+}
+
+.contact-card .btn,
+.hero .btn {
+  min-width: 220px;
 }
 
 .transformation-card {
@@ -52,15 +110,6 @@ body.dark {
 .object-fit-cover {
   object-fit: cover;
   aspect-ratio: 16 / 9;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--dark-bg);
-  color: #e0e0e0;
 }
 
 .letter-spacing {
@@ -100,23 +149,20 @@ body {
   box-shadow: 0 18px 35px rgba(0, 212, 255, 0.12);
 }
 
-.logo-card .brand-logo {
-  max-height: 160px;
-}
-
 .skill-icon i,
-.service-icon i {
+.service-icon i,
+.trust-icon i {
   font-size: 2rem;
   color: var(--primary);
   filter: drop-shadow(0 6px 14px rgba(0, 212, 255, 0.25));
 }
 
 .workflow-highlight {
+  border: 1px solid rgba(0, 212, 255, 0.18);
+  border-radius: 1.25rem;
   background: linear-gradient(135deg,
       rgba(0, 212, 255, 0.08),
       rgba(168, 85, 247, 0.08));
-  border: 1px solid rgba(0, 212, 255, 0.18);
-  border-radius: 1.25rem;
 }
 
 .bg-gradient-dark {
@@ -130,30 +176,160 @@ body {
 }
 
 .badge.text-bg-secondary {
-  background-color: rgba(255, 255, 255, 0.09) !important;
   color: #e0e0e0 !important;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.09) !important;
 }
 
 .badge.text-bg-dark.border {
-  background-color: rgba(255, 255, 255, 0.05) !important;
   color: #e0e0e0 !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-.contact-card .btn,
-.hero .btn {
-  min-width: 220px;
+.project-card,
+.skill-card,
+.service-card,
+.about-card,
+.contact-card {
+  min-height: 100%;
+}
+
+.skill-focus-box,
+.service-outcome-box {
+  padding: 1rem;
+  border-left: 3px solid var(--primary);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.skill-card .badge,
+.service-card .badge {
+  font-weight: 500;
+}
+
+.project-proof-label {
+  padding-left: 0.75rem;
+  color: #d1d5db;
+  letter-spacing: 0.08em;
+  border-left: 3px solid var(--accent);
+}
+
+.project-preview-wrapper {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-preview {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.35s ease;
+  background: rgba(10, 10, 10, 0.7);
+}
+
+.project-card:hover .project-preview {
+  transform: scale(1.02);
+}
+
+.project-detail-group {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.project-card .btn {
+  min-width: 190px;
+}
+
+.project-card .badge.text-bg-info {
+  color: #ffffff !important;
+  border: none;
+  background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
+}
+
+.profile-link {
+  padding: 1rem 1.1rem;
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.25s ease;
+}
+
+.profile-link:hover {
+  color: #ffffff;
+  border-color: rgba(0, 212, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.profile-link i.bi:first-child {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-item {
+  margin-left: 0.6rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0.35rem;
+  left: -0.52rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.08);
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  background: #111827;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 section {
   position: relative;
+  background: linear-gradient(180deg,
+      rgba(11, 14, 22, 0.96) 0%,
+      rgba(9, 11, 18, 1) 100%);
 }
 
-section .lead {
-  color: #c7d0d9;
+section>.container,
+section>.container-fluid {
+  position: relative;
+  z-index: 1;
 }
 
+section>.container,
+section>.container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+section .lead,
 p.text-light,
 .text-light {
   color: #c7d0d9 !important;
@@ -166,7 +342,8 @@ p.text-light,
 @media (max-width: 991.98px) {
   .hero {
     padding-top: 120px;
-    padding-bottom: 80px;
+    padding-bottom: 85px;
+    background-position: 78% center;
   }
 
   .transformation-media {
@@ -174,10 +351,144 @@ p.text-light,
   }
 }
 
+.contact-panel,
+.contact-side-panel {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.contact-form .form-label {
+  color: #f3f4f6;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f9fafb;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+}
+
+.contact-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.15);
+  color: #ffffff;
+}
+
+.contact-input::placeholder {
+  color: rgba(229, 231, 235, 0.6);
+}
+
+.contact-input option {
+  color: #111827;
+}
+
+.contact-textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-check {
+  padding: 0.25rem 0 0 1.9rem;
+}
+
+.contact-check .form-check-input {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-check .form-check-label {
+  color: #d1d5db;
+  line-height: 1.55;
+}
+
+.contact-check-feedback {
+  visibility: hidden;
+  color: #ff8c8c;
+  font-size: 0.92rem;
+  margin-top: 0.45rem;
+}
+
+.contact-form-status {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 1.5rem;
+}
+
+.contact-form-status.success {
+  color: #71f0b1;
+}
+
+.contact-form-status.error {
+  color: #ff8c8c;
+}
+
+.contact-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.contact-highlights-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #e5e7eb;
+}
+
+.contact-highlight-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  min-width: 0.7rem;
+  border-radius: 999px;
+  margin-top: 0.35rem;
+  background: linear-gradient(135deg, #00d4ff, #a855f7);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+
+.contact-side-block+.contact-side-block {
+  margin-top: 1.5rem;
+}
+
+.contact-side-note {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-input.is-invalid,
+.form-check-input.is-invalid {
+  border-color: rgba(255, 120, 120, 0.9);
+}
+
+@media (max-width: 767.98px) {
+  .project-preview {
+    height: 220px;
+  }
+
+  .project-card .btn {
+    width: 100%;
+  }
+}
+
 @media (max-width: 575.98px) {
   .hero {
     padding-top: 110px;
     padding-bottom: 70px;
+    background-position: 82% center;
+    background-size: cover;
   }
 
   .brand-logo {
@@ -195,165 +506,5 @@ p.text-light,
   .btn-primary,
   .btn-outline-light {
     width: 100%;
-  }
-
-  .skill-focus-box,
-  .service-outcome-box {
-    background: rgba(255, 255, 255, 0.04);
-    border-left: 3px solid var(--primary);
-    border-radius: 0.75rem;
-    padding: 1rem;
-  }
-
-  .skill-card .badge,
-  .service-card .badge {
-    font-weight: 500;
-  }
-
-  .skill-card,
-  .service-card {
-    min-height: 100%;
-  }
-
-  .project-proof-label {
-    border-left: 3px solid var(--accent);
-    padding-left: 0.75rem;
-  }
-
-  .project-card .btn {
-    min-width: 190px;
-  }
-
-  .project-card .badge.text-bg-info {
-    color: #fff !important;
-    background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
-    border: none;
-  }
-
-  .project-card {
-    min-height: 100%;
-  }
-
-  .project-proof-label {
-    border-left: 3px solid var(--accent);
-    padding-left: 0.75rem;
-    color: #d1d5db;
-    letter-spacing: 0.08em;
-  }
-
-  .project-preview-wrapper {
-    border-radius: 1rem;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .project-preview {
-    width: 100%;
-    height: 260px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    transition: transform 0.35s ease;
-    background: rgba(10, 10, 10, 0.7);
-  }
-
-  .project-card:hover .project-preview {
-    transform: scale(1.02);
-  }
-
-  .project-detail-group {
-    padding: 1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .project-card .btn {
-    min-width: 190px;
-  }
-
-  .project-card .badge.text-bg-info {
-    color: #ffffff !important;
-    background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
-    border: none;
-  }
-
-  @media (max-width: 767.98px) {
-    .project-preview {
-      height: 220px;
-    }
-
-    .project-card .btn {
-      width: 100%;
-    }
-  }
-
-  .profile-link {
-    padding: 1rem 1.1rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
-    color: #e5e7eb;
-    transition: all 0.25s ease;
-  }
-
-  .profile-link:hover {
-    color: #ffffff;
-    border-color: rgba(0, 212, 255, 0.35);
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
-  }
-
-  .profile-link i.bi:first-child {
-    color: var(--primary);
-    font-size: 1.1rem;
-  }
-
-  .trust-icon i {
-    font-size: 2rem;
-    color: var(--primary);
-    filter: drop-shadow(0 6px 14px rgba(0, 212, 255, 0.25));
-  }
-
-  .timeline-wrapper {
-    position: relative;
-  }
-
-  .timeline-item {
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    margin-left: 0.6rem;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: -0.52rem;
-    top: 0.35rem;
-    width: 0.85rem;
-    height: 0.85rem;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
-    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.08);
-  }
-
-  .about-card,
-  .contact-card {
-    min-height: 100%;
-  }
-
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 1rem;
-    z-index: 2000;
-    padding: 0.75rem 1rem;
-    background: #111827;
-    color: #ffffff;
-    border-radius: 0.5rem;
-    transition: top 0.2s ease;
-  }
-
-  .skip-link:focus {
-    top: 1rem;
   }
 }

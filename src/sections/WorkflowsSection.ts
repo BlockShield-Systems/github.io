@@ -4,7 +4,7 @@ import { renderSectionHeader } from '../components/SectionHeader';
 
 export function renderWorkflowsSection(): string {
   return `
-    <section id="workflows" class="py-5 bg-dark">
+    <section id="workflows" class="py-5">
       <div class="container">
         ${renderSectionHeader({
     eyebrow: 'Agentic Workflows Hub',
