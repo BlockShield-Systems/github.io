@@ -1,27 +1,33 @@
-import { renderSectionHeader } from '../components/SectionHeader';
-import { renderProjectCard } from '../components/ProjectCard';
 import { projects } from '../data/projects';
+import { renderProjectCard } from '../components/ProjectCard';
 
 export function renderProjectsSection(): string {
   return `
-    <section id="projects" class="py-5 bg-dark">
+    <section id="projects" class="py-5">
       <div class="container">
-        ${renderSectionHeader({
-    eyebrow: 'Selected Projects & Public Proof',
-    title: 'Work That Can Be Explored Further',
-    description:
-      'These projects are meant to show not only what I can describe, but what I can publicly demonstrate through workflow templates, creative profiles and structured technical output.'
-  })}
-
-        <div class="row g-4">
-          ${projects.map(renderProjectCard).join('')}
+        <div class="text-center mb-5">
+          <p class="text-uppercase text-info fw-semibold letter-spacing mb-2">
+            Selected Projects & Proof
+          </p>
+          <h2 class="display-5 fw-bold text-white">
+            Public workflow assets, visual direction and growing case-study depth
+          </h2>
+          <p class="lead text-light mx-auto" style="max-width: 920px;">
+            This section connects real workflow systems, visual work and infrastructure direction
+            with public proof, structured outcomes and evolving case-study material.
+          </p>
         </div>
 
-        <div class="mt-5 p-4 rounded-4 workflow-highlight">
-          <h3 class="h4 text-white fw-bold mb-3">Next Step for This Section</h3>
+        <div class="row g-4">
+          ${projects.map((project) => renderProjectCard(project)).join('')}
+        </div>
+
+        <div class="workflow-highlight mt-5 p-4 p-lg-5">
+          <h3 class="h4 text-white fw-bold mb-3">Why this proof layer matters</h3>
           <p class="text-light mb-0">
-            This project layer will be expanded further with carousel previews, stronger case-study packaging,
-            workflow diagrams, and more public reference material from LinkedIn, ArtStation and future documentation assets.
+            This portfolio is not meant to show isolated prompts or vague claims. It is designed
+            to demonstrate structured execution: real workflows, documented outputs, visible creative
+            direction and a growing bridge between AI systems, design thinking and technical delivery.
           </p>
         </div>
       </div>
