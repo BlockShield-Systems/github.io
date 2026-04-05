@@ -12,11 +12,10 @@ import { renderAboutSection } from './sections/AboutSection';
 import { renderContactSection } from './sections/ContactSection';
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.documentElement.classList.add('dark');
-
   const app = document.getElementById('app');
+
   if (!app) {
-    console.error('❌ #app not found');
+    console.error('App root #app not found.');
     return;
   }
 
