@@ -1,3 +1,8 @@
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface Project {
   title: string;
   category: string;
@@ -5,52 +10,112 @@ export interface Project {
   solution: string;
   result: string;
   stack: string[];
-  link?: string;
+  proofLabel: string;
+  links: ProjectLink[];
 }
 
 export const projects: Project[] = [
   {
-    title: 'Casino Contest Winning Visual',
-    category: 'Visual Impact',
+    title: 'Sport Prediction Analyzer',
+    category: 'Workflow Intelligence',
     problem:
-      'A high-impact visual concept had to stand out quickly in a competitive environment and generate attention within a short timeframe.',
+      'Multi-sport event prediction requires fast analysis across upcoming fixtures, historical patterns, injuries, news signals and output formatting.',
     solution:
-      'Created a visually distinctive AI-driven concept with strong atmosphere, composition and brand impact.',
+      'Built a structured AI workflow with event discovery, filtering, parallel research, a 3-layer prediction engine and multi-channel delivery.',
     result:
-      'Contest-winning result with visible public traction, including notable views and engagement.',
-    stack: ['Creative AI', 'Visual Design', 'Brand Impact']
+      'A repeatable workflow system that transforms scattered sports information into structured, confidence-based prediction outputs.',
+    proofLabel: 'Public workflow template available',
+    stack: [
+      'Needle Workflows',
+      'GPT-4.1',
+      'Claude Sonnet 4.5',
+      'Telegram Bot API',
+      'Microsoft Outlook',
+      'Notion MCP',
+      'RAG'
+    ],
+    links: [
+      {
+        label: 'View Needle Template',
+        url: 'https://needle.app/workflow-templates/automated-sport-prediction-analyzer'
+      }
+    ]
+  },
+  {
+    title: 'AI-Generative Trend Multi-Workflow',
+    category: 'Trend Intelligence',
+    problem:
+      'AI-generated visual trends evolve quickly across image, video, typography, legal changes and platform ecosystems, making consistent monitoring difficult.',
+    solution:
+      'Designed an autonomous intelligence workflow for research, web scraping, content cleaning, RAG-based historical comparison and structured report generation.',
+    result:
+      'A recurring visual trend intelligence system with stronger signal quality, historical context and professional multi-channel delivery.',
+    proofLabel: 'Public workflow template available',
+    stack: [
+      'Needle Workflows',
+      'GPT-4.1',
+      'Claude Sonnet 4.6',
+      'RAG',
+      'Google Sheets',
+      'Google Docs',
+      'Microsoft Outlook'
+    ],
+    links: [
+      {
+        label: 'View Needle Template',
+        url: 'https://needle.app/workflow-templates/ai-visual-trend-analyzer-trend-report-generator'
+      }
+    ]
   },
   {
     title: 'AI Robotics Intelligence Briefing',
-    category: 'Agentic Workflow',
+    category: 'Research Automation',
     problem:
-      'Robotics developments across science, defense, markets and policy are fragmented and difficult to track consistently.',
+      'Robotics developments span science, defense, markets, ethics and regulation, making structured tracking and reporting difficult without a dedicated system.',
     solution:
-      'Built an automated intelligence workflow that researches, cleans, compares and synthesizes robotics developments into structured briefings.',
+      'Implemented a multi-branch intelligence workflow with targeted search, quality filtering, RAG-supported comparison, AI synthesis and error-aware output delivery.',
     result:
-      'Repeatable 14-section intelligence reporting pipeline with source-aware quality control.',
-    stack: ['Needle Workflows', 'RAG', 'Claude Sonnet', 'GPT-4.1']
+      'A production-oriented robotics briefing pipeline with 14 structured sections, source freshness logic and multi-channel distribution.',
+    proofLabel: 'Public workflow template available',
+    stack: [
+      'Needle Workflows',
+      'GPT-4.1',
+      'Claude Sonnet 4',
+      'RAG',
+      'Google Sheets',
+      'Google Docs',
+      'Microsoft Outlook'
+    ],
+    links: [
+      {
+        label: 'View Needle Template',
+        url: 'https://needle.app/workflow-templates/ai-robotics-intelligence-briefing-2'
+      }
+    ]
   },
   {
-    title: 'Sport Prediction Analyzer',
-    category: 'Operational Intelligence',
+    title: 'Twisted_4_Chaos Visual Direction',
+    category: 'Creative AI',
     problem:
-      'Sports prediction across multiple disciplines requires fast aggregation of stats, news, injuries and context.',
+      'Creative AI work often lacks a recognizable artistic direction and becomes visually interchangeable.',
     solution:
-      'Designed a multi-stage prediction system with event parsing, parallel research and layered AI analysis.',
+      'Developed a distinct visual identity around cyberpunk-inspired AI art, transformation aesthetics and stylized concept imagery.',
     result:
-      'Structured multi-sport prediction output with confidence logic and automated multi-channel delivery.',
-    stack: ['Needle Workflows', 'Prediction Logic', 'Telegram', 'Notion']
-  },
-  {
-    title: 'AI-Generative Trend Intelligence',
-    category: 'Market & Trend Research',
-    problem:
-      'Generative AI trends change quickly across image, video, typography, pricing and platform ecosystems.',
-    solution:
-      'Created a recurring AI trend intelligence workflow with research, cleanup, RAG memory and executive briefing generation.',
-    result:
-      'Faster monitoring of creative AI developments with structured reporting and historical context.',
-    stack: ['Needle Workflows', 'RAG', 'Google Docs', 'Microsoft Outlook']
+      'A recognizable creative layer that strengthens visual branding, portfolio differentiation and artistic public presence.',
+    proofLabel: 'Public portfolio profile available',
+    stack: [
+      'Creative AI',
+      'ComfyUI',
+      'Flux',
+      'SDXL',
+      'Visual Direction',
+      'Concept Design'
+    ],
+    links: [
+      {
+        label: 'View ArtStation Profile',
+        url: 'https://www.artstation.com/twisted_4_chaos'
+      }
+    ]
   }
 ];

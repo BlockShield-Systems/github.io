@@ -4,9 +4,13 @@ export function renderProjectCard(project: Project): string {
   return `
     <div class="col-12 col-lg-6">
       <article class="project-card p-4 h-100">
-        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+        <div class="d-flex justify-content-between align-items-start gap-3 mb-3 flex-wrap">
           <h3 class="h4 text-white fw-bold mb-0">${project.title}</h3>
           <span class="badge text-bg-info">${project.category}</span>
+        </div>
+
+        <div class="project-proof-label mb-4">
+          <span class="small text-info fw-semibold">${project.proofLabel}</span>
         </div>
 
         <div class="mb-3">
@@ -25,11 +29,26 @@ export function renderProjectCard(project: Project): string {
         </div>
 
         <div class="d-flex flex-wrap gap-2 mb-4">
-          ${project.stack.map(item => `<span class="badge text-bg-secondary">${item}</span>`).join('')}
+          ${project.stack
+      .map(item => `<span class="badge text-bg-secondary">${item}</span>`)
+      .join('')}
         </div>
 
         <div class="d-flex flex-wrap gap-3">
-          ${project.link ? `<a href="${project.link}" target="_blank" rel="noreferrer" class="btn btn-primary btn-sm">View reference</a>` : ''}
+          ${project.links
+      .map(
+        link => `
+                <a
+                  href="${link.url}"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-outline-light btn-sm"
+                >
+                  ${link.label}
+                </a>
+              `
+      )
+      .join('')}
         </div>
       </article>
     </div>

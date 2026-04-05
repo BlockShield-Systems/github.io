@@ -214,4 +214,19 @@ p.text-light,
   .service-card {
     min-height: 100%;
   }
+
+  .project-proof-label {
+    border-left: 3px solid var(--accent);
+    padding-left: 0.75rem;
+  }
+
+  .project-card .btn {
+    min-width: 190px;
+  }
+
+  .project-card .badge.text-bg-info {
+    color: #fff !important;
+    background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
+    border: none;
+  }
 }
