@@ -1,4 +1,7 @@
 import { renderSectionHeader } from '../components/SectionHeader';
+import { renderTrustBadge } from '../components/TrustBadge';
+import { renderTimelineItem } from '../components/TimelineItem';
+import { profileLinks, timelineEntries, trustPoints } from '../data/profile';
 
 export function renderAboutSection(): string {
   return `
@@ -6,55 +9,68 @@ export function renderAboutSection(): string {
       <div class="container">
         ${renderSectionHeader({
     eyebrow: 'About Me',
-    title: 'Enterprise Roots, Modern AI Direction',
-    description:
-      'I am a certified Swiss Informatics Specialist EFZ with a modern professional foundation in systems engineering and platform-oriented IT. Beyond the formal path, my technical profile has been shaped by more than 25 years of intensive self-driven work across administration, networking, programming, Linux, automation, AI, web development and digital creation.'
+    title: 'Enterprise roots, modern AI direction and deep hands-on technical range',
+    description: 'My profile combines formal systems-oriented training, long-term private technical depth and a current focus on AI workflows, modern digital delivery and creative technology.'
   })}
 
-        <div class="row g-4 align-items-start">
-          <div class="col-lg-7">
-            <div class="about-card p-4 h-100">
-              <p class="text-light">
-                My background spans enterprise IT, structured engineering and platform-oriented thinking.
-                Today, I bring that depth into AI-powered workflows, creative visual systems and intelligent digital solutions.
+        <div class="row g-4 align-items-start mb-5">
+          <div class="col-12 col-lg-7">
+            <div class="about-card h-100 p-4 p-lg-5">
+              <h3 class="h3 text-white fw-bold mb-4">Demian Lienert</h3>
+
+              <p class="text-light mb-4">
+                I am a certified Swiss Informatics Specialist EFZ with a modern professional foundation in systems engineering and platform-oriented IT.
+                Beyond the formal path, my technical profile has been shaped by more than 25 years of intensive self-driven work across administration,
+                networking, programming, Linux, automation, AI, web development and digital creation.
               </p>
-              <p class="text-light">
-                What makes my profile different is the combination of three normally separate worlds:
-                technical depth, security-oriented thinking and creative AI execution.
+
+              <p class="text-light mb-4">
+                My background spans enterprise-rooted thinking, structured engineering and broad technical curiosity. Today, I bring that depth into
+                AI-powered workflows, creative visual systems, modern frontend implementation and technically meaningful digital solutions.
               </p>
+
               <p class="text-light mb-0">
-                I am especially interested in systems that are not only impressive on the surface,
-                but architecturally meaningful, operationally useful and visually memorable.
+                What makes my profile different is the combination of three normally separate worlds: technical depth, security-oriented thinking and creative AI execution.
+                I am especially interested in systems that are not only impressive on the surface, but architecturally meaningful, operationally useful and visually memorable.
               </p>
             </div>
           </div>
 
-          <div class="col-lg-5">
-            <div class="about-card p-4 h-100">
-              <h3 class="h5 text-white fw-bold mb-3">Profiles & External References</h3>
-              <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                <li>
-                  <a class="text-info text-decoration-none" href="https://www.linkedin.com/in/ai-techart-demian/" target="_blank" rel="noreferrer">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a class="text-info text-decoration-none" href="https://www.artstation.com/twisted_4_chaos" target="_blank" rel="noreferrer">
-                    ArtStation
-                  </a>
-                </li>
-                <li>
-                  <a class="text-info text-decoration-none" href="https://github.com/BlockShield-Systems" target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a class="text-info text-decoration-none" href="https://x.com/BlockShield_SYS" target="_blank" rel="noreferrer">
-                    X / BlockShield_SYS
-                  </a>
-                </li>
-              </ul>
+          <div class="col-12 col-lg-5">
+            <div class="about-card h-100 p-4 p-lg-5">
+              <h3 class="h4 text-white fw-bold mb-4">Profiles & Presence</h3>
+              <div class="d-flex flex-column gap-3">
+                ${profileLinks
+      .map(
+        (link) => `
+                      <a
+                        href="${link.url}"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="profile-link d-flex align-items-center justify-content-between text-decoration-none"
+                      >
+                        <span class="d-flex align-items-center gap-3">
+                          <i class="bi ${link.icon}"></i>
+                          <span>${link.label}</span>
+                        </span>
+                        <i class="bi bi-arrow-up-right"></i>
+                      </a>
+                    `
+      )
+      .join('')}
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+          ${trustPoints.map(renderTrustBadge).join('')}
+        </div>
+
+        <div class="about-card p-4 p-lg-5">
+          <h3 class="h4 text-white fw-bold mb-4">Compact Background Timeline</h3>
+          <div class="timeline-wrapper">
+            ${timelineEntries.map(renderTimelineItem).join('')}
           </div>
         </div>
       </div>

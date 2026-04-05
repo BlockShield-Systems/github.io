@@ -288,4 +288,56 @@ p.text-light,
       width: 100%;
     }
   }
+
+  .profile-link {
+    padding: 1rem 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: #e5e7eb;
+    transition: all 0.25s ease;
+  }
+
+  .profile-link:hover {
+    color: #ffffff;
+    border-color: rgba(0, 212, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .profile-link i.bi:first-child {
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+
+  .trust-icon i {
+    font-size: 2rem;
+    color: var(--primary);
+    filter: drop-shadow(0 6px 14px rgba(0, 212, 255, 0.25));
+  }
+
+  .timeline-wrapper {
+    position: relative;
+  }
+
+  .timeline-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 0.6rem;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -0.52rem;
+    top: 0.35rem;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.08);
+  }
+
+  .about-card,
+  .contact-card {
+    min-height: 100%;
+  }
 }
