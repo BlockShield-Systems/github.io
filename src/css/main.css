@@ -42,6 +42,19 @@ body.dark {
   z-index: 1;
 }
 
+.hero-app-title {
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.hero-app-description {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.75;
+}
+
 .hero::before {
   content: "";
   position: absolute;
