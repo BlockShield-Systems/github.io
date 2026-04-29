@@ -111,6 +111,30 @@ body.dark {
   min-width: 220px;
 }
 
+.oauth-app-summary {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 0;
+  background: transparent;
+}
+
+.oauth-app-summary__title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.oauth-app-summary__text {
+  max-width: 860px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
 .object-fit-cover {
   object-fit: cover;
   aspect-ratio: 16 / 9;
