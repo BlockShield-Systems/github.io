@@ -14,17 +14,6 @@ export function renderHeroSection(): string {
               From Legacy to Intelligent
             </h1>
 
-            <h2 class="hero-app-title text-white fw-semibold mb-3">
-              n8n Automation Platform
-            </h2>
-
-            <p class="hero-app-description lead text-light mb-4">
-              AI-Techart & Dynamics provides a self-hosted n8n-based automation environment
-              via <strong>n8n.ai-techart.com</strong>. It is used to build and operate
-              workflow automation, document processing, connected service integrations,
-              and intelligent process orchestration through authorized APIs and external tools.
-            </p>
-
             <p class="lead text-light mb-4">
               Built on 25+ years of deep hands-on involvement across IT, software, automation, AI and creative technology. I design production-ready workflows, modern digital solutions and visually distinctive AI-driven systems.
             </p>

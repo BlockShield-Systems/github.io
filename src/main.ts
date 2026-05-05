@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 
   attachSmoothScrolling();
-  attachTransformationHoverEffects();
+  initializeTransformationToggles();
   initializeContactForm();
 });
 
@@ -54,27 +54,30 @@ function attachSmoothScrolling(): void {
   });
 }
 
-function attachTransformationHoverEffects(): void {
-  document.querySelectorAll<HTMLElement>('.transformation-card').forEach((card) => {
-    const beforeImg = card.querySelector<HTMLImageElement>('.before-img');
-    const afterImg = card.querySelector<HTMLImageElement>('.after-img');
+function initializeTransformationToggles(): void {
+  const cards = document.querySelectorAll<HTMLElement>('[data-transformation-card]');
 
-    if (!beforeImg || !afterImg) return;
+  cards.forEach((card) => {
+    const buttons = card.querySelectorAll<HTMLButtonElement>('.transformation-toggle-btn');
 
-    card.addEventListener('mouseenter', () => {
-      beforeImg.style.opacity = '0';
-      afterImg.style.opacity = '1';
-    });
+    if (!buttons.length) return;
 
-    card.addEventListener('mouseleave', () => {
-      beforeImg.style.opacity = '1';
-      afterImg.style.opacity = '0';
-    });
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextView = button.dataset.view;
 
-    card.addEventListener('click', () => {
-      const isVisible = afterImg.style.opacity === '1';
-      beforeImg.style.opacity = isVisible ? '1' : '0';
-      afterImg.style.opacity = isVisible ? '0' : '1';
+        if (nextView !== 'before' && nextView !== 'after') {
+          return;
+        }
+
+        card.setAttribute('data-view', nextView);
+
+        buttons.forEach((btn) => {
+          const isActive = btn.dataset.view === nextView;
+          btn.classList.toggle('is-active', isActive);
+          btn.setAttribute('aria-pressed', String(isActive));
+        });
+      });
     });
   });
 }

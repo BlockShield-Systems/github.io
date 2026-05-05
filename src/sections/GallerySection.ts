@@ -12,73 +12,85 @@ const transformations: Transformation[] = [
     title: 'Traditional Home → Smart Home',
     before: 'traditional-home-4k-before.webp',
     after: 'smart-home-4k-after.webp',
-    description: 'Legacy residential environment reimagined as an intelligent living system.'
+    description:
+      'Legacy living redesigned as a connected smart-home concept.'
   },
   {
     title: 'Car Interior → Smart Car Interior',
     before: 'car-interior-4k-before.webp',
-    after: 'car-interior-after.webp',
-    description: 'Conventional interior concept transformed into a futuristic connected mobility space.'
+    after: 'car-interior-4k-after.webp',
+    description:
+      'A dated cockpit evolved into a premium connected driving experience.'
   },
   {
     title: 'Low-Tech Fitness → Smart Fitness',
     before: 'low-tech-fitness-4k-before.webp',
     after: 'smart-fitness-4k-after.webp',
-    description: 'A static workout setting redesigned as an adaptive performance environment.'
+    description:
+      'A conventional gym reimagined as a data-enhanced fitness environment.'
   },
   {
     title: 'Physical Storefront → Smart Fashion',
     before: 'physical-storefront-4k-before.webp',
     after: 'smart-fashion-4k-after.webp',
-    description: 'Retail identity elevated through AI-driven visual modernization.'
+    description:
+      'A classic boutique transformed into a smart retail fashion concept.'
   },
   {
     title: 'Ordinary Supermarket → Smart Retail',
     before: 'ordinary-supermarket-4k-before.webp',
     after: 'smart-retail-4k-after.webp',
-    description: 'Everyday commerce reframed as a high-tech customer experience.'
+    description:
+      'Everyday retail elevated into a high-tech customer experience.'
   },
   {
     title: 'Empty Render Stage → Metaverse',
     before: 'empty-render-stage-4k-before.webp',
     after: 'metaverse-4k-after.webp',
-    description: 'A neutral scene transformed into a stylized immersive digital world.'
+    description:
+      'A neutral stage expanded into an immersive branded metaverse concept.'
   },
   {
     title: 'Old-School Kitchen → Smart Kitchen',
     before: 'oldschool-kitchen-4k-before.webp',
     after: 'smart-kitchen-4k-after.webp',
-    description: 'Classic domestic design shifted toward connected living and intelligent comfort.'
+    description:
+      'A classic kitchen redesigned as a connected smart-operations space.'
   },
   {
     title: 'Legacy Healthcare → AI Healthcare',
     before: 'legacy-healthcare-4k-before.webp',
-    after: 'ai-healthcare-after.webp',
-    description: 'Healthcare visuals updated into an advanced, AI-supported care environment.'
+    after: 'ai-healthcare-4k-after.webp',
+    description:
+      'A dated care setting transformed into an AI-supported healthcare concept.'
   },
   {
     title: 'Analog Bank → Digital Banking',
-    before: 'analog-bank-interior-before.webp',
+    before: 'analog-bank-interior-4k-before.webp',
     after: 'digital-banking-4k-after.webp',
-    description: 'Traditional finance space reimagined as a future-facing digital experience.'
+    description:
+      'Traditional banking reframed as a digital-first service environment.'
   },
   {
     title: 'Conventional Office → AR Spatial Computing',
     before: 'conventional-office-4k-before.webp',
-    after: 'ar-spatial-computing-after.webp',
-    description: 'Office concept upgraded into a mixed-reality productivity environment.'
+    after: 'ar-spatial-computing-4k-after.webp',
+    description:
+      'A standard office upgraded into an immersive spatial-computing workspace.'
   },
   {
     title: 'Classic Computer Lab → AI Research Lab',
     before: 'classic-computer-lab-4k-before.webp',
-    after: 'ai-research-lab-after.webp',
-    description: 'Legacy computing transformed into an AI-native innovation space.'
+    after: 'ai-research-lab-4k-after.webp',
+    description:
+      'Legacy computing transformed into an AI-native research environment.'
   },
   {
     title: 'Basic Reception Lobby → Advanced Biometrics',
     before: 'basic-reception-lobby-4k-before.webp',
-    after: 'advanced-biometrics-after.webp',
-    description: 'Conventional entry space reframed through futuristic security design.'
+    after: 'advanced-biometrics-4k-after.webp',
+    description:
+      'A minimal lobby reimagined as a biometric security access concept.'
   }
 ];
 
@@ -94,38 +106,57 @@ export function renderGallerySection(): string {
     eyebrow: 'Transformations Gallery',
     title: 'Visual Before & After Concepts',
     description:
-      'A curated visual gallery showing how legacy, ordinary or static environments can be reimagined into intelligent, branded and future-oriented concepts.'
+      'A curated visual gallery showing how legacy, ordinary, or static environments can be reimagined into intelligent, branded, and future-oriented concepts.'
   })}
 
         <div class="row g-4">
           ${transformations
       .map(
-        t => `
-                <div class="col-md-6 col-lg-4">
-                  <article class="card border-0 h-100 transformation-card overflow-hidden cursor-pointer">
-                    <div class="position-relative transformation-media">
+        (t, index) => `
+                <div class="col-md-6">
+                  <article class="transformation-card h-100">
+                    <div class="transformation-media" data-transformation-card data-view="before">
                       <img
                         src="${getTransformationImagePath(t.before)}"
-                        class="before-img w-100 h-100 object-fit-cover"
+                        class="before-img transformation-image"
                         alt="${t.title} before transformation"
-                        loading="lazy"
+                        loading="${index < 3 ? 'eager' : 'lazy'}"
                         decoding="async"
-                        style="transition: opacity 0.5s ease;"
                       />
 
                       <img
                         src="${getTransformationImagePath(t.after)}"
-                        class="after-img w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+                        class="after-img transformation-image"
                         alt="${t.title} after transformation"
                         loading="lazy"
                         decoding="async"
-                        style="opacity: 0; transition: opacity 0.5s ease;"
                       />
 
-                      <div class="card-img-overlay d-flex flex-column justify-content-end p-4 bg-gradient-dark">
-                        <h3 class="h5 text-white fw-bold mb-1">${t.title}</h3>
-                        <p class="text-light small mb-1">${t.description}</p>
-                        <small class="text-info">Hover or tap to compare</small>
+                      <div class="transformation-state-toggle" role="group" aria-label="Toggle transformation view">
+                        <button
+                          type="button"
+                          class="transformation-toggle-btn is-active"
+                          data-view="before"
+                          aria-pressed="true"
+                        >
+                          Before
+                        </button>
+                        <button
+                          type="button"
+                          class="transformation-toggle-btn"
+                          data-view="after"
+                          aria-pressed="false"
+                        >
+                          After
+                        </button>
+                      </div>
+
+                      <div class="transformation-overlay-bottom">
+                        <div class="transformation-content">
+                          <p class="transformation-top-label mb-2">Concept Transformation</p>
+                          <h3 class="transformation-title mb-2">${t.title}</h3>
+                          <p class="transformation-description mb-0">${t.description}</p>
+                        </div>
                       </div>
                     </div>
                   </article>

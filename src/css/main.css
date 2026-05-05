@@ -212,10 +212,11 @@ body.dark {
 
 .transformation-media {
   position: relative;
-  min-height: 360px;
   height: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #0b1220;
+  isolation: isolate;
 }
 
 .transformation-image {
@@ -225,53 +226,66 @@ body.dark {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.5s ease, transform 0.6s ease;
+  transition: opacity 0.45s ease, transform 0.55s ease;
+  will-change: opacity, transform;
 }
 
 .before-img {
-  opacity: 1;
   z-index: 1;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .after-img {
-  opacity: 0;
   z-index: 2;
-}
-
-.transformation-card:hover .before-img,
-.transformation-card:focus-within .before-img {
   opacity: 0;
-  transform: scale(1.015);
+  transform: scale(1.01);
 }
 
-.transformation-card:hover .after-img,
-.transformation-card:focus-within .after-img {
+.transformation-media[data-view="before"] .before-img {
   opacity: 1;
-  transform: scale(1.015);
+  transform: scale(1);
 }
 
-.transformation-state-badge {
+.transformation-media[data-view="before"] .after-img {
+  opacity: 0;
+  transform: scale(1.01);
+}
+
+.transformation-media[data-view="after"] .before-img {
+  opacity: 0;
+  transform: scale(1.01);
+}
+
+.transformation-media[data-view="after"] .after-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.transformation-state-toggle {
   position: absolute;
-  top: 0.9rem;
-  left: 0.9rem;
+  top: 0.85rem;
+  right: 0.85rem;
   z-index: 4;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem;
+  gap: 0.25rem;
+  padding: 0.28rem;
   border-radius: 999px;
   background: rgba(7, 10, 18, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
-.transformation-state-badge span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.transformation-toggle-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(226, 232, 240, 0.82);
   min-width: 58px;
-  padding: 0.34rem 0.6rem;
+  padding: 0.38rem 0.68rem;
   border-radius: 999px;
   font-size: 0.68rem;
   font-weight: 700;
@@ -281,53 +295,48 @@ body.dark {
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
-    opacity 0.25s ease;
+    opacity 0.25s ease,
+    transform 0.2s ease;
+  cursor: pointer;
 }
 
-.state-before {
+.transformation-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.transformation-toggle-btn:focus-visible {
+  outline: 2px solid rgba(0, 212, 255, 0.65);
+  outline-offset: 2px;
+}
+
+.transformation-toggle-btn.is-active[data-view="before"] {
   background: rgba(59, 130, 246, 0.22);
   color: #dbeafe;
-  opacity: 1;
 }
 
-.state-after {
-  background: rgba(16, 185, 129, 0.16);
+.transformation-toggle-btn.is-active[data-view="after"] {
+  background: rgba(16, 185, 129, 0.22);
   color: #d1fae5;
-  opacity: 0.55;
 }
 
-.transformation-card:hover .state-before,
-.transformation-card:focus-within .state-before {
-  opacity: 0.5;
-}
-
-.transformation-card:hover .state-after,
-.transformation-card:focus-within .state-after {
-  opacity: 1;
-  background: rgba(16, 185, 129, 0.24);
-}
-
-.transformation-overlay {
+.transformation-overlay-bottom {
   position: absolute;
   inset-inline: 0;
   bottom: 0;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.65rem;
-  padding: 1rem;
+  z-index: 3;
+  padding: 0.85rem 0.95rem;
   background: linear-gradient(to top,
       rgba(3, 6, 14, 0.96) 0%,
-      rgba(3, 6, 14, 0.84) 48%,
+      rgba(3, 6, 14, 0.82) 44%,
       rgba(3, 6, 14, 0.18) 100%);
+  pointer-events: none;
 }
 
-.transformation-copy {
+.transformation-content {
   max-width: 100%;
 }
 
-.transformation-kicker {
+.transformation-top-label {
   margin: 0;
   font-size: 0.7rem;
   line-height: 1.1;
@@ -354,39 +363,23 @@ body.dark {
 .transformation-description {
   margin: 0;
   color: rgba(226, 232, 240, 0.88);
-  font-size: 0.78rem;
-  line-height: 1.45;
+  font-size: 0.74rem;
+  line-height: 1.38;
   display: -webkit-box;
   overflow: hidden;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
-.transformation-hint {
-  margin: 0;
-  color: rgba(191, 219, 254, 0.9);
-  font-size: 0.72rem;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
 @media (max-width: 991.98px) {
-  .transformation-media {
-    min-height: 340px;
-  }
-
   .transformation-title {
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 767.98px) {
-  .transformation-media {
-    min-height: 320px;
-  }
-
-  .transformation-overlay {
+  .transformation-overlay-bottom {
     padding: 0.9rem;
   }
 
@@ -397,25 +390,38 @@ body.dark {
   .transformation-description {
     font-size: 0.75rem;
   }
+
+  .transformation-info h3,
+  .transformation-info h4,
+  .transformation-overlay-bottom h3,
+  .transformation-overlay-bottom h4,
+  .transformation-content h3,
+  .transformation-content h4,
+  .transformation-title {
+    font-size: 0.84rem;
+  }
+
+  .transformation-info p,
+  .transformation-overlay-bottom p,
+  .transformation-content p,
+  .transformation-description {
+    font-size: 0.69rem;
+  }
 }
 
 @media (max-width: 575.98px) {
-  .transformation-media {
-    min-height: 300px;
-  }
-
-  .transformation-state-badge {
+  .transformation-state-toggle {
     top: 0.75rem;
-    left: 0.75rem;
+    right: 0.75rem;
   }
 
-  .transformation-state-badge span {
+  .transformation-toggle-btn {
     min-width: 54px;
+    padding: 0.34rem 0.58rem;
     font-size: 0.64rem;
-    padding: 0.32rem 0.55rem;
   }
 
-  .transformation-kicker {
+  .transformation-top-label {
     font-size: 0.66rem;
   }
 
@@ -426,10 +432,6 @@ body.dark {
   .transformation-description {
     font-size: 0.73rem;
     line-height: 1.4;
-  }
-
-  .transformation-hint {
-    font-size: 0.68rem;
   }
 }
 
