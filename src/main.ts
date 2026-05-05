@@ -11,6 +11,12 @@ import { renderGallerySection } from './sections/GallerySection';
 import { renderAboutSection } from './sections/AboutSection';
 import { renderContactSection } from './sections/ContactSection';
 
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT;
+
+if (!CONTACT_ENDPOINT) {
+  throw new Error('Missing VITE_CONTACT_ENDPOINT environment variable.');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = document.getElementById('app');
 
@@ -95,8 +101,18 @@ async function initializeContactForm(): Promise<void> {
   const messageInput = form.querySelector<HTMLTextAreaElement>('#contact-message');
   const privacyCheckbox = form.querySelector<HTMLInputElement>('#contact-privacy');
   const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const websiteInput = form.querySelector<HTMLInputElement>('#website');
+  const privacyFeedback = form.querySelector<HTMLElement>('.contact-check-feedback');
 
-  if (!nameInput || !emailInput || !topicInput || !stageInput || !messageInput || !privacyCheckbox || !submitButton) {
+  if (
+    !nameInput ||
+    !emailInput ||
+    !topicInput ||
+    !stageInput ||
+    !messageInput ||
+    !privacyCheckbox ||
+    !submitButton
+  ) {
     console.error('Contact form fields are incomplete.');
     return;
   }
@@ -109,7 +125,7 @@ async function initializeContactForm(): Promise<void> {
   });
 
   privacyCheckbox.addEventListener('change', () => {
-    clearPrivacyState(privacyCheckbox);
+    clearPrivacyState(privacyCheckbox, privacyFeedback);
   });
 
   form.addEventListener('submit', async (event) => {
@@ -119,7 +135,7 @@ async function initializeContactForm(): Promise<void> {
 
     clearStatus(statusElement);
     fields.forEach((field) => clearFieldState(field));
-    clearPrivacyState(privacyCheckbox);
+    clearPrivacyState(privacyCheckbox, privacyFeedback);
 
     if (!nameInput.value.trim()) {
       markInvalid(nameInput);
@@ -147,23 +163,22 @@ async function initializeContactForm(): Promise<void> {
     }
 
     if (!privacyCheckbox.checked) {
-      markPrivacyInvalid(privacyCheckbox);
+      markPrivacyInvalid(privacyCheckbox, privacyFeedback);
       isValid = false;
     }
 
     if (!isValid) {
-      statusElement.textContent = 'Please complete all required fields correctly.';
-      statusElement.className = 'contact-form-status error';
+      setStatusError(statusElement, 'Please complete all required fields correctly.');
       return;
     }
 
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
+    resetStatus(statusElement);
     statusElement.textContent = 'Submitting your inquiry...';
-    statusElement.className = 'contact-form-status';
 
     try {
-      const response = await fetch('https://ai-techart-contact-worker.contact-541.workers.dev/submit', {
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -174,28 +189,38 @@ async function initializeContactForm(): Promise<void> {
           topic: topicInput.value.trim(),
           stage: stageInput.value.trim(),
           message: messageInput.value.trim(),
-          privacyAccepted: privacyCheckbox.checked
+          privacyAccepted: privacyCheckbox.checked,
+          honeypot: websiteInput?.value.trim() ?? ''
         })
       });
 
-      const result = (await response.json()) as { ok: boolean; error?: string; message?: string };
+      let result: { ok?: boolean; error?: string; message?: string } = {};
+
+      try {
+        result = (await response.json()) as { ok?: boolean; error?: string; message?: string };
+      } catch {
+        result = {};
+      }
 
       if (!response.ok || !result.ok) {
         throw new Error(result.error || 'Submission failed.');
       }
 
-      statusElement.textContent =
-        'Your inquiry was sent successfully. Thank you — I will review it and respond as appropriate.';
-      statusElement.className = 'contact-form-status success';
+      setStatusSuccess(
+        statusElement,
+        'Your inquiry was sent successfully. Thank you — I will review it and respond as appropriate.'
+      );
 
       form.reset();
-      clearPrivacyState(privacyCheckbox);
+      clearPrivacyState(privacyCheckbox, privacyFeedback);
+      fields.forEach((field) => clearFieldState(field));
     } catch (error) {
-      console.error(error);
+      console.error('Contact form submission failed:', error);
 
-      statusElement.textContent =
-        'The inquiry could not be sent right now. Please try again later or use LinkedIn as fallback.';
-      statusElement.className = 'contact-form-status error';
+      setStatusError(
+        statusElement,
+        'The inquiry could not be sent right now. Please try again later or use LinkedIn as fallback.'
+      );
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = 'Send project inquiry';
@@ -215,25 +240,39 @@ function clearFieldState(element: HTMLInputElement | HTMLTextAreaElement | HTMLS
   element.classList.remove('is-invalid');
 }
 
-function markPrivacyInvalid(checkbox: HTMLInputElement): void {
+function markPrivacyInvalid(checkbox: HTMLInputElement, feedback?: HTMLElement | null): void {
   checkbox.classList.add('is-invalid');
 
-  const feedback = document.querySelector<HTMLElement>('.contact-check-feedback');
   if (feedback) {
     feedback.style.visibility = 'visible';
   }
 }
 
-function clearPrivacyState(checkbox: HTMLInputElement): void {
+function clearPrivacyState(checkbox: HTMLInputElement, feedback?: HTMLElement | null): void {
   checkbox.classList.remove('is-invalid');
 
-  const feedback = document.querySelector<HTMLElement>('.contact-check-feedback');
   if (feedback) {
     feedback.style.visibility = 'hidden';
   }
 }
 
-function clearStatus(statusElement: HTMLDivElement): void {
+function resetStatus(statusElement: HTMLDivElement): void {
   statusElement.textContent = '';
-  statusElement.className = 'contact-form-status';
+  statusElement.classList.remove('success', 'error');
+}
+
+function clearStatus(statusElement: HTMLDivElement): void {
+  resetStatus(statusElement);
+}
+
+function setStatusSuccess(statusElement: HTMLDivElement, message: string): void {
+  resetStatus(statusElement);
+  statusElement.textContent = message;
+  statusElement.classList.add('success');
+}
+
+function setStatusError(statusElement: HTMLDivElement, message: string): void {
+  resetStatus(statusElement);
+  statusElement.textContent = message;
+  statusElement.classList.add('error');
 }

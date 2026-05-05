@@ -100,6 +100,18 @@ export function renderContactSection(): string {
                     <div class="invalid-feedback">Please enter a message.</div>
                   </div>
 
+                  <div class="col-12 contact-form-honeypot" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabindex="-1"
+                      autocomplete="off"
+                      inputmode="text"
+                    />
+                  </div>
+
                   <div class="col-12">
                     <div class="form-check contact-check">
                       <input
