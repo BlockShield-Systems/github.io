@@ -106,24 +106,27 @@ export function renderGallerySection(): string {
     eyebrow: 'Transformations Gallery',
     title: 'Visual Before & After Concepts',
     description:
-      'A curated visual gallery showing how legacy, ordinary, or static environments can be reimagined into intelligent, branded, and future-oriented concepts.'
+      'A curated visual gallery showing how legacy, ordinary, or static environments can be reimagined into intelligent, branded, and future-oriented concepts. Use the before/after controls on each card to compare both states directly.'
   })}
 
         <div class="row g-4">
           ${transformations
       .map(
         (t, index) => `
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <article class="transformation-card h-100">
-                    <div class="transformation-media" data-transformation-card data-view="before">
+                    <div
+                      class="transformation-media"
+                      data-transformation-card
+                      data-view="before"
+                    >
                       <img
                         src="${getTransformationImagePath(t.before)}"
                         class="before-img transformation-image"
                         alt="${t.title} before transformation"
-                        loading="${index < 3 ? 'eager' : 'lazy'}"
+                        loading="${index < 2 ? 'eager' : 'lazy'}"
                         decoding="async"
                       />
-
                       <img
                         src="${getTransformationImagePath(t.after)}"
                         class="after-img transformation-image"
@@ -132,7 +135,20 @@ export function renderGallerySection(): string {
                         decoding="async"
                       />
 
-                      <div class="transformation-state-toggle" role="group" aria-label="Toggle transformation view">
+                      <div
+                        class="transformation-state-badge"
+                        data-transformation-state
+                        data-state="before"
+                        aria-live="polite"
+                      >
+                        Before
+                      </div>
+
+                      <div
+                        class="transformation-state-toggle"
+                        role="group"
+                        aria-label="Toggle transformation view"
+                      >
                         <button
                           type="button"
                           class="transformation-toggle-btn is-active"
@@ -153,9 +169,13 @@ export function renderGallerySection(): string {
 
                       <div class="transformation-overlay-bottom">
                         <div class="transformation-content">
-                          <p class="transformation-top-label mb-2">Concept Transformation</p>
+                          <p class="transformation-top-label mb-2">
+                            Concept Transformation
+                          </p>
                           <h3 class="transformation-title mb-2">${t.title}</h3>
-                          <p class="transformation-description mb-0">${t.description}</p>
+                          <p class="transformation-description mb-0">
+                            ${t.description}
+                          </p>
                         </div>
                       </div>
                     </div>

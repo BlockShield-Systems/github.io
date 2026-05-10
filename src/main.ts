@@ -65,6 +65,7 @@ function initializeTransformationToggles(): void {
 
   cards.forEach((card) => {
     const buttons = card.querySelectorAll<HTMLButtonElement>('.transformation-toggle-btn');
+    const stateBadge = card.querySelector<HTMLElement>('[data-transformation-state]');
 
     if (!buttons.length) return;
 
@@ -77,6 +78,11 @@ function initializeTransformationToggles(): void {
         }
 
         card.setAttribute('data-view', nextView);
+
+        if (stateBadge) {
+          stateBadge.dataset.state = nextView;
+          stateBadge.textContent = nextView === 'before' ? 'Before' : 'After';
+        }
 
         buttons.forEach((btn) => {
           const isActive = btn.dataset.view === nextView;
@@ -197,7 +203,11 @@ async function initializeContactForm(): Promise<void> {
       let result: { ok?: boolean; error?: string; message?: string } = {};
 
       try {
-        result = (await response.json()) as { ok?: boolean; error?: string; message?: string };
+        result = (await response.json()) as {
+          ok?: boolean;
+          error?: string;
+          message?: string;
+        };
       } catch {
         result = {};
       }
@@ -232,15 +242,22 @@ function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function markInvalid(element: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement): void {
+function markInvalid(
+  element: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+): void {
   element.classList.add('is-invalid');
 }
 
-function clearFieldState(element: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement): void {
+function clearFieldState(
+  element: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+): void {
   element.classList.remove('is-invalid');
 }
 
-function markPrivacyInvalid(checkbox: HTMLInputElement, feedback?: HTMLElement | null): void {
+function markPrivacyInvalid(
+  checkbox: HTMLInputElement,
+  feedback?: HTMLElement | null
+): void {
   checkbox.classList.add('is-invalid');
 
   if (feedback) {
@@ -248,7 +265,10 @@ function markPrivacyInvalid(checkbox: HTMLInputElement, feedback?: HTMLElement |
   }
 }
 
-function clearPrivacyState(checkbox: HTMLInputElement, feedback?: HTMLElement | null): void {
+function clearPrivacyState(
+  checkbox: HTMLInputElement,
+  feedback?: HTMLElement | null
+): void {
   checkbox.classList.remove('is-invalid');
 
   if (feedback) {
