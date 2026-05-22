@@ -917,3 +917,63 @@ p.text-light,
     padding: 1.5rem 1.25rem 2rem;
   }
 }
+
+/* Responsive media correction: avoid rigid cropping on tablets and smaller screens. */
+
+.project-preview-wrapper {
+  display: grid;
+  aspect-ratio: 16 / 10;
+}
+
+.project-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .transformation-media {
+    height: auto;
+    min-height: clamp(320px, 46vw, 460px);
+    aspect-ratio: 16 / 10;
+  }
+
+  .transformation-image {
+    object-fit: contain;
+    object-position: center;
+    background: #0b1220;
+  }
+
+  .project-preview-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-preview {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .transformation-media {
+    height: auto;
+    min-height: clamp(320px, 95vw, 520px);
+    aspect-ratio: 4 / 5;
+  }
+
+  .transformation-image {
+    object-fit: contain;
+    object-position: center;
+    background: #0b1220;
+  }
+
+  .project-preview-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-preview {
+    height: 100%;
+    object-fit: contain;
+  }
+}

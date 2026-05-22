@@ -5,6 +5,7 @@ import './css/main.css';
 import { renderHeroSection } from './sections/HeroSection';
 import { renderWorkflowsSection } from './sections/WorkflowsSection';
 import { renderSkillsSection } from './sections/SkillsSection';
+import { renderFeaturedProjectSection } from './sections/FeaturedProjectSection';
 import { renderProjectsSection } from './sections/ProjectsSection';
 import { renderServicesSection } from './sections/ServicesSection';
 import { renderGallerySection } from './sections/GallerySection';
@@ -26,15 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   app.innerHTML = `
-    ${renderHeroSection()}
-    ${renderWorkflowsSection()}
-    ${renderSkillsSection()}
-    ${renderProjectsSection()}
-    ${renderServicesSection()}
-    ${renderGallerySection()}
-    ${renderAboutSection()}
-    ${renderContactSection()}
-  `;
+  ${renderHeroSection()}
+  ${renderWorkflowsSection()}
+  ${renderSkillsSection()}
+  ${renderFeaturedProjectSection()}
+  ${renderProjectsSection()}
+  ${renderServicesSection()}
+  ${renderGallerySection()}
+  ${renderAboutSection()}
+  ${renderContactSection()}
+`;
+
+  document.dispatchEvent(new CustomEvent('smd-showcase:ready'));
 
   attachSmoothScrolling();
   initializeTransformationToggles();
