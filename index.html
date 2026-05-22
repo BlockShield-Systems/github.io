@@ -125,6 +125,30 @@
       }
     </script>
 
+    <!-- Structured Data: Swiss Market Dashboard -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Swiss Market Dashboard",
+        "url": "https://dashboard.ai-techart.com",
+        "codeRepository": "https://github.com/BlockShield-Systems/swiss-market-dashboard",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "creator": {
+          "@type": "Organization",
+          "name": "BlockShield Systems"
+        }
+      }
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/swiss-market-dashboard-showcase.css"
+    />
+
+    <script src="/assets/js/swiss-market-dashboard-showcase.js" defer></script>
+
     <script type="module" src="/src/main.ts"></script>
   </head>
 
@@ -147,6 +171,84 @@
         </div>
       </section>
 
+      <section
+        class="smd-showcase"
+        id="swiss-market-dashboard"
+        aria-labelledby="smd-title"
+      >
+        <div class="smd-showcase__inner">
+          <figure class="smd-showcase__media">
+            <video
+              class="smd-showcase__video"
+              data-smd-brand-video
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="/assets/images/ai-techart-blockshield-logo-poster.webp"
+              aria-describedby="smd-video-caption"
+            >
+              <source
+                src="/assets/videos/ai-techart-blockshield-logo-sequence.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video element.
+            </video>
+
+            <figcaption id="smd-video-caption" class="smd-sr-only">
+              Brand animation from AI-Techart to BlockShield Systems.
+            </figcaption>
+
+            <button
+              class="smd-showcase__video-toggle"
+              type="button"
+              data-smd-video-toggle
+              aria-pressed="false"
+            >
+              Play animation
+            </button>
+          </figure>
+
+          <div class="smd-showcase__content">
+            <p class="smd-showcase__eyebrow">Featured Project</p>
+
+            <h2 id="smd-title">Swiss Market Dashboard</h2>
+
+            <p class="smd-showcase__lead">
+              Standalone live demo of my Swiss Market Dashboard project,
+              deployed with Vercel on a dedicated subdomain.
+            </p>
+
+            <p class="smd-showcase__text">
+              The project intentionally separates the public brand presence from
+              the actual dashboard application: the main website introduces the
+              project, while the subdomain delivers the live demo.
+            </p>
+
+            <div
+              class="smd-showcase__actions"
+              aria-label="Swiss Market Dashboard project links"
+            >
+              <a
+                class="smd-button smd-button--primary"
+                href="https://dashboard.ai-techart.com"
+              >
+                Open Live Demo
+              </a>
+
+              <a
+                class="smd-button smd-button--secondary"
+                href="https://github.com/BlockShield-Systems/swiss-market-dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View GitHub Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div id="app"></div>
     </main>
 
@@ -165,6 +267,15 @@
           <a href="/terms.html">Terms of Service</a>
           <a href="/imprint.html">Imprint</a>
         </nav>
+
+        <a
+          class="smd-footer-source"
+          href="https://github.com/BlockShield-Systems/github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Website Source
+        </a>
       </div>
     </footer>
   </body>
