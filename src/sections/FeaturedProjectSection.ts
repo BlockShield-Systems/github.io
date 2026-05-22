@@ -13,7 +13,8 @@ export function renderFeaturedProjectSection(): string {
             muted
             loop
             playsinline
-            preload="metadata"
+            autoplay
+            preload="auto"
             poster="/assets/images/ai-techart-blockshield-logo-poster.webp"
             aria-describedby="smd-video-caption"
           >

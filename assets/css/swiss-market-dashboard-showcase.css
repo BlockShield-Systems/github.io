@@ -330,3 +330,15 @@
     font-size: clamp(2rem, 12vw, 3rem);
   }
 }
+
+/* Video reliability correction: interactive media should not use content-visibility:auto. */
+.smd-showcase {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
+}
+
+.smd-showcase__video {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
