@@ -17,6 +17,6 @@
     "wrangler": "^4.87.0"
   },
   "dependencies": {
-    "resend": "^6.12.2"
+    "resend": "^6.12.3"
   }
 }
